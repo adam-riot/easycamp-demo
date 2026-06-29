@@ -23,7 +23,7 @@
   body{
     font-family:'Inter',sans-serif;
     color:var(--black);
-    background:var(--white);
+    background:var(--yellow);
     line-height:1.6;
     overflow-x:hidden;
   }
@@ -45,16 +45,18 @@
   .btn-yellow:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--black)}
   .btn-outline{background:var(--white);color:var(--black);border-color:var(--black)}
   .btn-outline:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--black)}
+  .btn-dark{background:var(--black);color:var(--yellow);border-color:var(--black)}
+  .btn-dark:hover{transform:translateY(-3px);box-shadow:5px 5px 0 rgba(0,0,0,.25)}
   .btn-lg{font-size:18px;padding:22px 40px}
 
   /* ===== Navbar ===== */
   header.nav{
-    position:sticky;top:0;z-index:1000;background:var(--white);
+    position:sticky;top:0;z-index:1000;background:var(--yellow);
     border-bottom:2px solid var(--black);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
   .logo{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:var(--black)}
-  .logo .dot{color:var(--yellow)}
+  .logo .dot{color:var(--black)}
   .nav-links{display:flex;gap:34px;align-items:center}
   .nav-links a{font-weight:600;font-size:14px;letter-spacing:.3px;position:relative}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--yellow);transition:width .2s ease}
@@ -62,15 +64,15 @@
   .nav-cta{padding:12px 20px;font-size:13px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
   .burger span{width:26px;height:3px;background:var(--black);display:block;transition:.2s}
-  .mobile-menu{display:none;flex-direction:column;border-top:2px solid var(--black);background:var(--white)}
-  .mobile-menu a{padding:16px 24px;border-bottom:1px solid var(--border);font-weight:600}
+  .mobile-menu{display:none;flex-direction:column;border-top:2px solid var(--black);background:var(--yellow)}
+  .mobile-menu a{padding:16px 24px;border-bottom:1px solid rgba(0,0,0,.15);font-weight:600}
   .mobile-menu.open{display:flex}
 
   /* ===== Hero ===== */
   .hero{padding:70px 0 0}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
   .badge{
-    display:inline-block;background:var(--yellow);color:var(--black);
+    display:inline-block;background:var(--black);color:var(--yellow);
     font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
     padding:9px 16px;border:2px solid var(--black);margin-bottom:26px;
   }
@@ -85,6 +87,8 @@
   }
   .art-card:hover{transform:translateY(-6px)}
   .art-card span{position:relative;z-index:2;font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--white);letter-spacing:1px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+  .art-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .art-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%)}
   .art-1{background:linear-gradient(135deg,#1b3a2b,#2f5d43 60%,var(--yellow))}
   .art-2{background:linear-gradient(135deg,#243b1e,#3c5a2b)}
   .art-3{background:linear-gradient(135deg,#0f2a1e,#1f4030)}
@@ -101,7 +105,7 @@
   /* ===== Section heading ===== */
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
   .sec-head h2{font-size:clamp(40px,6vw,68px);text-transform:uppercase;line-height:.9}
-  .sec-head .link{font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--yellow);padding-bottom:3px}
+  .sec-head .link{font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--black);padding-bottom:3px}
   .pad{padding:90px 0}
 
   /* ===== Product grid ===== */
@@ -126,6 +130,8 @@
     content:"";position:absolute;inset:0;
     background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 10px,transparent 10px 20px);
   }
+  .prod-img.has-photo::after{display:none}
+  .prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .best{
     position:absolute;top:12px;left:12px;z-index:3;background:var(--yellow);color:var(--black);
     font-weight:800;font-size:11px;letter-spacing:1px;padding:6px 10px;border:2px solid var(--black);text-transform:uppercase;
@@ -143,7 +149,22 @@
   .prod:hover .arrow{transform:translateX(4px) rotate(0deg)}
 
   /* ===== Packages ===== */
-  .packages{background:var(--gray)}
+  .packages{background:var(--white)}
+  /* Featured package */
+  .feat-pkg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);background:var(--white);margin-bottom:40px}
+  .feat-img{position:relative;min-height:420px;border-right:2px solid var(--black)}
+  .feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .feat-tag{position:absolute;top:16px;left:16px;z-index:2;background:var(--yellow);color:var(--black);border:2px solid var(--black);font-weight:800;font-size:12px;letter-spacing:1px;padding:7px 12px;text-transform:uppercase}
+  .feat-body{padding:38px}
+  .feat-body .eyebrow{font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .feat-body h3{font-size:clamp(38px,5vw,58px);text-transform:uppercase;line-height:.9;margin-bottom:18px}
+  .feat-list{list-style:none;margin-bottom:24px;columns:2;column-gap:24px}
+  .feat-list li{font-size:14px;font-weight:500;padding:5px 0 5px 22px;position:relative;break-inside:avoid}
+  .feat-list li::before{content:"⛺";position:absolute;left:0;font-size:12px}
+  .price-tiers{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+  .tier{border:2px solid var(--black);min-width:130px}
+  .tier .dur{background:var(--black);color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;text-align:center;padding:8px}
+  .tier .amt{background:var(--yellow);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;text-align:center;padding:8px}
   .pkg-layout{display:grid;grid-template-columns:.8fr 2.2fr;gap:50px;align-items:start}
   .pkg-intro h2{font-size:clamp(44px,6vw,72px);text-transform:uppercase;line-height:.88;margin-bottom:22px}
   .pkg-intro p{color:var(--muted);font-size:16px;margin-bottom:28px;max-width:320px}
@@ -187,7 +208,9 @@
   .why-card p{font-size:14px;color:var(--muted)}
 
   /* ===== Gallery ===== */
+  .galsec{background:var(--white)}
   .gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:40px}
+  .gal img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
   .gal{aspect-ratio:1;border:2px solid var(--black);position:relative;overflow:hidden;cursor:pointer}
   .g1{background:linear-gradient(135deg,#5a4a32,#8a7048)}
   .g2{background:linear-gradient(135deg,#1b3a2b,#2f5d43)}
@@ -203,10 +226,10 @@
   .gal-foot{text-align:center}
 
   /* ===== Testimoni ===== */
-  .testi{background:var(--yellow);color:var(--black)}
-  .testi h2{text-align:center;font-size:clamp(40px,6vw,68px);text-transform:uppercase;margin-bottom:48px}
+  .testi{background:var(--black);color:var(--white)}
+  .testi h2{text-align:center;font-size:clamp(40px,6vw,68px);text-transform:uppercase;margin-bottom:48px;color:var(--yellow)}
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .t-card{background:var(--white);border:2px solid var(--black);padding:30px 26px;box-shadow:6px 6px 0 var(--black)}
+  .t-card{background:var(--white);border:2px solid var(--black);padding:30px 26px;box-shadow:6px 6px 0 var(--yellow)}
   .t-stars{color:#FFB800;font-size:18px;letter-spacing:2px;margin-bottom:14px}
   .t-card p{font-size:16px;font-weight:500;margin-bottom:18px;line-height:1.5}
   .t-card .who{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
@@ -254,6 +277,9 @@
     .prod-grid{grid-template-columns:repeat(2,1fr)}
     .pkg-layout{grid-template-columns:1fr;gap:34px}
     .pkg-grid{grid-template-columns:repeat(2,1fr)}
+    .feat-pkg{grid-template-columns:1fr}
+    .feat-img{min-height:300px;border-right:none;border-bottom:2px solid var(--black)}
+    .feat-list{columns:1}
     .why-grid{grid-template-columns:repeat(2,1fr)}
     .gal-grid{grid-template-columns:repeat(3,1fr)}
     .testi-grid{grid-template-columns:1fr}
@@ -314,8 +340,8 @@
       </div>
     </div>
     <div class="hero-art reveal-up">
-      <div class="art-card art-1"><span>Family Tent</span></div>
-      <div class="art-card art-2"><span>Picnic Set</span></div>
+      <div class="art-card art-1"><img src="imej/cottage-l.png" alt="Payung Camp Cottage L"><span>Cottage L</span></div>
+      <div class="art-card art-2"><img src="imej/village6.png" alt="Naturehike Village 6"><span>Village 6</span></div>
       <div class="art-card art-3"><span>Cooler Box</span></div>
       <div class="art-card art-4"><span>Lantern LED</span></div>
     </div>
@@ -347,6 +373,34 @@
 
 <!-- ===== PACKAGES ===== -->
 <section class="packages pad" id="pakej">
+  <div class="container">
+    <!-- Featured real package: Naturehike Village 6 -->
+    <div class="feat-pkg reveal-up">
+      <div class="feat-img">
+        <span class="feat-tag">⭐ Pakej Popular</span>
+        <img src="imej/village6.png" alt="Naturehike Village 6 Package">
+      </div>
+      <div class="feat-body">
+        <div class="eyebrow">Sewa Khemah Camping</div>
+        <h3>Naturehike<br>Village 6</h3>
+        <ul class="feat-list">
+          <li>Naturehike Village 6</li>
+          <li>Kermit Chairs x2</li>
+          <li>Egg Roll Table 120cm</li>
+          <li>Opolar Fold Fan</li>
+          <li>Retro Lanterns x2</li>
+          <li>Premium Stove</li>
+          <li>Storage Box</li>
+          <li>Mobi Garden Air Mattress</li>
+        </ul>
+        <div class="price-tiers">
+          <div class="tier"><div class="dur">2D1N</div><div class="amt">RM180</div></div>
+          <div class="tier"><div class="dur">3D2N</div><div class="amt">RM280</div></div>
+        </div>
+        <button class="btn btn-yellow" onclick="waPakej('Naturehike Village 6 Package')">Tempah Pakej Ini →</button>
+      </div>
+    </div>
+  </div>
   <div class="container pkg-layout">
     <div class="pkg-intro reveal-up">
       <h2>Complete<br>Packages</h2>
@@ -385,13 +439,13 @@
 </section>
 
 <!-- ===== GALLERY ===== -->
-<section class="pad">
+<section class="pad galsec">
   <div class="container">
     <div class="sec-head reveal-up"><h2>Ikuti Kami @easycamp.co</h2></div>
     <div class="gal-grid">
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g1 reveal-up"><div class="gal-over">📷</div></a>
+      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal reveal-up"><img src="imej/village6.png" alt="Naturehike Village 6"><div class="gal-over">📷</div></a>
       <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g2 reveal-up"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g3 reveal-up"><div class="gal-over">📷</div></a>
+      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal reveal-up"><img src="imej/cottage-l.png" alt="Payung Camp Cottage L"><div class="gal-over">📷</div></a>
       <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g4 reveal-up"><div class="gal-over">📷</div></a>
       <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g5 reveal-up"><div class="gal-over">📷</div></a>
       <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g6 reveal-up"><div class="gal-over">📷</div></a>
@@ -483,22 +537,24 @@
 
   // ===== Products data =====
   const products = [
-    {name:'Family Tent', spec:'5-6 Pax', price:'70', img:'p1', best:true},
+    {name:'Payung Camp Cottage L', spec:'Khemah Cottage', price:'120', photo:'imej/cottage-l.png', badge:'New'},
+    {name:'Family Tent', spec:'5-6 Pax', price:'70', img:'p1', badge:'Best Seller'},
     {name:'Tarp & Shelter', spec:'Pelbagai Saiz', price:'30', img:'p2'},
     {name:'Camping Chair', spec:'High Back', price:'10', img:'p3'},
     {name:'Camping Table', spec:'Roll Table', price:'20', img:'p4'},
     {name:'Sleeping Bag', spec:'3 Season', price:'15', img:'p5'},
     {name:'Cooler Box', spec:'25L', price:'20', img:'p6'},
     {name:'Cooking Set', spec:'Lengkap', price:'15', img:'p7'},
-    {name:'Lantern LED', spec:'Rechargeable', price:'8', img:'p8'},
   ];
   const prodGrid = document.getElementById('prodGrid');
   products.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'prod reveal-up';
     card.style.transitionDelay = (i * 0.08) + 's';
+    const imgInner = p.photo ? `<img src="${p.photo}" alt="${p.name}">` : '';
+    const imgClass = p.photo ? 'has-photo' : p.img;
     card.innerHTML = `
-      <div class="prod-img ${p.img}">${p.best ? '<span class="best">Best Seller</span>' : ''}</div>
+      <div class="prod-img ${imgClass}">${imgInner}${p.badge ? `<span class="best">${p.badge}</span>` : ''}</div>
       <div class="prod-body">
         <h3>${p.name}</h3>
         <span class="prod-spec">${p.spec}</span>
