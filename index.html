@@ -712,21 +712,34 @@ function render(c){
   initObservers();
 }
 
-// ===== Scroll reveal + stat counters =====
-function initObservers(){
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
-  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>io.observe(el));
-
-  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{
-    if(e.isIntersecting){
-      const el=e.target, target=parseInt(el.dataset.count,10), suffix=el.dataset.suffix||'';
-      let cur=0; const step=Math.max(1,Math.ceil(target/60));
-      const tick=()=>{cur+=step; if(cur>=target){el.textContent=target.toLocaleString()+suffix;} else {el.textContent=cur.toLocaleString()+suffix; requestAnimationFrame(tick);}};
-      tick(); cio.unobserve(el);
-    }
-  });},{threshold:0.4});
-  document.querySelectorAll('.num[data-count]').forEach(c=>cio.observe(c));
+// ===== Scroll reveal + stat counters (resilient to throttled/hidden tabs) =====
+function startCounter(el){
+  if(el.dataset.done) return; el.dataset.done='1';
+  const target=parseInt(el.dataset.count,10)||0, suffix=el.dataset.suffix||'';
+  if(document.hidden){ el.textContent=target.toLocaleString()+suffix; return; } // no animation when not visible
+  let cur=0; const step=Math.max(1,Math.ceil(target/60));
+  const tick=()=>{cur+=step; if(cur>=target){el.textContent=target.toLocaleString()+suffix;} else {el.textContent=cur.toLocaleString()+suffix; requestAnimationFrame(tick);}};
+  tick();
 }
+function initObservers(){
+  const vh=window.innerHeight||800;
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{
+    // Above-the-fold: reveal immediately so content never depends on the observer firing.
+    if(el.getBoundingClientRect().top < vh*0.9) el.classList.add('in'); else io.observe(el);
+  });
+  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){startCounter(e.target);cio.unobserve(e.target);}});},{threshold:0.4});
+  document.querySelectorAll('.num[data-count]').forEach(el=>{
+    if(el.getBoundingClientRect().top < vh*0.9) startCounter(el); else cio.observe(el);
+  });
+}
+// When a backgrounded tab becomes visible, make sure everything on screen is shown/counted.
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden) return;
+  const vh=window.innerHeight||800;
+  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{ if(el.getBoundingClientRect().top < vh) el.classList.add('in'); });
+  document.querySelectorAll('.num[data-count]').forEach(el=>{ if(!el.dataset.done && el.getBoundingClientRect().top < vh) startCounter(el); });
+});
 
 // ===== Mobile menu + promo close =====
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
