@@ -205,9 +205,9 @@ function listEditor(container, arr, fieldsDef, defaultItem, titleKey){
 
 // ---------- Build panels ----------
 const TABS=[
-  ['promo','Promo'],['hero','Hero'],['products','Produk'],['featured','Pakej Utama'],
-  ['packages','Pakej'],['why','Kelebihan'],['gallery','Galeri'],['testimonials','Testimoni'],
-  ['stats','Statistik'],['contact','Hubungi'],['seo','SEO']
+  ['promo','Promo'],['header','Header'],['services','Servis'],['whychoose','Why Choose'],
+  ['how','Cara Sewa'],['products','Produk'],['featured','Pakej Utama'],['packages','Pakej'],
+  ['testimonials','Testimoni'],['gallery','Galeri'],['contact','Hubungi'],['seo','SEO']
 ];
 
 function buildUI(){
@@ -227,17 +227,31 @@ function buildUI(){
     c.appendChild(field('Teks promo',data.promo,'text',{area:true}));
     p.appendChild(c);})();
 
-  // HERO
-  (()=>{const p=$('#panel-hero');p.innerHTML='<h2>Hero</h2><p class="hint">Bahagian atas — tajuk besar & ayat pengenalan.</p>';
+  // HEADER
+  (()=>{const p=$('#panel-header');p.innerHTML='<h2>Header (Hero)</h2><p class="hint">Bahagian paling atas — gambar background, tagline & butang.</p>';
     const c=document.createElement('div');c.className='card';
-    c.appendChild(field('Badge (label kecil)',data.hero,'badge'));
-    const r=document.createElement('div');r.className='row3';
-    r.appendChild(field('Tajuk baris 1',data.hero,'title1'));
-    r.appendChild(field('Tajuk baris 2',data.hero,'title2'));
-    r.appendChild(field('Tajuk baris 3',data.hero,'title3'));
+    c.appendChild(imageField('Gambar background header',data.header,'bgImage'));
+    c.appendChild(field('Tagline (tajuk besar)',data.header,'tagline',{area:true}));
+    c.appendChild(field('Ayat bawah tagline',data.header,'sub',{area:true}));
+    c.appendChild(stringList('Badge (cth: Clean, Reliable, Ready to Use)',data.header.badges));
+    const r=document.createElement('div');r.className='row';
+    r.appendChild(field('Teks butang 1 (→ WhatsApp)',data.header,'btnPrimary'));
+    r.appendChild(field('Teks butang 2 (→ scroll ke katalog)',data.header,'btnSecondary'));
     c.appendChild(r);
-    c.appendChild(field('Ayat pengenalan',data.hero,'lead',{area:true}));
     p.appendChild(c);})();
+
+  // SERVICES
+  (()=>{const p=$('#panel-services');p.innerHTML='<h2>Our Services</h2><p class="hint">3 servis utama — guna GAMBAR REAL (bukan icon). CTA: <b>#produk</b> = scroll ke katalog, <b>#pakej</b> = scroll ke pakej, <b>wa</b> = terus WhatsApp.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.services,[
+      {k:'image',label:'Gambar servis',type:'image'},{k:'title',label:'Tajuk'},{k:'desc',label:'Penerangan',type:'area'},
+      {k:'ctaLabel',label:'Teks butang (cth: View Catalog)'},{k:'ctaAction',label:'Aksi butang (#produk / #pakej / wa)'}
+    ],{image:'',title:'Servis Baru',desc:'',ctaLabel:'Learn More',ctaAction:'wa'},'title');})();
+
+  // HOW IT WORKS
+  (()=>{const p=$('#panel-how');p.innerHTML='<h2>How It Works</h2><p class="hint">Langkah-langkah cara sewa. Guna emoji untuk ikon.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.howItWorks,[{k:'icon',label:'Ikon (emoji)'},{k:'title',label:'Tajuk'},{k:'text',label:'Penerangan',type:'area'}],{icon:'⛺',title:'',text:''},'title');})();
 
   // PRODUCTS
   (()=>{const p=$('#panel-products');p.innerHTML='<h2>Produk</h2><p class="hint">Setiap produk jadi kad. Klik kad di laman → terus WhatsApp. Biar "Gambar" kosong untuk guna corak gradient.</p>';
@@ -272,10 +286,10 @@ function buildUI(){
       {k:'name',label:'Nama pakej'},{k:'desc',label:'Penerangan'},{k:'price',label:'Harga (cth: Dari RM 120)'},{k:'photo',label:'Gambar (boleh kosong)',type:'image'}
     ],{name:'Pakej Baru',desc:'',price:'',gradient:'k1',photo:''},'name');})();
 
-  // WHY
-  (()=>{const p=$('#panel-why');p.innerHTML='<h2>Kelebihan</h2><p class="hint">Kenapa pilih EasyCamp — gunakan emoji untuk ikon.</p>';
+  // WHY CHOOSE
+  (()=>{const p=$('#panel-whychoose');p.innerHTML='<h2>Why Choose EasyCamp?</h2><p class="hint">Band kuning — sebab-sebab pilih EasyCamp. Guna emoji untuk ikon.</p>';
     const box=document.createElement('div');p.appendChild(box);
-    listEditor(box,data.why,[{k:'icon',label:'Ikon (emoji)'},{k:'title',label:'Tajuk'},{k:'text',label:'Penerangan',type:'area'}],{icon:'✅',title:'',text:''},'title');})();
+    listEditor(box,data.whyChoose,[{k:'icon',label:'Ikon (emoji)'},{k:'text',label:'Teks'}],{icon:'✅',text:''},'text');})();
 
   // GALLERY
   (()=>{const p=$('#panel-gallery');p.innerHTML='<h2>Galeri</h2><p class="hint">6 petak gambar. Kosongkan gambar untuk guna corak gradient.</p>';
@@ -286,11 +300,6 @@ function buildUI(){
   (()=>{const p=$('#panel-testimonials');p.innerHTML='<h2>Testimoni</h2><p class="hint">Ulasan pelanggan (5 bintang).</p>';
     const box=document.createElement('div');p.appendChild(box);
     listEditor(box,data.testimonials,[{k:'text',label:'Ulasan',type:'area'},{k:'who',label:'Nama, Lokasi'}],{text:'',who:''},'who');})();
-
-  // STATS
-  (()=>{const p=$('#panel-stats');p.innerHTML='<h2>Statistik</h2><p class="hint">Bar nombor di bawah hero. Biar "Nombor" kosong untuk simbol statik (cth ✓).</p>';
-    const box=document.createElement('div');p.appendChild(box);
-    listEditor(box,data.stats,[{k:'num',label:'Nombor (cth: 8000 — boleh kosong)'},{k:'suffix',label:'Suffix (cth: + atau ✓)'},{k:'label',label:'Label'}],{num:'',suffix:'',label:''},'label');})();
 
   // CONTACT
   (()=>{const p=$('#panel-contact');p.innerHTML='<h2>Hubungi & Footer</h2><p class="hint">Nombor WhatsApp di sini dipakai oleh SEMUA butang di laman.</p>';
@@ -327,8 +336,10 @@ function buildUI(){
 async function loadContent(){
   const r=await fetch('/api/content?ts='+Date.now(),{cache:'no-store'});
   data=await r.json();
-  // ensure arrays exist
-  ['stats','products','packages','why','gallery','testimonials'].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[];});
+  // ensure objects/arrays exist
+  if(!data.header) data.header={bgImage:'',tagline:'',sub:'',badges:[],btnPrimary:'Book Now',btnSecondary:'Browse Gear'};
+  if(!Array.isArray(data.header.badges)) data.header.badges=[];
+  ['services','whyChoose','howItWorks','products','packages','gallery','testimonials'].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[];});
   if(!data.featuredPackage) data.featuredPackage={enabled:false,items:[],tiers:[]};
   if(!Array.isArray(data.featuredPackage.items)) data.featuredPackage.items=[];
   if(!Array.isArray(data.featuredPackage.tiers)) data.featuredPackage.tiers=[];

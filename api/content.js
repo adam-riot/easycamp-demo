@@ -4,12 +4,12 @@ import { list, put } from '@vercel/blob';
 // schema the admin panel edits. Keep in sync with DEFAULT_CONTENT in index.html.
 export const DEFAULT_CONTENT = {
   seo: {
-    title: 'EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti di Klang Valley',
-    description: 'Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley. Pickup atau delivery available. WhatsApp untuk tempah.',
-    keywords: 'sewa khemah, sewa camping, sewa gear camping, camping rental klang valley, sewa khemah selangor, naturehike village 6, sewa picnic set'
+    title: 'EasyCamp Rental — Sewa Gear Camping & Outdoor Event di Dengkil, Selangor',
+    description: 'Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil, Selangor. Self pick-up atau delivery. Booking mudah via WhatsApp.',
+    keywords: 'sewa khemah, sewa camping, camping gear rental dengkil, outdoor event rental selangor, sewa khemah dengkil, tent cleaning service, naturehike village 6'
   },
   brand: {
-    name: 'EASY CAMP',
+    name: 'EasyCamp',
     whatsapp: '60182922958',
     phoneDisplay: '018-292 2958',
     instagram: 'https://instagram.com/easycamp.co',
@@ -21,28 +21,42 @@ export const DEFAULT_CONTENT = {
     enabled: true,
     text: '🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!'
   },
-  hero: {
-    badge: 'Camping & Picnic Gear Rental',
-    title1: 'Campers',
-    title2: 'At Your',
-    title3: 'Service.',
-    lead: 'Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda. Pickup atau delivery available.'
+  header: {
+    bgImage: 'imej/village6.png',
+    tagline: 'Your trusted camping gear & outdoor event partner.',
+    sub: 'Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.',
+    badges: ['Clean', 'Reliable', 'Ready to Use'],
+    btnPrimary: 'Book Now',
+    btnSecondary: 'Browse Gear'
   },
-  stats: [
-    { num: '8000', suffix: '+', label: '⛺ Campers' },
-    { num: '170', suffix: '+', label: '🏕️ Produk' },
-    { num: '1', suffix: ' Jam', label: '⚡ Respons' },
-    { num: '', suffix: '✓', label: 'Gear Bersih' }
+  services: [
+    { image: '', title: 'Camping Gear Rental', desc: 'Sewa gear camping berkualiti untuk adventure anda yang seterusnya.', ctaLabel: 'View Catalog', ctaAction: '#produk' },
+    { image: '', title: 'Outdoor Event Rental', desc: 'Peralatan untuk event semua saiz — gathering, birthday, team building.', ctaLabel: 'See More', ctaAction: '#pakej' },
+    { image: '', title: 'Tent Cleaning Service', desc: 'Servis cuci profesional supaya gear anda sentiasa segar & bersih.', ctaLabel: 'Learn More', ctaAction: 'wa' }
+  ],
+  whyChoose: [
+    { icon: '✨', text: 'Clean & Well-Maintained' },
+    { icon: '🏷️', text: 'Affordable Prices' },
+    { icon: '🙌', text: 'Beginner Friendly' },
+    { icon: '💬', text: 'Easy Booking via WhatsApp' },
+    { icon: '📍', text: 'Self Pick-up in Dengkil' },
+    { icon: '🚚', text: 'Delivery Available' }
+  ],
+  howItWorks: [
+    { icon: '🔍', title: 'Choose Your Gear', text: 'Browse koleksi kami & pilih item yang anda perlukan.' },
+    { icon: '💬', title: 'Make a Booking', text: 'Hubungi kami via WhatsApp untuk confirm tempahan.' },
+    { icon: '📦', title: 'Pick Up or Delivery', text: 'Self pick-up di Dengkil atau kami hantar ke anda.' },
+    { icon: '⛺', title: 'Enjoy Your Adventure', text: 'Camp dengan yakin guna gear bersih & berkualiti.' }
   ],
   products: [
     { name: 'Payung Camp Cottage L', spec: 'Khemah Cottage', price: '120', photo: 'imej/cottage-l.png', badge: 'New' },
-    { name: 'Family Tent', spec: '5-6 Pax', price: '70', gradient: 'p1', badge: 'Best Seller' },
-    { name: 'Tarp & Shelter', spec: 'Pelbagai Saiz', price: '30', gradient: 'p2', badge: '' },
-    { name: 'Camping Chair', spec: 'High Back', price: '10', gradient: 'p3', badge: '' },
-    { name: 'Camping Table', spec: 'Roll Table', price: '20', gradient: 'p4', badge: '' },
-    { name: 'Sleeping Bag', spec: '3 Season', price: '15', gradient: 'p5', badge: '' },
-    { name: 'Cooler Box', spec: '25L', price: '20', gradient: 'p6', badge: '' },
-    { name: 'Cooking Set', spec: 'Lengkap', price: '15', gradient: 'p7', badge: '' }
+    { name: 'Family Tent', spec: '5-6 Pax', price: '70', photo: '', badge: 'Best Seller' },
+    { name: 'Tarp & Shelter', spec: 'Pelbagai Saiz', price: '30', photo: '', badge: '' },
+    { name: 'Camping Chair', spec: 'High Back', price: '10', photo: '', badge: '' },
+    { name: 'Camping Table', spec: 'Roll Table', price: '20', photo: '', badge: '' },
+    { name: 'Sleeping Bag', spec: '3 Season', price: '15', photo: '', badge: '' },
+    { name: 'Cooler Box', spec: '25L', price: '20', photo: '', badge: '' },
+    { name: 'Cooking Set', spec: 'Lengkap', price: '15', photo: '', badge: '' }
   ],
   featuredPackage: {
     enabled: true,
@@ -61,34 +75,24 @@ export const DEFAULT_CONTENT = {
     ]
   },
   packages: [
-    { name: 'Basic', desc: 'Essentials untuk trip solo/couple', price: 'Dari RM 120', gradient: 'k1' },
-    { name: 'Family', desc: 'Comfort untuk seluruh keluarga', price: 'Dari RM 200', gradient: 'k2' },
-    { name: 'Group', desc: 'Perfect untuk gathering & group besar', price: 'Dari RM 350', gradient: 'k3' },
-    { name: 'Event', desc: 'Kami setup, anda enjoy', price: 'Custom Quote', gradient: 'k4' }
-  ],
-  why: [
-    { icon: '🧼', title: 'Gear Bersih', text: 'Semua gear dicuci & diperiksa sebelum setiap sewaan.' },
-    { icon: '💰', title: 'Harga Berpatutan', text: 'Jimat berbanding beli gear sendiri. Kualiti premium, harga mesra.' },
-    { icon: '🚚', title: 'Pickup & Delivery', text: 'Self pickup di Klang Valley atau kami hantar ke anda.' },
-    { icon: '🎉', title: 'Untuk Semua Majlis', text: 'Camping, picnic, birthday, team building & outdoor event.' }
-  ],
-  gallery: [
-    { photo: 'imej/village6.png' },
-    { gradient: 'g2' },
-    { photo: 'imej/cottage-l.png' },
-    { gradient: 'g4' },
-    { gradient: 'g5' },
-    { gradient: 'g6' }
+    { name: 'Basic', desc: 'Essentials untuk trip solo/couple', price: 'Dari RM 120', photo: '' },
+    { name: 'Family', desc: 'Comfort untuk seluruh keluarga', price: 'Dari RM 200', photo: '' },
+    { name: 'Group', desc: 'Perfect untuk gathering & group besar', price: 'Dari RM 350', photo: '' },
+    { name: 'Event', desc: 'Kami setup, anda enjoy', price: 'Custom Quote', photo: '' }
   ],
   testimonials: [
     { text: 'Gear semua bersih, delivery on time. Sangat puas hati!', who: 'Hafizah, Shah Alam' },
     { text: 'Pakej picnic cantik gila, memang berbaloi!', who: 'Azrul, Subang' },
     { text: 'Dah 3 kali sewa, memang tak kecewa. Seller responsive!', who: 'Suriani, KL' }
   ],
+  gallery: [
+    { photo: 'imej/village6.png' }, { photo: '' }, { photo: 'imej/cottage-l.png' },
+    { photo: '' }, { photo: '' }, { photo: '' }
+  ],
   footer: {
-    tagline: 'Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.',
-    pickup: 'Klang Valley',
-    hours: '10am – 8pm'
+    tagline: 'Your trusted camping gear rental & outdoor event partner di Dengkil, Selangor.',
+    pickup: 'Dengkil, Selangor',
+    hours: '10am – 8pm (Daily)'
   }
 };
 

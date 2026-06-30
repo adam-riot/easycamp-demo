@@ -3,708 +3,551 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti di Klang Valley</title>
-<meta name="description" content="Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley. Pickup atau delivery available. WhatsApp untuk tempah.">
-<meta name="keywords" content="sewa khemah, sewa camping, sewa gear camping, camping rental klang valley, sewa khemah selangor, naturehike village 6, sewa picnic set">
+<title>EasyCamp Rental — Sewa Gear Camping & Outdoor Event di Dengkil, Selangor</title>
+<meta name="description" content="Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil, Selangor. Self pick-up atau delivery. Booking mudah via WhatsApp.">
+<meta name="keywords" content="sewa khemah, sewa camping, camping gear rental dengkil, outdoor event rental selangor, sewa khemah dengkil, tent cleaning service, naturehike village 6">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#FFD100">
 <link rel="canonical" href="https://easycamp.vercel.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFD100'/%3E%3Ctext y='.9em' x='10' font-size='80'%3E%E2%9B%BA%3C/text%3E%3C/svg%3E">
-<!-- Open Graph -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FFD100'/%3E%3Ctext y='.9em' x='12' font-size='78'%3E%E2%9B%BA%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EasyCamp Rental">
-<meta property="og:title" content="EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti">
-<meta property="og:description" content="Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley. Pickup atau delivery available.">
+<meta property="og:title" content="EasyCamp Rental — Camping Gear & Outdoor Event Rental">
+<meta property="og:description" content="Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil. Booking mudah via WhatsApp.">
 <meta property="og:url" content="https://easycamp.vercel.app/">
 <meta property="og:image" content="https://easycamp.vercel.app/imej/village6.png">
 <meta property="og:locale" content="ms_MY">
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EasyCamp Rental — Sewa Gear Camping & Picnic">
-<meta name="twitter:description" content="Sewa gear camping & picnic berkualiti di Klang Valley. WhatsApp untuk tempah.">
+<meta name="twitter:title" content="EasyCamp Rental — Camping & Outdoor Event Rental">
+<meta name="twitter:description" content="Sewa gear camping & outdoor event di Dengkil, Selangor. WhatsApp untuk tempah.">
 <meta name="twitter:image" content="https://easycamp.vercel.app/imej/village6.png">
-<!-- LocalBusiness structured data -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "EasyCamp Rental",
-  "image": "https://easycamp.vercel.app/imej/village6.png",
-  "url": "https://easycamp.vercel.app/",
-  "telephone": "+60182922958",
-  "priceRange": "RM",
-  "description": "Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event di Klang Valley.",
-  "areaServed": "Klang Valley, Selangor, Malaysia",
-  "address": { "@type": "PostalAddress", "addressRegion": "Selangor", "addressCountry": "MY" },
-  "openingHours": "Mo-Su 10:00-20:00",
-  "sameAs": ["https://instagram.com/easycamp.co"]
+  "@context":"https://schema.org","@type":"LocalBusiness","name":"EasyCamp Rental",
+  "image":"https://easycamp.vercel.app/imej/village6.png","url":"https://easycamp.vercel.app/",
+  "telephone":"+60182922958","priceRange":"RM",
+  "description":"Sewa gear camping, pakej outdoor event & servis cuci khemah di Dengkil, Selangor.",
+  "areaServed":"Dengkil, Selangor, Malaysia",
+  "address":{"@type":"PostalAddress","addressLocality":"Dengkil","addressRegion":"Selangor","addressCountry":"MY"},
+  "openingHours":"Mo-Su 10:00-20:00","sameAs":["https://instagram.com/easycamp.co"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --yellow:#FFD100;
-    --black:#111111;
-    --white:#FFFFFF;
-    --gray:#F5F5F5;
-    --muted:#666666;
-    --border:#E0E0E0;
+    --yellow:#FFD100; --yellow-deep:#F2C200; --yellow-soft:#FFF3C2; --cream:#FFFBF0;
+    --black:#1A1A1A; --ink:#2A2A2A; --muted:#6B6B6B; --white:#FFFFFF; --line:#EFEADD;
+    --radius:20px; --radius-sm:14px; --radius-pill:999px;
+    --shadow:0 16px 40px rgba(26,26,26,.10); --shadow-sm:0 8px 22px rgba(26,26,26,.08);
   }
-
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Inter',sans-serif;
-    color:var(--black);
-    background:var(--yellow);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4,.bebas{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.5px}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
-  .container{max-width:1240px;margin:0 auto;padding:0 24px}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .fred{font-family:'Fredoka',sans-serif}
   section{position:relative}
 
-  /* ===== Promo bar ===== */
-  .promo-bar{background:var(--black);color:var(--yellow);text-align:center;font-weight:700;font-size:14px;
-    padding:10px 44px 10px 16px;position:relative;letter-spacing:.3px}
+  /* Section heading */
+  .head{text-align:center;margin-bottom:44px}
+  .head .accent{display:inline-block;width:48px;height:4px;background:var(--yellow);border-radius:4px;margin-bottom:16px}
+  .head h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-transform:uppercase}
+  .head p{color:var(--muted);font-size:16px;margin-top:8px}
+  .pad{padding:84px 0}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:15px;
+    padding:14px 26px;border-radius:var(--radius-pill);cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap}
+  .btn-y{background:var(--yellow);color:var(--black);box-shadow:0 8px 20px rgba(242,194,0,.35)}
+  .btn-y:hover{background:var(--yellow-deep);transform:translateY(-2px)}
+  .btn-o{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7)}
+  .btn-o:hover{background:rgba(255,255,255,.14);border-color:#fff}
+  .btn-dark{background:var(--black);color:#fff}
+  .btn-dark:hover{transform:translateY(-2px);background:#000}
+  .btn-lg{padding:17px 34px;font-size:16px}
+
+  /* Promo bar */
+  .promo-bar{background:var(--black);color:var(--yellow);text-align:center;font-weight:600;font-size:14px;padding:9px 42px 9px 16px;position:relative}
   .promo-bar.hide{display:none}
-  .promo-bar .close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;
-    color:var(--yellow);font-size:20px;cursor:pointer;line-height:1;padding:4px}
+  .promo-bar .close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--yellow);font-size:18px;cursor:pointer}
 
-  /* ===== Buttons ===== */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    font-family:'Inter',sans-serif;font-weight:800;text-transform:uppercase;
-    letter-spacing:.5px;font-size:14px;padding:16px 28px;cursor:pointer;
-    border:2px solid var(--black);transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    line-height:1;
-  }
-  .btn-yellow{background:var(--yellow);color:var(--black);border-color:var(--black)}
-  .btn-yellow:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--black)}
-  .btn-outline{background:var(--white);color:var(--black);border-color:var(--black)}
-  .btn-outline:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--black)}
-  .btn-dark{background:var(--black);color:var(--yellow);border-color:var(--black)}
-  .btn-dark:hover{transform:translateY(-3px);box-shadow:5px 5px 0 rgba(0,0,0,.25)}
-  .btn-lg{font-size:18px;padding:22px 40px}
-
-  /* ===== Navbar ===== */
-  header.nav{
-    position:sticky;top:0;z-index:1000;background:var(--yellow);
-    border-bottom:2px solid var(--black);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:var(--black)}
-  .logo .dot{color:var(--black)}
-  .nav-links{display:flex;gap:34px;align-items:center}
-  .nav-links a{font-weight:600;font-size:14px;letter-spacing:.3px;position:relative}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--black);transition:width .2s ease}
-  .nav-links a:hover::after{width:100%}
-  .nav-cta{padding:12px 20px;font-size:13px}
+  /* Navbar */
+  header.nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--black);letter-spacing:-.5px}
+  .logo .co{color:var(--yellow-deep);font-size:16px;vertical-align:super}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-weight:600;font-size:15px;color:var(--ink);transition:.2s}
+  .nav-links a:hover{color:var(--yellow-deep)}
+  .nav-cta{padding:11px 20px;font-size:14px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-  .burger span{width:26px;height:3px;background:var(--black);display:block;transition:.2s}
-  .mobile-menu{display:none;flex-direction:column;border-top:2px solid var(--black);background:var(--yellow)}
-  .mobile-menu a{padding:16px 24px;border-bottom:1px solid rgba(0,0,0,.15);font-weight:600}
+  .burger span{width:25px;height:3px;background:var(--black);border-radius:3px}
+  .mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line);background:#fff}
+  .mobile-menu a{padding:15px 24px;border-bottom:1px solid var(--line);font-weight:600}
   .mobile-menu.open{display:flex}
 
-  /* ===== Hero ===== */
-  .hero{padding:70px 0 0}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-  .badge{
-    display:inline-block;background:var(--black);color:var(--yellow);
-    font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
-    padding:9px 16px;border:2px solid var(--black);margin-bottom:26px;
-  }
-  .hero h1{font-size:clamp(64px,9vw,128px);line-height:.86;text-transform:uppercase;margin-bottom:26px}
-  .hero p.lead{font-size:18px;color:var(--muted);max-width:440px;margin-bottom:34px}
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  /* HEADER HERO (image background) */
+  .hero{position:relative;min-height:600px;display:flex;align-items:center;color:#fff;background:#23311f;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(20,25,18,.86) 0%,rgba(20,25,18,.55) 50%,rgba(20,25,18,.25) 100%)}
+  .hero .container{position:relative;z-index:2;padding-top:40px;padding-bottom:120px}
+  .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .hero-badges span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    padding:7px 14px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;backdrop-filter:blur(4px)}
+  .hero-badges span::before{content:"✓";color:var(--yellow);font-weight:800}
+  .hero h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(34px,5.2vw,62px);line-height:1.08;max-width:760px;margin-bottom:16px;letter-spacing:-1px}
+  .hero .sub{font-size:18px;color:rgba(255,255,255,.85);max-width:520px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .wave{position:absolute;left:0;right:0;bottom:-1px;z-index:2;width:100%;height:auto;display:block}
 
-  .hero-art{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:480px}
-  .art-card{
-    border:2px solid var(--black);position:relative;overflow:hidden;
-    display:flex;align-items:flex-end;padding:18px;transition:transform .25s ease;
-  }
-  .art-card:hover{transform:translateY(-6px)}
-  .art-card span{position:relative;z-index:2;font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--white);letter-spacing:1px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
-  .art-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .art-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%)}
-  .art-1{background:linear-gradient(135deg,#1b3a2b,#2f5d43 60%,var(--yellow))}
-  .art-2{background:linear-gradient(135deg,#243b1e,#3c5a2b)}
-  .art-3{background:linear-gradient(135deg,#0f2a1e,#1f4030)}
-  .art-4{background:linear-gradient(135deg,#3c5a2b,var(--yellow))}
+  /* OUR SERVICES */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:.25s;border:1px solid var(--line)}
+  .svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .svc-img{position:relative;height:200px;background:linear-gradient(135deg,var(--yellow-soft),#e7e0c8);overflow:hidden}
+  .svc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .svc-body{padding:24px 26px 28px;text-align:center;display:flex;flex-direction:column;flex:1}
+  .svc-body h3{font-size:21px;font-weight:800;margin-bottom:10px}
+  .svc-body p{color:var(--muted);font-size:14.5px;flex:1;margin-bottom:16px}
+  .svc-cta{display:inline-flex;align-items:center;gap:6px;justify-content:center;color:var(--black);font-weight:700;font-size:14px;
+    background:var(--yellow-soft);padding:11px 18px;border-radius:var(--radius-pill);transition:.2s;align-self:center}
+  .svc-cta:hover{background:var(--yellow);transform:translateX(0) scale(1.03)}
 
-  /* ===== Stats bar ===== */
-  .stats{background:var(--black);margin-top:70px}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-  .stat{padding:36px 20px;text-align:center;border-right:1px solid #2a2a2a;color:var(--white)}
-  .stat:last-child{border-right:none}
-  .stat .num{font-family:'Bebas Neue',sans-serif;font-size:46px;color:var(--yellow);line-height:1;letter-spacing:1px}
-  .stat .lbl{font-size:13px;color:#cfcfcf;font-weight:500;margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+  /* WHY CHOOSE — yellow band */
+  .why{background:var(--yellow)}
+  .why .head h2{color:var(--black)}
+  .why-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+  .why-item{text-align:center}
+  .why-ico{width:64px;height:64px;margin:0 auto 12px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:var(--shadow-sm)}
+  .why-item span{display:block;font-weight:700;font-size:13.5px;color:var(--black);line-height:1.35}
 
-  /* ===== Section heading ===== */
-  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
-  .sec-head h2{font-size:clamp(40px,6vw,68px);text-transform:uppercase;line-height:.9}
-  .sec-head .link{font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--black);padding-bottom:3px}
-  .pad{padding:90px 0}
+  /* HOW IT WORKS */
+  .how{background:var(--cream)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+  .step{text-align:center;position:relative;padding:0 6px}
+  .step .circle{width:84px;height:84px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;font-size:32px;position:relative;z-index:2;border:3px solid var(--yellow)}
+  .step .n{position:absolute;top:-6px;right:calc(50% - 52px);z-index:3;width:26px;height:26px;border-radius:50%;background:var(--yellow);color:var(--black);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .step h4{font-size:16px;font-weight:800;text-transform:uppercase;margin-bottom:6px;letter-spacing:.3px}
+  .step p{font-size:13.5px;color:var(--muted);max-width:200px;margin:0 auto}
+  .step:not(:last-child)::after{content:"";position:absolute;top:42px;left:62%;width:76%;height:0;border-top:3px dotted var(--yellow-deep);z-index:1}
 
-  /* ===== Product grid ===== */
-  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .prod{
-    border:2px solid var(--black);background:var(--white);cursor:pointer;
-    display:flex;flex-direction:column;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-    position:relative;
-  }
-  .prod:hover{transform:translateY(-8px);border-color:var(--yellow);box-shadow:0 12px 30px rgba(0,0,0,.12)}
-  .prod-img{height:180px;position:relative;border-bottom:2px solid var(--black)}
-  .prod:hover .prod-img{border-color:var(--yellow)}
-  .p1{background:linear-gradient(135deg,#1b3a2b,#2f5d43)}
-  .p2{background:linear-gradient(135deg,#243b1e,#3c5a2b)}
-  .p3{background:linear-gradient(135deg,#2f5d43,var(--yellow))}
-  .p4{background:linear-gradient(135deg,#0f2a1e,#1f4030)}
-  .p5{background:linear-gradient(135deg,#3c5a2b,#1b3a2b)}
-  .p6{background:linear-gradient(135deg,#1f4030,var(--yellow))}
-  .p7{background:linear-gradient(135deg,#243b1e,#2f5d43)}
-  .p8{background:linear-gradient(135deg,#1b3a2b,#3c5a2b)}
-  .prod-img::after{
-    content:"";position:absolute;inset:0;
-    background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 10px,transparent 10px 20px);
-  }
-  .prod-img.has-photo::after{display:none}
+  /* CATALOG / PRODUCTS */
+  .catalog{background:var(--white)}
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .prod{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:.25s;border:1px solid var(--line)}
+  .prod:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .prod-img{position:relative;height:175px;background:linear-gradient(135deg,#dfe6da,var(--yellow-soft))}
   .prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .best{
-    position:absolute;top:12px;left:12px;z-index:3;background:var(--yellow);color:var(--black);
-    font-weight:800;font-size:11px;letter-spacing:1px;padding:6px 10px;border:2px solid var(--black);text-transform:uppercase;
-  }
-  .prod-body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
-  .prod-body h3{font-size:22px;text-transform:uppercase;letter-spacing:.5px}
-  .prod-spec{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+  .badge-tag{position:absolute;top:12px;left:12px;z-index:2;background:var(--yellow);color:var(--black);font-weight:800;font-size:11px;letter-spacing:.5px;padding:5px 11px;border-radius:var(--radius-pill);text-transform:uppercase}
+  .prod-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .prod-body h3{font-size:17px;font-weight:800}
+  .prod-spec{font-size:12.5px;color:var(--muted);font-weight:600}
   .prod-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px}
-  .prod-price{font-weight:800;font-size:15px}
-  .prod-price b{color:var(--black)}
-  .arrow{
-    width:40px;height:40px;border-radius:50%;background:var(--yellow);border:2px solid var(--black);
-    display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;transition:transform .2s ease;
-  }
-  .prod:hover .arrow{transform:translateX(4px) rotate(0deg)}
+  .prod-price{font-weight:700;font-size:14px;color:var(--muted)}
+  .prod-price b{color:var(--black);font-size:17px}
+  .arrow{width:38px;height:38px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;transition:.2s}
+  .prod:hover .arrow{transform:translateX(3px)}
 
-  /* ===== Packages ===== */
-  .packages{background:var(--white)}
-  .feat-pkg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);background:var(--white);margin-bottom:40px}
-  .feat-img{position:relative;min-height:420px;border-right:2px solid var(--black)}
+  /* PACKAGES */
+  .packages{background:var(--cream)}
+  .feat-pkg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow);margin-bottom:40px}
+  .feat-img{position:relative;min-height:430px;background:linear-gradient(135deg,#dfe6da,var(--yellow-soft))}
   .feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .feat-tag{position:absolute;top:16px;left:16px;z-index:2;background:var(--yellow);color:var(--black);border:2px solid var(--black);font-weight:800;font-size:12px;letter-spacing:1px;padding:7px 12px;text-transform:uppercase}
-  .feat-body{padding:38px}
-  .feat-body .eyebrow{font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .feat-body h3{font-size:clamp(38px,5vw,58px);text-transform:uppercase;line-height:.9;margin-bottom:18px}
-  .feat-list{list-style:none;margin-bottom:24px;columns:2;column-gap:24px}
-  .feat-list li{font-size:14px;font-weight:500;padding:5px 0 5px 22px;position:relative;break-inside:avoid}
+  .feat-tag{position:absolute;top:18px;left:18px;z-index:2;background:var(--yellow);color:var(--black);border-radius:var(--radius-pill);font-weight:800;font-size:12px;padding:8px 15px;text-transform:uppercase}
+  .feat-body{padding:40px}
+  .feat-body .eyebrow{font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--yellow-deep);margin-bottom:8px}
+  .feat-body h3{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.05;margin-bottom:18px}
+  .feat-list{list-style:none;margin-bottom:22px;columns:2;column-gap:22px}
+  .feat-list li{font-size:14px;font-weight:500;padding:5px 0 5px 24px;position:relative;break-inside:avoid;color:var(--ink)}
   .feat-list li::before{content:"⛺";position:absolute;left:0;font-size:12px}
-  .price-tiers{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap}
-  .tier{border:2px solid var(--black);min-width:130px}
-  .tier .dur{background:var(--black);color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;text-align:center;padding:8px}
-  .tier .amt{background:var(--yellow);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;text-align:center;padding:8px}
-  .pkg-layout{display:grid;grid-template-columns:.8fr 2.2fr;gap:50px;align-items:start}
-  .pkg-intro h2{font-size:clamp(44px,6vw,72px);text-transform:uppercase;line-height:.88;margin-bottom:22px}
-  .pkg-intro p{color:var(--muted);font-size:16px;margin-bottom:28px;max-width:320px}
-  .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .pkg{background:var(--white);border:2px solid var(--black);display:flex;flex-direction:column;transition:transform .22s ease, box-shadow .22s ease}
-  .pkg:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
-  .pkg-img{height:140px;border-bottom:2px solid var(--black);position:relative}
-  .pkg-img::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 10px,transparent 10px 20px)}
+  .price-tiers{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+  .tier{border-radius:var(--radius-sm);overflow:hidden;min-width:120px;box-shadow:var(--shadow-sm)}
+  .tier .dur{background:var(--black);color:#fff;font-weight:700;font-size:14px;text-align:center;padding:8px}
+  .tier .amt{background:var(--yellow);color:var(--black);font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;text-align:center;padding:8px}
+  .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .pkg{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:.25s;border:1px solid var(--line)}
+  .pkg:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .pkg-img{position:relative;height:140px;background:linear-gradient(135deg,#dfe6da,var(--yellow-soft))}
   .pkg-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .k1{background:linear-gradient(135deg,#1b3a2b,#2f5d43)}
-  .k2{background:linear-gradient(135deg,#2f5d43,var(--yellow))}
-  .k3{background:linear-gradient(135deg,#0f2a1e,#3c5a2b)}
-  .k4{background:linear-gradient(135deg,#3c5a2b,var(--yellow))}
-  .pkg-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
-  .pkg-body h3{font-size:26px;text-transform:uppercase}
-  .pkg-body p{font-size:13px;color:var(--muted);flex:1}
-  .pkg-price{font-weight:900;font-size:18px;color:var(--black);background:var(--yellow);display:inline-block;padding:4px 10px;align-self:flex-start}
-  .pkg .btn{margin-top:6px;width:100%;padding:13px;font-size:13px}
+  .pkg-body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pkg-body h3{font-size:20px;font-weight:800}
+  .pkg-body p{font-size:13.5px;color:var(--muted);flex:1}
+  .pkg-price{font-weight:800;font-size:17px;color:var(--black)}
+  .pkg .btn{margin-top:8px;width:100%}
 
-  /* ===== How it works ===== */
-  .how{background:var(--black);color:var(--white)}
-  .how h2{color:var(--yellow);font-size:clamp(40px,6vw,68px);text-transform:uppercase;margin-bottom:54px}
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;position:relative}
-  .step{text-align:center;position:relative;padding:0 8px}
-  .step .circle{
-    width:74px;height:74px;border-radius:50%;background:var(--yellow);border:3px solid var(--white);
-    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:30px;position:relative;z-index:2;
-  }
-  .step h4{font-size:24px;text-transform:uppercase;color:var(--yellow);letter-spacing:1px;margin-bottom:8px}
-  .step p{font-size:13px;color:#cfcfcf;max-width:170px;margin:0 auto}
-  .step:not(:last-child)::after{
-    content:"";position:absolute;top:37px;left:60%;width:80%;height:0;
-    border-top:3px dashed var(--yellow);z-index:1;
-  }
+  /* TESTIMONIALS */
+  .testi{background:var(--white)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .t-card{background:var(--cream);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm)}
+  .t-stars{color:#FFB800;font-size:17px;letter-spacing:2px;margin-bottom:14px}
+  .t-card p{font-size:15.5px;font-weight:500;margin-bottom:18px;color:var(--ink)}
+  .t-who{display:flex;align-items:center;gap:12px}
+  .t-av{width:42px;height:42px;border-radius:50%;background:var(--yellow);color:var(--black);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .t-name{font-weight:700;font-size:14.5px}
 
-  /* ===== Why ===== */
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .why-card{border:2px solid var(--black);padding:30px 24px;background:var(--white);transition:border-color .2s ease, transform .2s ease}
-  .why-card:hover{border-color:var(--yellow);transform:translateY(-6px)}
-  .why-ico{width:56px;height:56px;background:var(--yellow);border:2px solid var(--black);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
-  .why-card h3{font-size:24px;text-transform:uppercase;margin-bottom:10px}
-  .why-card p{font-size:14px;color:var(--muted)}
-
-  /* ===== Gallery ===== */
-  .galsec{background:var(--white)}
-  .gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:40px}
-  .gal img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-  .gal{aspect-ratio:1;border:2px solid var(--black);position:relative;overflow:hidden;cursor:pointer}
-  .g1{background:linear-gradient(135deg,#5a4a32,#8a7048)}
-  .g2{background:linear-gradient(135deg,#1b3a2b,#2f5d43)}
-  .g3{background:linear-gradient(135deg,#6b5836,#3c5a2b)}
-  .g4{background:linear-gradient(135deg,#2f5d43,#5a4a32)}
-  .g5{background:linear-gradient(135deg,#3c5a2b,#8a7048)}
-  .g6{background:linear-gradient(135deg,#1f4030,#6b5836)}
-  .gal-over{
-    position:absolute;inset:0;background:var(--yellow);display:flex;align-items:center;justify-content:center;
-    opacity:0;transition:opacity .22s ease;font-size:34px;color:var(--black);
-  }
-  .gal:hover .gal-over{opacity:.95}
+  /* GALLERY */
+  .galsec{background:var(--cream)}
+  .gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:34px}
+  .gal{aspect-ratio:1;border-radius:var(--radius-sm);position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,#dfe6da,var(--yellow-soft))}
+  .gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .gal-over{position:absolute;inset:0;background:var(--yellow);display:flex;align-items:center;justify-content:center;opacity:0;transition:.22s;font-size:30px}
+  .gal:hover .gal-over{opacity:.92}
   .gal-foot{text-align:center}
 
-  /* ===== Testimoni ===== */
-  .testi{background:var(--black);color:var(--white)}
-  .testi h2{text-align:center;font-size:clamp(40px,6vw,68px);text-transform:uppercase;margin-bottom:48px;color:var(--yellow)}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .t-card{background:var(--white);border:2px solid var(--black);padding:30px 26px;box-shadow:6px 6px 0 var(--yellow)}
-  .t-stars{color:#FFB800;font-size:18px;letter-spacing:2px;margin-bottom:14px}
-  .t-card p{font-size:16px;font-weight:500;margin-bottom:18px;line-height:1.5;color:var(--black)}
-  .t-card .who{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--black)}
+  /* CTA */
+  .cta{background:var(--black);color:#fff;text-align:center}
+  .cta h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(30px,5vw,52px);line-height:1.08;margin-bottom:14px}
+  .cta p{color:rgba(255,255,255,.75);margin-bottom:28px;font-size:17px}
+  .cta .phone{display:inline-block;margin-top:18px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:26px;color:var(--yellow)}
 
-  /* ===== CTA ===== */
-  .cta{background:var(--black);color:var(--white);text-align:center}
-  .cta h2{font-size:clamp(48px,8vw,104px);text-transform:uppercase;line-height:.88;margin-bottom:34px}
-  .cta .phone{display:block;margin-top:22px;font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--yellow)}
-
-  /* ===== Footer ===== */
-  footer{background:var(--black);color:var(--white);padding-top:64px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:48px}
-  .foot-grid .logo{color:var(--white);margin-bottom:14px}
-  .foot-col h4{color:var(--yellow);font-size:22px;text-transform:uppercase;margin-bottom:16px;letter-spacing:1px}
-  .foot-col p,.foot-col a{font-size:14px;color:#bdbdbd;display:block;margin-bottom:10px}
+  /* Footer */
+  footer{background:#141414;color:#fff;padding-top:60px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
+  .foot-grid .logo{color:#fff;margin-bottom:14px;display:inline-block}
+  .foot-col h4{color:var(--yellow);font-size:15px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;font-weight:800}
+  .foot-col p,.foot-col a{font-size:14px;color:#b5b5b5;display:block;margin-bottom:10px}
   .foot-col a:hover{color:var(--yellow)}
-  .socials{display:flex;gap:12px;margin-top:4px}
-  .socials a{width:40px;height:40px;border:2px solid #444;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--white);margin:0;transition:.2s}
-  .socials a:hover{background:var(--yellow);color:var(--black);border-color:var(--yellow)}
-  .foot-bottom{border-top:1px solid #2a2a2a;padding:24px 0;text-align:center;font-size:13px;color:#9a9a9a}
+  .socials{display:flex;gap:10px}
+  .socials a{width:40px;height:40px;border-radius:50%;background:#2a2a2a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;margin:0;transition:.2s}
+  .socials a:hover{background:var(--yellow);color:var(--black)}
+  .foot-bottom{border-top:1px solid #2a2a2a;padding:22px 0;text-align:center;font-size:13px;color:#888}
   .foot-bottom b{color:var(--yellow)}
 
-  /* ===== WhatsApp float ===== */
-  .wa-float{
-    position:fixed;bottom:26px;right:26px;z-index:1500;width:62px;height:62px;border-radius:50%;
-    background:var(--yellow);border:2px solid var(--black);display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .2s ease;
-  }
+  /* WhatsApp float */
+  .wa-float{position:fixed;bottom:24px;right:24px;z-index:1500;width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:.2s}
   .wa-float:hover{transform:scale(1.08)}
-  .wa-float svg{width:32px;height:32px;fill:var(--black)}
-  .wa-float::before{
-    content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--yellow);
-    animation:pulse 1.8s infinite;
-  }
-  @keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+  .wa-float svg{width:33px;height:33px;fill:#fff}
+  .wa-float::before{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #25D366;animation:pulse 1.9s infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
 
-  /* ===== Reveal animations ===== */
-  .reveal-up{opacity:0;transform:translateY(40px);transition:opacity .6s ease, transform .6s ease}
+  /* Reveal */
+  .reveal-up{opacity:0;transform:translateY(34px);transition:opacity .6s ease,transform .6s ease}
   .reveal-up.in{opacity:1;transform:none}
 
-  /* ===== Responsive ===== */
   @media(max-width:980px){
-    .hero-grid{grid-template-columns:1fr;gap:40px}
-    .hero-art{height:380px}
+    .svc-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:repeat(3,1fr);gap:24px}
     .prod-grid{grid-template-columns:repeat(2,1fr)}
-    .pkg-layout{grid-template-columns:1fr;gap:34px}
-    .pkg-grid{grid-template-columns:repeat(2,1fr)}
     .feat-pkg{grid-template-columns:1fr}
-    .feat-img{min-height:300px;border-right:none;border-bottom:2px solid var(--black)}
+    .feat-img{min-height:280px}
     .feat-list{columns:1}
-    .why-grid{grid-template-columns:repeat(2,1fr)}
-    .gal-grid{grid-template-columns:repeat(3,1fr)}
-    .testi-grid{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .stats-grid{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(2){border-right:none}
-    .steps{grid-template-columns:repeat(5,minmax(180px,1fr));overflow-x:auto;padding-bottom:14px}
+    .pkg-grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr);gap:30px 18px}
     .step:not(:last-child)::after{display:none}
+    .testi-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:repeat(3,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:640px){
-    .nav-links{display:none}
-    .nav-cta{display:none}
+    .nav-links,.nav-cta{display:none}
     .burger{display:flex}
-    .pad{padding:60px 0}
+    .pad{padding:58px 0}
+    .hero{min-height:540px}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
     .prod-grid{grid-template-columns:repeat(2,1fr);gap:14px}
     .pkg-grid{grid-template-columns:1fr}
-    .why-grid{grid-template-columns:1fr}
     .gal-grid{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr}
-    .sec-head{flex-direction:column;align-items:flex-start}
   }
 </style>
 </head>
 <body>
 
-<!-- ===== PROMO BAR ===== -->
-<div class="promo-bar hide" id="promoBar">
-  <span id="promoText"></span>
-  <button class="close" id="promoClose" aria-label="Tutup">×</button>
-</div>
+<div class="promo-bar hide" id="promoBar"><span id="promoText"></span><button class="close" id="promoClose" aria-label="Tutup">×</button></div>
 
-<!-- ===== NAVBAR ===== -->
 <header class="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo" id="navLogo">EASY CAMP<span class="dot">.</span></a>
+    <a href="#" class="logo" id="navLogo">EasyCamp<span class="co">.co</span></a>
     <nav class="nav-links">
-      <a href="#produk">Produk</a>
+      <a href="#services">Servis</a>
+      <a href="#produk">Katalog</a>
       <a href="#pakej">Pakej</a>
       <a href="#cara">Cara Sewa</a>
       <a href="#hubungi">Hubungi</a>
     </nav>
-    <a class="btn btn-dark nav-cta wa-link" href="#" target="_blank" rel="noopener">WhatsApp Kami</a>
+    <a class="btn btn-y nav-cta wa-link" href="#" target="_blank" rel="noopener">WhatsApp Kami</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#produk">Produk</a>
-    <a href="#pakej">Pakej</a>
-    <a href="#cara">Cara Sewa</a>
-    <a href="#hubungi">Hubungi</a>
+    <a href="#services">Servis</a><a href="#produk">Katalog</a><a href="#pakej">Pakej</a>
+    <a href="#cara">Cara Sewa</a><a href="#hubungi">Hubungi</a>
     <a href="#" class="wa-link" target="_blank" rel="noopener">WhatsApp Kami</a>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="reveal-up">
-      <span class="badge" id="heroBadge"></span>
-      <h1 id="heroTitle"></h1>
-      <p class="lead" id="heroLead"></p>
-      <div class="hero-actions">
-        <a href="#produk" class="btn btn-yellow">Lihat Produk ↓</a>
-        <a href="#" class="btn btn-outline wa-link" target="_blank" rel="noopener">WhatsApp Kami</a>
-      </div>
-    </div>
-    <div class="hero-art reveal-up" id="heroArt"></div>
-  </div>
-
-  <div class="stats">
-    <div class="container">
-      <div class="stats-grid" id="statsGrid"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== POPULAR RENTAL ===== -->
-<section class="pad" id="produk">
+  <img class="bg" id="heroBg" src="" alt="EasyCamp camping setup">
   <div class="container">
-    <div class="sec-head reveal-up">
-      <h2>Popular Rental</h2>
-      <a href="#" class="link wa-link" target="_blank" rel="noopener">Lihat Semua →</a>
+    <div class="hero-badges reveal-up" id="heroBadges"></div>
+    <h1 class="reveal-up" id="heroTagline"></h1>
+    <p class="sub reveal-up" id="heroSub">Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.</p>
+    <div class="hero-actions reveal-up">
+      <a href="#" class="btn btn-y wa-link" id="heroBtn1" target="_blank" rel="noopener">Book Now</a>
+      <a href="#produk" class="btn btn-o" id="heroBtn2">Browse Gear</a>
     </div>
-    <div class="prod-grid" id="prodGrid"></div>
   </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#ffffff" d="M0,48 C240,90 480,90 720,60 C960,30 1200,20 1440,52 L1440,90 L0,90 Z"></path></svg>
 </section>
 
-<!-- ===== PACKAGES ===== -->
-<section class="packages pad" id="pakej">
-  <div class="container" id="featWrap"></div>
-  <div class="container pkg-layout">
-    <div class="pkg-intro reveal-up">
-      <h2>Complete<br>Packages</h2>
-      <p>Tidak pasti nak sewa apa? Pilih pakej kami — kami dah aturkan semua untuk anda.</p>
-      <a href="#" class="btn btn-yellow wa-link" target="_blank" rel="noopener">Lihat Semua Pakej →</a>
-    </div>
-    <div class="pkg-grid" id="pkgGrid"></div>
-  </div>
-</section>
-
-<!-- ===== HOW IT WORKS ===== -->
-<section class="how pad" id="cara">
+<!-- OUR SERVICES -->
+<section class="services pad" id="services">
   <div class="container">
-    <h2 class="reveal-up">How It Works</h2>
-    <div class="steps">
-      <div class="step reveal-up"><div class="circle">📋</div><h4>1. Pilih</h4><p>Pilih gear atau pakej anda</p></div>
-      <div class="step reveal-up"><div class="circle">💬</div><h4>2. Tempah</h4><p>Confirm via WhatsApp</p></div>
-      <div class="step reveal-up"><div class="circle">🚚</div><h4>3. Ambil/Hantar</h4><p>Self pickup di Klang Valley</p></div>
-      <div class="step reveal-up"><div class="circle">🏕️</div><h4>4. Enjoy</h4><p>Enjoy your adventure!</p></div>
-      <div class="step reveal-up"><div class="circle">↩️</div><h4>5. Pulang</h4><p>Pulangkan gear dalam masa ditetapkan</p></div>
-    </div>
+    <div class="head reveal-up"><span class="accent"></span><h2>Our Services</h2><p>Semua yang anda perlukan untuk outdoor.</p></div>
+    <div class="svc-grid" id="svcGrid"></div>
   </div>
 </section>
 
-<!-- ===== WHY EASYCAMP ===== -->
-<section class="pad">
+<!-- WHY CHOOSE -->
+<section class="why pad">
   <div class="container">
-    <div class="sec-head reveal-up"><h2>Why EasyCamp</h2></div>
+    <div class="head reveal-up"><span class="accent" style="background:var(--black)"></span><h2>Why Choose EasyCamp?</h2></div>
     <div class="why-grid" id="whyGrid"></div>
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
-<section class="pad galsec">
+<!-- HOW IT WORKS -->
+<section class="how pad" id="cara">
   <div class="container">
-    <div class="sec-head reveal-up"><h2 id="galTitle">Ikuti Kami</h2></div>
-    <div class="gal-grid" id="galGrid"></div>
-    <div class="gal-foot reveal-up">
-      <a href="#" class="btn btn-yellow" id="igBtn" target="_blank" rel="noopener">Follow di Instagram →</a>
-    </div>
+    <div class="head reveal-up"><span class="accent"></span><h2>How It Works</h2><p>Empat langkah mudah untuk adventure anda.</p></div>
+    <div class="steps" id="stepsGrid"></div>
   </div>
 </section>
 
-<!-- ===== TESTIMONI ===== -->
+<!-- CATALOG -->
+<section class="catalog pad" id="produk">
+  <div class="container">
+    <div class="head reveal-up"><span class="accent"></span><h2>Popular Rental</h2><p>Gear paling kerap disewa oleh campers kami.</p></div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages pad" id="pakej">
+  <div class="container">
+    <div class="head reveal-up"><span class="accent"></span><h2>Complete Packages</h2><p>Pakej lengkap untuk outdoor event & camping.</p></div>
+    <div id="featWrap"></div>
+    <div class="pkg-grid" id="pkgGrid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
 <section class="testi pad">
   <div class="container">
-    <h2 class="reveal-up">Apa Kata Mereka</h2>
+    <div class="head reveal-up"><span class="accent"></span><h2>What Our Campers Say</h2></div>
     <div class="testi-grid" id="testiGrid"></div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- GALLERY -->
+<section class="galsec pad">
+  <div class="container">
+    <div class="head reveal-up"><span class="accent"></span><h2 id="galTitle">Ikuti Kami</h2></div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div class="gal-foot reveal-up"><a href="#" class="btn btn-dark" id="igBtn" target="_blank" rel="noopener">Follow di Instagram →</a></div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="cta pad" id="hubungi">
   <div class="container reveal-up">
-    <h2>Ready Untuk<br>Adventure? ⛺</h2>
-    <a href="#" class="btn btn-yellow btn-lg wa-link" target="_blank" rel="noopener">WhatsApp Kami Sekarang →</a>
+    <h2>Ready for your adventure? ⛺</h2>
+    <p>WhatsApp kami sekarang untuk booking & pertanyaan stok.</p>
+    <a href="#" class="btn btn-y btn-lg wa-link" target="_blank" rel="noopener">WhatsApp Kami Sekarang →</a>
     <a href="#" class="phone wa-link" id="ctaPhone" target="_blank" rel="noopener"></a>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="foot-grid">
       <div class="foot-col">
-        <div class="logo" id="footLogo">EASY CAMP<span class="dot">.</span></div>
+        <a href="#" class="logo" id="footLogo">EasyCamp<span class="co">.co</span></a>
         <p id="footTagline"></p>
       </div>
-      <div class="foot-col">
-        <h4>Quick Links</h4>
-        <a href="#produk">Produk</a>
-        <a href="#pakej">Pakej</a>
-        <a href="#cara">Cara Sewa</a>
-        <a href="#hubungi">Hubungi</a>
-      </div>
-      <div class="foot-col">
-        <h4>Info</h4>
-        <p id="footPickup"></p>
-        <p id="footHours"></p>
-        <p id="footPhone"></p>
-      </div>
-      <div class="foot-col">
-        <h4>Follow Us</h4>
-        <div class="socials" id="footSocials"></div>
-      </div>
+      <div class="foot-col"><h4>Quick Links</h4>
+        <a href="#services">Servis</a><a href="#produk">Katalog</a><a href="#pakej">Pakej</a><a href="#cara">Cara Sewa</a></div>
+      <div class="foot-col"><h4>Info</h4><p id="footPickup"></p><p id="footHours"></p><p id="footPhone"></p></div>
+      <div class="foot-col"><h4>Follow Us</h4><div class="socials" id="footSocials"></div></div>
     </div>
   </div>
-  <div class="foot-bottom">
-    © 2026 EasyCamp Rental. All rights reserved. | Laman web oleh <b>AdamSofi.com</b>
-  </div>
+  <div class="foot-bottom">© 2026 EasyCamp Rental. All rights reserved. | Laman web oleh <b>AdamSofi.com</b></div>
 </footer>
 
-<!-- ===== WHATSAPP FLOAT ===== -->
 <a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.738-.981zm5.392-6.79c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
 </a>
 
-<noscript>
-  <div style="padding:24px;text-align:center;font-weight:700">
-    EasyCamp Rental — Sewa gear camping &amp; picnic di Klang Valley.
-    WhatsApp <a href="https://wa.me/60182922958">018-292 2958</a>.
-  </div>
-</noscript>
+<noscript><div style="padding:24px;text-align:center;font-weight:700">EasyCamp Rental — Sewa gear camping & outdoor event di Dengkil. WhatsApp <a href="https://wa.me/60182922958">018-292 2958</a>.</div></noscript>
 
 <script>
-// ===== Inline fallback (used only if /api/content is unreachable) =====
 const DEFAULT_CONTENT = {
-  seo:{title:"EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti di Klang Valley",description:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.",keywords:""},
-  brand:{name:"EASY CAMP",whatsapp:"60182922958",phoneDisplay:"018-292 2958",instagram:"https://instagram.com/easycamp.co",instagramHandle:"@easycamp.co",facebook:"#",tiktok:"#"},
+  seo:{title:"EasyCamp Rental — Sewa Gear Camping & Outdoor Event di Dengkil, Selangor",description:"Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil, Selangor.",keywords:""},
+  brand:{name:"EasyCamp",whatsapp:"60182922958",phoneDisplay:"018-292 2958",instagram:"https://instagram.com/easycamp.co",instagramHandle:"@easycamp.co",facebook:"#",tiktok:"#"},
   promo:{enabled:true,text:"🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!"},
-  hero:{badge:"Camping & Picnic Gear Rental",title1:"Campers",title2:"At Your",title3:"Service.",lead:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda. Pickup atau delivery available."},
-  stats:[{num:"8000",suffix:"+",label:"⛺ Campers"},{num:"170",suffix:"+",label:"🏕️ Produk"},{num:"1",suffix:" Jam",label:"⚡ Respons"},{num:"",suffix:"✓",label:"Gear Bersih"}],
+  header:{
+    bgImage:"imej/village6.png",
+    tagline:"Your trusted camping gear & outdoor event partner.",
+    sub:"Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.",
+    badges:["Clean","Reliable","Ready to Use"],
+    btnPrimary:"Book Now", btnSecondary:"Browse Gear"
+  },
+  services:[
+    {image:"",title:"Camping Gear Rental",desc:"Sewa gear camping berkualiti untuk adventure anda yang seterusnya.",ctaLabel:"View Catalog",ctaAction:"#produk"},
+    {image:"",title:"Outdoor Event Rental",desc:"Peralatan untuk event semua saiz — gathering, birthday, team building.",ctaLabel:"See More",ctaAction:"#pakej"},
+    {image:"",title:"Tent Cleaning Service",desc:"Servis cuci profesional supaya gear anda sentiasa segar & bersih.",ctaLabel:"Learn More",ctaAction:"wa"}
+  ],
+  whyChoose:[
+    {icon:"✨",text:"Clean & Well-Maintained"},
+    {icon:"🏷️",text:"Affordable Prices"},
+    {icon:"🙌",text:"Beginner Friendly"},
+    {icon:"💬",text:"Easy Booking via WhatsApp"},
+    {icon:"📍",text:"Self Pick-up in Dengkil"},
+    {icon:"🚚",text:"Delivery Available"}
+  ],
+  howItWorks:[
+    {icon:"🔍",title:"Choose Your Gear",text:"Browse koleksi kami & pilih item yang anda perlukan."},
+    {icon:"💬",title:"Make a Booking",text:"Hubungi kami via WhatsApp untuk confirm tempahan."},
+    {icon:"📦",title:"Pick Up or Delivery",text:"Self pick-up di Dengkil atau kami hantar ke anda."},
+    {icon:"⛺",title:"Enjoy Your Adventure",text:"Camp dengan yakin guna gear bersih & berkualiti."}
+  ],
   products:[
     {name:"Payung Camp Cottage L",spec:"Khemah Cottage",price:"120",photo:"imej/cottage-l.png",badge:"New"},
-    {name:"Family Tent",spec:"5-6 Pax",price:"70",gradient:"p1",badge:"Best Seller"},
-    {name:"Tarp & Shelter",spec:"Pelbagai Saiz",price:"30",gradient:"p2",badge:""},
-    {name:"Camping Chair",spec:"High Back",price:"10",gradient:"p3",badge:""},
-    {name:"Camping Table",spec:"Roll Table",price:"20",gradient:"p4",badge:""},
-    {name:"Sleeping Bag",spec:"3 Season",price:"15",gradient:"p5",badge:""},
-    {name:"Cooler Box",spec:"25L",price:"20",gradient:"p6",badge:""},
-    {name:"Cooking Set",spec:"Lengkap",price:"15",gradient:"p7",badge:""}
+    {name:"Family Tent",spec:"5-6 Pax",price:"70",photo:"",badge:"Best Seller"},
+    {name:"Tarp & Shelter",spec:"Pelbagai Saiz",price:"30",photo:"",badge:""},
+    {name:"Camping Chair",spec:"High Back",price:"10",photo:"",badge:""},
+    {name:"Camping Table",spec:"Roll Table",price:"20",photo:"",badge:""},
+    {name:"Sleeping Bag",spec:"3 Season",price:"15",photo:"",badge:""},
+    {name:"Cooler Box",spec:"25L",price:"20",photo:"",badge:""},
+    {name:"Cooking Set",spec:"Lengkap",price:"15",photo:"",badge:""}
   ],
   featuredPackage:{enabled:true,tag:"⭐ Pakej Popular",eyebrow:"Sewa Khemah Camping",title1:"Naturehike",title2:"Village 6",photo:"imej/village6.png",
     items:["Naturehike Village 6","Kermit Chairs x2","Egg Roll Table 120cm","Opolar Fold Fan","Retro Lanterns x2","Premium Stove","Storage Box","Mobi Garden Air Mattress"],
     tiers:[{dur:"2D1N",amt:"RM180"},{dur:"3D2N",amt:"RM280"}]},
   packages:[
-    {name:"Basic",desc:"Essentials untuk trip solo/couple",price:"Dari RM 120",gradient:"k1"},
-    {name:"Family",desc:"Comfort untuk seluruh keluarga",price:"Dari RM 200",gradient:"k2"},
-    {name:"Group",desc:"Perfect untuk gathering & group besar",price:"Dari RM 350",gradient:"k3"},
-    {name:"Event",desc:"Kami setup, anda enjoy",price:"Custom Quote",gradient:"k4"}
+    {name:"Basic",desc:"Essentials untuk trip solo/couple",price:"Dari RM 120",photo:""},
+    {name:"Family",desc:"Comfort untuk seluruh keluarga",price:"Dari RM 200",photo:""},
+    {name:"Group",desc:"Perfect untuk gathering & group besar",price:"Dari RM 350",photo:""},
+    {name:"Event",desc:"Kami setup, anda enjoy",price:"Custom Quote",photo:""}
   ],
-  why:[
-    {icon:"🧼",title:"Gear Bersih",text:"Semua gear dicuci & diperiksa sebelum setiap sewaan."},
-    {icon:"💰",title:"Harga Berpatutan",text:"Jimat berbanding beli gear sendiri. Kualiti premium, harga mesra."},
-    {icon:"🚚",title:"Pickup & Delivery",text:"Self pickup di Klang Valley atau kami hantar ke anda."},
-    {icon:"🎉",title:"Untuk Semua Majlis",text:"Camping, picnic, birthday, team building & outdoor event."}
-  ],
-  gallery:[{photo:"imej/village6.png"},{gradient:"g2"},{photo:"imej/cottage-l.png"},{gradient:"g4"},{gradient:"g5"},{gradient:"g6"}],
   testimonials:[
     {text:"Gear semua bersih, delivery on time. Sangat puas hati!",who:"Hafizah, Shah Alam"},
     {text:"Pakej picnic cantik gila, memang berbaloi!",who:"Azrul, Subang"},
     {text:"Dah 3 kali sewa, memang tak kecewa. Seller responsive!",who:"Suriani, KL"}
   ],
-  footer:{tagline:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.",pickup:"Klang Valley",hours:"10am – 8pm"}
+  gallery:[{photo:"imej/village6.png"},{photo:""},{photo:"imej/cottage-l.png"},{photo:""},{photo:""},{photo:""}],
+  footer:{tagline:"Your trusted camping gear rental & outdoor event partner di Dengkil, Selangor.",pickup:"Dengkil, Selangor",hours:"10am – 8pm (Daily)"}
 };
 
-let WA = "60182922958";
-const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let WA="60182922958";
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function waMsg(text){return `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;}
+function waProduk(name){window.open(waMsg(`Salam EasyCamp! Saya nak tanya stok:\n\nProduk: ${name}\nTarikh: \nTempoh: \nNama: `),'_blank');}
+function waPakej(name){window.open(waMsg(`Salam EasyCamp! Saya berminat dengan pakej:\n\nPakej: ${name}\nTarikh: \nBilangan Pax: \nNama: `),'_blank');}
+function waServis(name){window.open(waMsg(`Salam EasyCamp! Saya nak tahu lebih lanjut tentang: ${name}`),'_blank');}
 
-function waProduk(name){
-  const msg = encodeURIComponent(`Salam EasyCamp! Saya nak tanya stok:\n\nProduk: ${name}\nTarikh: \nTempoh: \nNama: `);
-  window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
-}
-function waPakej(name){
-  const msg = encodeURIComponent(`Salam EasyCamp! Saya berminat dengan pakej:\n\nPakej: ${name}\nTarikh: \nBilangan Pax: \nNama: `);
-  window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+function svcCtaAttr(s){
+  if(s.ctaAction==='wa') return `onclick="waServis('${esc(s.title)}');return false;" href="#"`;
+  return `href="${esc(s.ctaAction||'#produk')}"`;
 }
 
 function render(c){
-  WA = c.brand.whatsapp || WA;
+  WA=c.brand.whatsapp||WA;
+  if(c.seo){ if(c.seo.title)document.title=c.seo.title; const md=document.querySelector('meta[name="description"]'); if(md&&c.seo.description)md.setAttribute('content',c.seo.description); }
+  document.querySelectorAll('.wa-link').forEach(a=>a.href=`https://wa.me/${WA}`);
 
-  // SEO / meta (for social shares + browser)
-  if(c.seo){
-    if(c.seo.title) document.title = c.seo.title;
-    const md = document.querySelector('meta[name="description"]');
-    if(md && c.seo.description) md.setAttribute('content', c.seo.description);
-  }
+  // Promo
+  const pb=document.getElementById('promoBar');
+  if(c.promo&&c.promo.enabled&&c.promo.text&&sessionStorage.getItem('promoClosed')!=='1'){document.getElementById('promoText').textContent=c.promo.text;pb.classList.remove('hide');}else pb.classList.add('hide');
 
-  // WhatsApp links everywhere
-  document.querySelectorAll('.wa-link').forEach(a => a.href = `https://wa.me/${WA}`);
+  // Logo
+  const logo=`${esc(c.brand.name)}<span class="co">.co</span>`;
+  document.getElementById('navLogo').innerHTML=logo; document.getElementById('footLogo').innerHTML=logo;
 
-  // Promo bar
-  const pb = document.getElementById('promoBar');
-  if(c.promo && c.promo.enabled && c.promo.text && sessionStorage.getItem('promoClosed') !== '1'){
-    document.getElementById('promoText').textContent = c.promo.text;
-    pb.classList.remove('hide');
-  } else { pb.classList.add('hide'); }
+  // Header
+  const h=c.header||{};
+  document.getElementById('heroBg').src=h.bgImage||'imej/village6.png';
+  document.getElementById('heroTagline').textContent=h.tagline||'';
+  document.getElementById('heroSub').textContent=h.sub||'';
+  document.getElementById('heroBadges').innerHTML=(h.badges||[]).map(b=>`<span>${esc(b)}</span>`).join('');
+  document.getElementById('heroBtn1').textContent=h.btnPrimary||'Book Now';
+  document.getElementById('heroBtn2').textContent=h.btnSecondary||'Browse Gear';
 
-  // Brand name in logos
-  const logoHtml = `${esc(c.brand.name)}<span class="dot">.</span>`;
-  document.getElementById('navLogo').innerHTML = logoHtml;
-  document.getElementById('footLogo').innerHTML = logoHtml;
+  // Services
+  document.getElementById('svcGrid').innerHTML=(c.services||[]).map(s=>`
+    <div class="svc-card reveal-up">
+      <div class="svc-img">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.title)}">`:''}</div>
+      <div class="svc-body">
+        <h3>${esc(s.title)}</h3>
+        <p>${esc(s.desc)}</p>
+        <a class="svc-cta" ${svcCtaAttr(s)}>${esc(s.ctaLabel||'Learn More')} →</a>
+      </div>
+    </div>`).join('');
 
-  // Hero
-  document.getElementById('heroBadge').textContent = c.hero.badge;
-  document.getElementById('heroTitle').innerHTML = `${esc(c.hero.title1)}<br>${esc(c.hero.title2)}<br>${esc(c.hero.title3)}`;
-  document.getElementById('heroLead').textContent = c.hero.lead;
+  // Why choose
+  document.getElementById('whyGrid').innerHTML=(c.whyChoose||[]).map(w=>`
+    <div class="why-item reveal-up"><div class="why-ico">${esc(w.icon)}</div><span>${esc(w.text)}</span></div>`).join('');
 
-  // Hero art — first 4 products
-  document.getElementById('heroArt').innerHTML = c.products.slice(0,4).map((p,i)=>{
-    const img = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
-    return `<div class="art-card art-${i+1}">${img}<span>${esc(p.name)}</span></div>`;
-  }).join('');
-
-  // Stats
-  document.getElementById('statsGrid').innerHTML = c.stats.map(s=>{
-    const numAttr = s.num ? ` data-count="${esc(s.num)}" data-suffix="${esc(s.suffix||'')}"` : '';
-    const numText = s.num ? '0' : esc(s.suffix||'');
-    return `<div class="stat"><div class="num"${numAttr}>${numText}</div><div class="lbl">${esc(s.label)}</div></div>`;
-  }).join('');
+  // How it works
+  document.getElementById('stepsGrid').innerHTML=(c.howItWorks||[]).map((s,i)=>`
+    <div class="step reveal-up"><div class="circle">${esc(s.icon)}<span class="n">${i+1}</span></div><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p></div>`).join('');
 
   // Products
-  const pg = document.getElementById('prodGrid'); pg.innerHTML='';
-  c.products.forEach((p,i)=>{
-    const card=document.createElement('div');
-    card.className='prod reveal-up'; card.style.transitionDelay=(i*0.06)+'s';
-    const imgInner = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
-    const imgClass = p.photo ? 'has-photo' : (p.gradient||'p1');
-    card.innerHTML = `
-      <div class="prod-img ${imgClass}">${imgInner}${p.badge?`<span class="best">${esc(p.badge)}</span>`:''}</div>
-      <div class="prod-body">
-        <h3>${esc(p.name)}</h3>
-        <span class="prod-spec">${esc(p.spec)}</span>
-        <div class="prod-foot">
-          <span class="prod-price">Dari <b>RM ${esc(p.price)}</b></span>
-          <span class="arrow">→</span>
-        </div>
-      </div>`;
-    card.addEventListener('click',()=>waProduk(p.name));
-    pg.appendChild(card);
+  const pg=document.getElementById('prodGrid');pg.innerHTML='';
+  (c.products||[]).forEach((p,i)=>{
+    const d=document.createElement('div');d.className='prod reveal-up';d.style.transitionDelay=(i*0.05)+'s';
+    d.innerHTML=`<div class="prod-img">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}">`:''}${p.badge?`<span class="badge-tag">${esc(p.badge)}</span>`:''}</div>
+      <div class="prod-body"><h3>${esc(p.name)}</h3><span class="prod-spec">${esc(p.spec)}</span>
+      <div class="prod-foot"><span class="prod-price">Dari <b>RM${esc(p.price)}</b></span><span class="arrow">→</span></div></div>`;
+    d.addEventListener('click',()=>waProduk(p.name));pg.appendChild(d);
   });
 
   // Featured package
-  const fw = document.getElementById('featWrap');
-  const f = c.featuredPackage;
-  if(f && f.enabled){
-    fw.innerHTML = `
-      <div class="feat-pkg reveal-up">
-        <div class="feat-img">
-          ${f.tag?`<span class="feat-tag">${esc(f.tag)}</span>`:''}
-          ${f.photo?`<img src="${esc(f.photo)}" alt="${esc(f.title1)} ${esc(f.title2)}">`:''}
-        </div>
-        <div class="feat-body">
-          <div class="eyebrow">${esc(f.eyebrow)}</div>
-          <h3>${esc(f.title1)}<br>${esc(f.title2)}</h3>
-          <ul class="feat-list">${f.items.map(it=>`<li>${esc(it)}</li>`).join('')}</ul>
-          <div class="price-tiers">${f.tiers.map(t=>`<div class="tier"><div class="dur">${esc(t.dur)}</div><div class="amt">${esc(t.amt)}</div></div>`).join('')}</div>
-          <button class="btn btn-yellow" id="featBtn">Tempah Pakej Ini →</button>
-        </div>
-      </div>`;
+  const fw=document.getElementById('featWrap');const f=c.featuredPackage;
+  if(f&&f.enabled){
+    fw.innerHTML=`<div class="feat-pkg reveal-up">
+      <div class="feat-img">${f.tag?`<span class="feat-tag">${esc(f.tag)}</span>`:''}${f.photo?`<img src="${esc(f.photo)}" alt="${esc(f.title1)} ${esc(f.title2)}">`:''}</div>
+      <div class="feat-body"><div class="eyebrow">${esc(f.eyebrow)}</div><h3>${esc(f.title1)} ${esc(f.title2)}</h3>
+        <ul class="feat-list">${(f.items||[]).map(it=>`<li>${esc(it)}</li>`).join('')}</ul>
+        <div class="price-tiers">${(f.tiers||[]).map(t=>`<div class="tier"><div class="dur">${esc(t.dur)}</div><div class="amt">${esc(t.amt)}</div></div>`).join('')}</div>
+        <button class="btn btn-y" id="featBtn">Tempah Pakej Ini →</button></div></div>`;
     document.getElementById('featBtn').addEventListener('click',()=>waPakej(`${f.title1} ${f.title2}`));
-  } else { fw.innerHTML=''; }
+  } else fw.innerHTML='';
 
-  // Packages grid
-  const kg=document.getElementById('pkgGrid'); kg.innerHTML='';
-  c.packages.forEach((p,i)=>{
-    const card=document.createElement('div');
-    card.className='pkg reveal-up'; card.style.transitionDelay=(i*0.06)+'s';
-    const imgInner = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
-    const imgClass = p.photo ? '' : (p.gradient||'k1');
-    card.innerHTML = `
-      <div class="pkg-img ${imgClass}">${imgInner}</div>
-      <div class="pkg-body">
-        <h3>${esc(p.name)}</h3>
-        <p>${esc(p.desc)}</p>
-        <span class="pkg-price">${esc(p.price)}</span>
-        <button class="btn btn-yellow">Tempah →</button>
-      </div>`;
-    card.querySelector('button').addEventListener('click',()=>waPakej(p.name));
-    kg.appendChild(card);
+  // Packages
+  const kg=document.getElementById('pkgGrid');kg.innerHTML='';
+  (c.packages||[]).forEach(p=>{
+    const d=document.createElement('div');d.className='pkg reveal-up';
+    d.innerHTML=`<div class="pkg-img">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}">`:''}</div>
+      <div class="pkg-body"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><span class="pkg-price">${esc(p.price)}</span>
+      <button class="btn btn-y">Tempah →</button></div>`;
+    d.querySelector('button').addEventListener('click',()=>waPakej(p.name));kg.appendChild(d);
   });
 
-  // Why
-  document.getElementById('whyGrid').innerHTML = c.why.map(w=>`
-    <div class="why-card reveal-up">
-      <div class="why-ico">${esc(w.icon)}</div>
-      <h3>${esc(w.title)}</h3>
-      <p>${esc(w.text)}</p>
-    </div>`).join('');
+  // Testimonials
+  document.getElementById('testiGrid').innerHTML=(c.testimonials||[]).map(t=>`
+    <div class="t-card reveal-up"><div class="t-stars">★★★★★</div><p>"${esc(t.text)}"</p>
+      <div class="t-who"><div class="t-av">${esc((t.who||'?').trim().charAt(0).toUpperCase())}</div><div class="t-name">${esc(t.who)}</div></div></div>`).join('');
 
   // Gallery
-  document.getElementById('galTitle').textContent = `Ikuti Kami ${c.brand.instagramHandle||''}`.trim();
-  document.getElementById('igBtn').href = c.brand.instagram || '#';
-  document.getElementById('galGrid').innerHTML = c.gallery.map(g=>{
-    const inner = g.photo ? `<img src="${esc(g.photo)}" alt="EasyCamp">` : '';
-    const cls = g.photo ? '' : (g.gradient||'g1');
-    return `<a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" class="gal ${cls} reveal-up">${inner}<div class="gal-over">📷</div></a>`;
-  }).join('');
+  document.getElementById('galTitle').textContent=`Ikuti Kami ${c.brand.instagramHandle||''}`.trim();
+  document.getElementById('igBtn').href=c.brand.instagram||'#';
+  document.getElementById('galGrid').innerHTML=(c.gallery||[]).map(g=>`
+    <a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" class="gal reveal-up">${g.photo?`<img src="${esc(g.photo)}" alt="EasyCamp">`:''}<div class="gal-over">📷</div></a>`).join('');
 
-  // Testimonials
-  document.getElementById('testiGrid').innerHTML = c.testimonials.map(t=>`
-    <div class="t-card reveal-up">
-      <div class="t-stars">★★★★★</div>
-      <p>"${esc(t.text)}"</p>
-      <div class="who">— ${esc(t.who)}</div>
-    </div>`).join('');
-
-  // CTA + Footer
-  document.getElementById('ctaPhone').textContent = c.brand.phoneDisplay;
-  document.getElementById('footTagline').textContent = c.footer.tagline;
-  document.getElementById('footPickup').innerHTML = `📍 Pickup: ${esc(c.footer.pickup)}`;
-  document.getElementById('footHours').innerHTML = `🕙 Hours: ${esc(c.footer.hours)}`;
-  document.getElementById('footPhone').innerHTML = `📞 ${esc(c.brand.phoneDisplay)}`;
-  document.getElementById('footSocials').innerHTML = `
+  // CTA + footer
+  document.getElementById('ctaPhone').textContent=c.brand.phoneDisplay;
+  document.getElementById('footTagline').textContent=c.footer.tagline;
+  document.getElementById('footPickup').innerHTML=`📍 Pickup: ${esc(c.footer.pickup)}`;
+  document.getElementById('footHours').innerHTML=`🕙 Hours: ${esc(c.footer.hours)}`;
+  document.getElementById('footPhone').innerHTML=`📞 ${esc(c.brand.phoneDisplay)}`;
+  document.getElementById('footSocials').innerHTML=`
     <a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
     <a href="${esc(c.brand.facebook||'#')}" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
     <a href="${esc(c.brand.tiktok||'#')}" target="_blank" rel="noopener" aria-label="TikTok">TT</a>`;
@@ -712,46 +555,20 @@ function render(c){
   initObservers();
 }
 
-// ===== Scroll reveal + stat counters (resilient to throttled/hidden tabs) =====
-function startCounter(el){
-  if(el.dataset.done) return; el.dataset.done='1';
-  const target=parseInt(el.dataset.count,10)||0, suffix=el.dataset.suffix||'';
-  if(document.hidden){ el.textContent=target.toLocaleString()+suffix; return; } // no animation when not visible
-  let cur=0; const step=Math.max(1,Math.ceil(target/60));
-  const tick=()=>{cur+=step; if(cur>=target){el.textContent=target.toLocaleString()+suffix;} else {el.textContent=cur.toLocaleString()+suffix; requestAnimationFrame(tick);}};
-  tick();
-}
 function initObservers(){
   const vh=window.innerHeight||800;
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
-  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{
-    // Above-the-fold: reveal immediately so content never depends on the observer firing.
-    if(el.getBoundingClientRect().top < vh*0.9) el.classList.add('in'); else io.observe(el);
-  });
-  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){startCounter(e.target);cio.unobserve(e.target);}});},{threshold:0.4});
-  document.querySelectorAll('.num[data-count]').forEach(el=>{
-    if(el.getBoundingClientRect().top < vh*0.9) startCounter(el); else cio.observe(el);
-  });
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{ if(el.getBoundingClientRect().top<vh*0.92)el.classList.add('in'); else io.observe(el); });
 }
-// When a backgrounded tab becomes visible, make sure everything on screen is shown/counted.
-document.addEventListener('visibilitychange',()=>{
-  if(document.hidden) return;
-  const vh=window.innerHeight||800;
-  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{ if(el.getBoundingClientRect().top < vh) el.classList.add('in'); });
-  document.querySelectorAll('.num[data-count]').forEach(el=>{ if(!el.dataset.done && el.getBoundingClientRect().top < vh) startCounter(el); });
-});
+document.addEventListener('visibilitychange',()=>{ if(document.hidden)return; const vh=window.innerHeight||800;
+  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>{ if(el.getBoundingClientRect().top<vh)el.classList.add('in'); }); });
 
-// ===== Mobile menu + promo close =====
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 document.getElementById('promoClose').addEventListener('click',()=>{document.getElementById('promoBar').classList.add('hide');sessionStorage.setItem('promoClosed','1');});
 
-// ===== Boot: render defaults instantly, then hydrate from API =====
 render(DEFAULT_CONTENT);
-fetch('/api/content',{cache:'no-store'})
-  .then(r=>r.ok?r.json():null)
-  .then(c=>{ if(c && typeof c==='object') render(c); })
-  .catch(()=>{});
+fetch('/api/content',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(c=>{if(c&&typeof c==='object')render(c);}).catch(()=>{});
 </script>
 </body>
 </html>
