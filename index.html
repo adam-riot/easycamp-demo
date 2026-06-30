@@ -34,7 +34,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --yellow:#FFD100; --yellow-deep:#F2C200; --yellow-soft:#FFF3C2; --cream:#FFFBF0;
@@ -100,7 +100,8 @@
   .hero-badges span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
     padding:7px 14px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;backdrop-filter:blur(4px)}
   .hero-badges span::before{content:"✓";color:var(--yellow);font-weight:800}
-  .hero h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(34px,5.2vw,62px);line-height:1.08;max-width:760px;margin-bottom:16px;letter-spacing:-1px}
+  .hero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(40px,6.4vw,82px);line-height:.92;max-width:820px;margin-bottom:18px;letter-spacing:.5px}
+  .hero h1 .y{color:var(--yellow)}
   .hero .sub{font-size:18px;color:rgba(255,255,255,.85);max-width:520px;margin-bottom:30px}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
   .wave{position:absolute;left:0;right:0;bottom:-1px;z-index:2;width:100%;height:auto;display:block}
@@ -475,7 +476,11 @@ function render(c){
   // Header
   const h=c.header||{};
   document.getElementById('heroBg').src=h.bgImage||'imej/village6.png';
-  document.getElementById('heroTagline').textContent=h.tagline||'';
+  // Two-tone hero tagline: split on comma -> line 1 white, line 2 yellow
+  (()=>{const t=(h.tagline||'').trim();const i=t.indexOf(',');
+    if(i>-1){const l1=t.slice(0,i+1).trim(),l2=t.slice(i+1).trim();
+      document.getElementById('heroTagline').innerHTML=`${esc(l1)}<br><span class="y">${esc(l2)}</span>`;}
+    else document.getElementById('heroTagline').textContent=t;})();
   document.getElementById('heroSub').textContent=h.sub||'';
   document.getElementById('heroBadges').innerHTML=(h.badges||[]).map(b=>`<span>${esc(b)}</span>`).join('');
   document.getElementById('heroBtn1').textContent=h.btnPrimary||'Book Now';
