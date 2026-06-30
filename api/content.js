@@ -24,9 +24,9 @@ export const DEFAULT_CONTENT = {
   },
   header: {
     bgImage: 'imej/header.jpg',
-    tagline: 'Your trusted camping gear & outdoor event partner.',
+    tagline: 'Camp Easier, Rent Better.',
     sub: 'Self pick-up in Dengkil or delivery to your location. Easy booking, clean & ready-to-use gear.',
-    badges: ['Clean', 'Reliable', 'Ready to Use'],
+    badges: ['Clean', 'Affordable', 'Complete'],
     btnPrimary: 'Book Now',
     btnSecondary: 'Browse Gear'
   },
