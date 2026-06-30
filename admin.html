@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>EasyCamp — Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#FFD100;--black:#111;--white:#fff;--gray:#f5f5f5;--muted:#666;--border:#ddd}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--gray);color:var(--black);line-height:1.5}
+  .bebas{font-family:'Bebas Neue',sans-serif;letter-spacing:1px}
+
+  /* Login */
+  #login{position:fixed;inset:0;background:var(--yellow);display:flex;align-items:center;justify-content:center;z-index:50}
+  #login .box{background:#fff;border:3px solid var(--black);padding:40px;max-width:380px;width:90%;box-shadow:8px 8px 0 var(--black)}
+  #login h1{font-family:'Bebas Neue',sans-serif;font-size:42px;text-transform:uppercase;margin-bottom:6px}
+  #login p{color:var(--muted);font-size:14px;margin-bottom:22px}
+  #login input{width:100%;padding:14px;border:2px solid var(--black);font-size:16px;margin-bottom:14px}
+  #login .err{color:#c00;font-size:13px;font-weight:600;margin-bottom:12px;min-height:18px}
+
+  /* Topbar */
+  header{position:sticky;top:0;z-index:30;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;flex-wrap:wrap;gap:10px}
+  header .brand{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--yellow);letter-spacing:1px}
+  header .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .btn{font-family:'Inter',sans-serif;font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.5px;padding:11px 18px;border:2px solid var(--black);cursor:pointer;background:#fff;color:#111}
+  .btn-y{background:var(--yellow);border-color:var(--yellow)}
+  .btn-o{background:transparent;color:#fff;border-color:#fff}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  #saveState{font-size:13px;font-weight:600}
+
+  /* Tabs */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;padding:14px 22px 0;background:var(--gray);position:sticky;top:60px;z-index:20}
+  .tab{padding:9px 15px;border:2px solid var(--black);background:#fff;font-weight:700;font-size:13px;cursor:pointer;text-transform:uppercase;letter-spacing:.3px}
+  .tab.active{background:var(--black);color:var(--yellow)}
+
+  main{max-width:920px;margin:0 auto;padding:24px 22px 80px}
+  .panel{display:none}
+  .panel.active{display:block}
+  .panel>h2{font-family:'Bebas Neue',sans-serif;font-size:34px;text-transform:uppercase;margin-bottom:4px}
+  .panel>.hint{color:var(--muted);font-size:14px;margin-bottom:20px}
+
+  .card{background:#fff;border:2px solid var(--black);padding:18px;margin-bottom:16px;position:relative}
+  .card h4{font-family:'Bebas Neue',sans-serif;font-size:20px;text-transform:uppercase;margin-bottom:12px;color:#333}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444;margin-bottom:5px}
+  .field input[type=text],.field textarea,.field input:not([type]){width:100%;padding:10px 12px;border:2px solid var(--border);font-family:inherit;font-size:14px}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--black)}
+  .field textarea{min-height:70px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+
+  .switch{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .switch input{width:18px;height:18px}
+
+  .img-field{display:flex;gap:12px;align-items:flex-start}
+  .img-field .thumb{width:78px;height:78px;border:2px solid var(--border);object-fit:cover;background:var(--gray);flex-shrink:0}
+  .img-field .grow{flex:1}
+  .img-field .up{margin-top:6px}
+  .up-status{font-size:12px;color:var(--muted);margin-top:4px}
+
+  .item-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .item-head .ctrls{display:flex;gap:6px}
+  .mini{border:1px solid var(--black);background:#fff;cursor:pointer;font-size:13px;font-weight:700;padding:4px 9px}
+  .mini.del{background:#fff0f0;border-color:#c00;color:#c00}
+  .add-btn{background:var(--yellow);border:2px solid var(--black);font-weight:800;text-transform:uppercase;font-size:13px;padding:11px 18px;cursor:pointer;letter-spacing:.5px}
+
+  .strlist .strrow{display:flex;gap:8px;margin-bottom:8px}
+  .strlist .strrow input{flex:1;padding:9px 11px;border:2px solid var(--border)}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--black);color:var(--yellow);padding:14px 26px;font-weight:700;border:2px solid var(--yellow);z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+  .toast.show{opacity:1}
+  @media(max-width:640px){.row,.row3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="box">
+    <h1>EasyCamp Admin</h1>
+    <p>Masukkan kata laluan untuk urus kandungan laman web.</p>
+    <input type="password" id="pw" placeholder="Kata laluan" autocomplete="current-password">
+    <div class="err" id="loginErr"></div>
+    <button class="btn btn-y" id="loginBtn" style="width:100%">Log Masuk</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+  <header>
+    <div class="brand">EASYCAMP ADMIN</div>
+    <div class="actions">
+      <span id="saveState"></span>
+      <a class="btn btn-o" href="/" target="_blank">Lihat Laman ↗</a>
+      <button class="btn btn-o" id="logoutBtn">Log Keluar</button>
+      <button class="btn btn-y" id="saveBtn">💾 Simpan Perubahan</button>
+    </div>
+  </header>
+
+  <div class="tabs" id="tabs"></div>
+
+  <main id="panels"></main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { upload } from 'https://esm.sh/@vercel/blob@2.5.0/client';
+
+let PW = sessionStorage.getItem('ec_pw') || '';
+let data = null;
+let dirty = false;
+
+const $ = s => document.querySelector(s);
+const toast = (msg)=>{const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);};
+const markDirty = ()=>{dirty=true;$('#saveState').textContent='● Belum disimpan';$('#saveState').style.color='#ffb3b3';};
+const markClean = ()=>{dirty=false;$('#saveState').textContent='✓ Tersimpan';$('#saveState').style.color='#9f9';};
+
+// ---------- Field builders ----------
+function field(label, obj, key, {area=false}={}){
+  const wrap=document.createElement('div');wrap.className='field';
+  wrap.innerHTML=`<label>${label}</label>`;
+  const inp=document.createElement(area?'textarea':'input');
+  if(!area) inp.type='text';
+  inp.value=obj[key]??'';
+  inp.addEventListener('input',()=>{obj[key]=inp.value;markDirty();});
+  wrap.appendChild(inp);return wrap;
+}
+function boolField(label, obj, key){
+  const wrap=document.createElement('div');wrap.className='switch';
+  const inp=document.createElement('input');inp.type='checkbox';inp.checked=!!obj[key];
+  inp.addEventListener('change',()=>{obj[key]=inp.checked;markDirty();});
+  const lab=document.createElement('label');lab.textContent=label;lab.style.margin='0';
+  wrap.appendChild(inp);wrap.appendChild(lab);return wrap;
+}
+function imageField(label, obj, key){
+  const wrap=document.createElement('div');wrap.className='field';
+  wrap.innerHTML=`<label>${label}</label>`;
+  const box=document.createElement('div');box.className='img-field';
+  const thumb=document.createElement('img');thumb.className='thumb';thumb.src=obj[key]||'';thumb.alt='';
+  const grow=document.createElement('div');grow.className='grow';
+  const inp=document.createElement('input');inp.type='text';inp.value=obj[key]??'';inp.placeholder='URL gambar atau muat naik →';
+  inp.addEventListener('input',()=>{obj[key]=inp.value;thumb.src=inp.value;markDirty();});
+  const file=document.createElement('input');file.type='file';file.accept='image/*';file.className='up';
+  const status=document.createElement('div');status.className='up-status';
+  file.addEventListener('change',async()=>{
+    if(!file.files[0])return;
+    status.textContent='Memuat naik…';
+    try{
+      const res=await upload(file.files[0].name, file.files[0], {access:'public',handleUploadUrl:'/api/upload',clientPayload:PW});
+      obj[key]=res.url;inp.value=res.url;thumb.src=res.url;markDirty();status.textContent='✓ Berjaya dimuat naik';
+    }catch(e){status.textContent='✗ Gagal: '+e.message;}
+  });
+  grow.appendChild(inp);grow.appendChild(file);grow.appendChild(status);
+  box.appendChild(thumb);box.appendChild(grow);wrap.appendChild(box);return wrap;
+}
+function stringList(label, arr){
+  const wrap=document.createElement('div');wrap.className='field strlist';
+  wrap.innerHTML=`<label>${label}</label>`;
+  const list=document.createElement('div');
+  const draw=()=>{
+    list.innerHTML='';
+    arr.forEach((v,i)=>{
+      const r=document.createElement('div');r.className='strrow';
+      const inp=document.createElement('input');inp.type='text';inp.value=v;
+      inp.addEventListener('input',()=>{arr[i]=inp.value;markDirty();});
+      const del=document.createElement('button');del.className='mini del';del.textContent='✕';
+      del.onclick=()=>{arr.splice(i,1);markDirty();draw();};
+      r.appendChild(inp);r.appendChild(del);list.appendChild(r);
+    });
+  };
+  draw();
+  const add=document.createElement('button');add.className='mini';add.textContent='+ Tambah';add.style.marginTop='4px';
+  add.onclick=()=>{arr.push('');markDirty();draw();};
+  wrap.appendChild(list);wrap.appendChild(add);return wrap;
+}
+
+// listEditor: array of objects, fieldsDef = [{k,label,type}], type: text|area|image
+function listEditor(container, arr, fieldsDef, defaultItem, titleKey){
+  const draw=()=>{
+    container.innerHTML='';
+    arr.forEach((item,idx)=>{
+      const card=document.createElement('div');card.className='card';
+      const head=document.createElement('div');head.className='item-head';
+      head.innerHTML=`<h4 style="margin:0">${(item[titleKey]||fieldsDef[0]&&item[fieldsDef[0].k])||'Item'} #${idx+1}</h4>`;
+      const ctrls=document.createElement('div');ctrls.className='ctrls';
+      const up=document.createElement('button');up.className='mini';up.textContent='↑';up.onclick=()=>{if(idx>0){[arr[idx-1],arr[idx]]=[arr[idx],arr[idx-1]];markDirty();draw();}};
+      const dn=document.createElement('button');dn.className='mini';dn.textContent='↓';dn.onclick=()=>{if(idx<arr.length-1){[arr[idx+1],arr[idx]]=[arr[idx],arr[idx+1]];markDirty();draw();}};
+      const del=document.createElement('button');del.className='mini del';del.textContent='🗑 Buang';del.onclick=()=>{if(confirm('Buang item ini?')){arr.splice(idx,1);markDirty();draw();}};
+      ctrls.append(up,dn,del);head.appendChild(ctrls);card.appendChild(head);
+      fieldsDef.forEach(fd=>{
+        if(fd.type==='image') card.appendChild(imageField(fd.label,item,fd.k));
+        else card.appendChild(field(fd.label,item,fd.k,{area:fd.type==='area'}));
+      });
+      container.appendChild(card);
+    });
+    const add=document.createElement('button');add.className='add-btn';add.textContent='+ Tambah Item';
+    add.onclick=()=>{arr.push(JSON.parse(JSON.stringify(defaultItem)));markDirty();draw();};
+    container.appendChild(add);
+  };
+  draw();
+}
+
+// ---------- Build panels ----------
+const TABS=[
+  ['promo','Promo'],['hero','Hero'],['products','Produk'],['featured','Pakej Utama'],
+  ['packages','Pakej'],['why','Kelebihan'],['gallery','Galeri'],['testimonials','Testimoni'],
+  ['stats','Statistik'],['contact','Hubungi'],['seo','SEO']
+];
+
+function buildUI(){
+  const tabsEl=$('#tabs');tabsEl.innerHTML='';
+  const panelsEl=$('#panels');panelsEl.innerHTML='';
+  TABS.forEach(([id,label],i)=>{
+    const t=document.createElement('button');t.className='tab'+(i===0?' active':'');t.textContent=label;t.dataset.t=id;
+    t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));$('#panel-'+id).classList.add('active');window.scrollTo(0,0);};
+    tabsEl.appendChild(t);
+    const p=document.createElement('div');p.className='panel'+(i===0?' active':'');p.id='panel-'+id;panelsEl.appendChild(p);
+  });
+
+  // PROMO
+  (()=>{const p=$('#panel-promo');p.innerHTML='<h2>Promo Bar</h2><p class="hint">Bar promosi di bahagian atas laman web.</p>';
+    const c=document.createElement('div');c.className='card';
+    c.appendChild(boolField('Tunjukkan promo bar',data.promo,'enabled'));
+    c.appendChild(field('Teks promo',data.promo,'text',{area:true}));
+    p.appendChild(c);})();
+
+  // HERO
+  (()=>{const p=$('#panel-hero');p.innerHTML='<h2>Hero</h2><p class="hint">Bahagian atas — tajuk besar & ayat pengenalan.</p>';
+    const c=document.createElement('div');c.className='card';
+    c.appendChild(field('Badge (label kecil)',data.hero,'badge'));
+    const r=document.createElement('div');r.className='row3';
+    r.appendChild(field('Tajuk baris 1',data.hero,'title1'));
+    r.appendChild(field('Tajuk baris 2',data.hero,'title2'));
+    r.appendChild(field('Tajuk baris 3',data.hero,'title3'));
+    c.appendChild(r);
+    c.appendChild(field('Ayat pengenalan',data.hero,'lead',{area:true}));
+    p.appendChild(c);})();
+
+  // PRODUCTS
+  (()=>{const p=$('#panel-products');p.innerHTML='<h2>Produk</h2><p class="hint">Setiap produk jadi kad. Klik kad di laman → terus WhatsApp. Biar "Gambar" kosong untuk guna corak gradient.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.products,[
+      {k:'name',label:'Nama produk'},{k:'spec',label:'Spec (cth: 5-6 Pax)'},{k:'price',label:'Harga (nombor sahaja, cth: 70)'},
+      {k:'badge',label:'Badge (cth: New / Best Seller — boleh kosong)'},{k:'photo',label:'Gambar',type:'image'}
+    ],{name:'Produk Baru',spec:'',price:'',badge:'',photo:''},'name');})();
+
+  // FEATURED
+  (()=>{const p=$('#panel-featured');p.innerHTML='<h2>Pakej Utama</h2><p class="hint">Pakej besar yang ditonjolkan (cth: Naturehike Village 6).</p>';
+    const c=document.createElement('div');c.className='card';
+    c.appendChild(boolField('Tunjukkan pakej utama',data.featuredPackage,'enabled'));
+    c.appendChild(field('Tag (cth: ⭐ Pakej Popular)',data.featuredPackage,'tag'));
+    c.appendChild(field('Eyebrow (label atas tajuk)',data.featuredPackage,'eyebrow'));
+    const r=document.createElement('div');r.className='row';
+    r.appendChild(field('Tajuk baris 1',data.featuredPackage,'title1'));
+    r.appendChild(field('Tajuk baris 2',data.featuredPackage,'title2'));
+    c.appendChild(r);
+    c.appendChild(imageField('Gambar pakej',data.featuredPackage,'photo'));
+    c.appendChild(stringList('Senarai item dalam pakej',data.featuredPackage.items));
+    p.appendChild(c);
+    const tc=document.createElement('div');tc.className='card';tc.innerHTML='<h4>Harga (tiers)</h4>';
+    const tbox=document.createElement('div');tc.appendChild(tbox);
+    listEditor(tbox,data.featuredPackage.tiers,[{k:'dur',label:'Tempoh (cth: 2D1N)'},{k:'amt',label:'Harga (cth: RM180)'}],{dur:'',amt:''},'dur');
+    p.appendChild(tc);})();
+
+  // PACKAGES
+  (()=>{const p=$('#panel-packages');p.innerHTML='<h2>Pakej</h2><p class="hint">Grid 4 pakej ringkas.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.packages,[
+      {k:'name',label:'Nama pakej'},{k:'desc',label:'Penerangan'},{k:'price',label:'Harga (cth: Dari RM 120)'},{k:'photo',label:'Gambar (boleh kosong)',type:'image'}
+    ],{name:'Pakej Baru',desc:'',price:'',gradient:'k1',photo:''},'name');})();
+
+  // WHY
+  (()=>{const p=$('#panel-why');p.innerHTML='<h2>Kelebihan</h2><p class="hint">Kenapa pilih EasyCamp — gunakan emoji untuk ikon.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.why,[{k:'icon',label:'Ikon (emoji)'},{k:'title',label:'Tajuk'},{k:'text',label:'Penerangan',type:'area'}],{icon:'✅',title:'',text:''},'title');})();
+
+  // GALLERY
+  (()=>{const p=$('#panel-gallery');p.innerHTML='<h2>Galeri</h2><p class="hint">6 petak gambar. Kosongkan gambar untuk guna corak gradient.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.gallery,[{k:'photo',label:'Gambar',type:'image'}],{photo:'',gradient:'g1'},'photo');})();
+
+  // TESTIMONIALS
+  (()=>{const p=$('#panel-testimonials');p.innerHTML='<h2>Testimoni</h2><p class="hint">Ulasan pelanggan (5 bintang).</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.testimonials,[{k:'text',label:'Ulasan',type:'area'},{k:'who',label:'Nama, Lokasi'}],{text:'',who:''},'who');})();
+
+  // STATS
+  (()=>{const p=$('#panel-stats');p.innerHTML='<h2>Statistik</h2><p class="hint">Bar nombor di bawah hero. Biar "Nombor" kosong untuk simbol statik (cth ✓).</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.stats,[{k:'num',label:'Nombor (cth: 8000 — boleh kosong)'},{k:'suffix',label:'Suffix (cth: + atau ✓)'},{k:'label',label:'Label'}],{num:'',suffix:'',label:''},'label');})();
+
+  // CONTACT
+  (()=>{const p=$('#panel-contact');p.innerHTML='<h2>Hubungi & Footer</h2><p class="hint">Nombor WhatsApp di sini dipakai oleh SEMUA butang di laman.</p>';
+    const c=document.createElement('div');c.className='card';c.innerHTML='<h4>Brand & WhatsApp</h4>';
+    c.appendChild(field('Nama brand',data.brand,'name'));
+    const r=document.createElement('div');r.className='row';
+    r.appendChild(field('No WhatsApp (format: 60182922958)',data.brand,'whatsapp'));
+    r.appendChild(field('No telefon (paparan, cth: 018-292 2958)',data.brand,'phoneDisplay'));
+    c.appendChild(r);p.appendChild(c);
+    const s=document.createElement('div');s.className='card';s.innerHTML='<h4>Sosial Media</h4>';
+    s.appendChild(field('Instagram URL',data.brand,'instagram'));
+    s.appendChild(field('Instagram handle (cth: @easycamp.co)',data.brand,'instagramHandle'));
+    const r2=document.createElement('div');r2.className='row';
+    r2.appendChild(field('Facebook URL',data.brand,'facebook'));
+    r2.appendChild(field('TikTok URL',data.brand,'tiktok'));
+    s.appendChild(r2);p.appendChild(s);
+    const f=document.createElement('div');f.className='card';f.innerHTML='<h4>Footer Info</h4>';
+    f.appendChild(field('Tagline',data.footer,'tagline',{area:true}));
+    const r3=document.createElement('div');r3.className='row';
+    r3.appendChild(field('Lokasi pickup',data.footer,'pickup'));
+    r3.appendChild(field('Waktu operasi',data.footer,'hours'));
+    f.appendChild(r3);p.appendChild(f);})();
+
+  // SEO
+  (()=>{const p=$('#panel-seo');p.innerHTML='<h2>SEO</h2><p class="hint">Tajuk & penerangan untuk Google + perkongsian sosial.</p>';
+    const c=document.createElement('div');c.className='card';
+    c.appendChild(field('Tajuk laman (title tag)',data.seo,'title'));
+    c.appendChild(field('Meta description',data.seo,'description',{area:true}));
+    c.appendChild(field('Keywords (pisah dengan koma)',data.seo,'keywords',{area:true}));
+    p.appendChild(c);})();
+}
+
+// ---------- API ----------
+async function loadContent(){
+  const r=await fetch('/api/content?ts='+Date.now(),{cache:'no-store'});
+  data=await r.json();
+  // ensure arrays exist
+  ['stats','products','packages','why','gallery','testimonials'].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[];});
+  if(!data.featuredPackage) data.featuredPackage={enabled:false,items:[],tiers:[]};
+  if(!Array.isArray(data.featuredPackage.items)) data.featuredPackage.items=[];
+  if(!Array.isArray(data.featuredPackage.tiers)) data.featuredPackage.tiers=[];
+  buildUI();markClean();
+}
+async function save(){
+  $('#saveBtn').disabled=true;$('#saveBtn').textContent='Menyimpan…';
+  try{
+    const r=await fetch('/api/content',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':PW},body:JSON.stringify(data)});
+    if(r.status===401){toast('Kata laluan salah — sila log masuk semula.');logout();return;}
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.error||r.status);}
+    markClean();toast('✓ Berjaya disimpan! Perubahan sudah live.');
+  }catch(e){toast('✗ Gagal simpan: '+e.message);}
+  finally{$('#saveBtn').disabled=false;$('#saveBtn').textContent='💾 Simpan Perubahan';}
+}
+
+// ---------- Auth ----------
+async function tryLogin(pw){
+  // verify by attempting a no-op save guard: we just store and let first save validate.
+  // Better: do a lightweight check via POST with current (unloaded) — instead verify on load+save.
+  PW=pw;sessionStorage.setItem('ec_pw',pw);
+  $('#login').style.display='none';$('#app').style.display='block';
+  await loadContent();
+}
+function logout(){sessionStorage.removeItem('ec_pw');PW='';location.reload();}
+
+$('#loginBtn').onclick=()=>{const v=$('#pw').value.trim();if(!v){$('#loginErr').textContent='Sila masukkan kata laluan.';return;}tryLogin(v);};
+$('#pw').addEventListener('keydown',e=>{if(e.key==='Enter')$('#loginBtn').click();});
+$('#saveBtn').onclick=save;
+$('#logoutBtn').onclick=logout;
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+
+// auto-login if password remembered this session
+if(PW){tryLogin(PW);}
+</script>
+</body>
+</html>

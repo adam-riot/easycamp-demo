@@ -3,8 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti</title>
-<meta name="description" content="Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda. Pickup atau delivery di Klang Valley.">
+<title>EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti di Klang Valley</title>
+<meta name="description" content="Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley. Pickup atau delivery available. WhatsApp untuk tempah.">
+<meta name="keywords" content="sewa khemah, sewa camping, sewa gear camping, camping rental klang valley, sewa khemah selangor, naturehike village 6, sewa picnic set">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFD100">
+<link rel="canonical" href="https://easycamp.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFD100'/%3E%3Ctext y='.9em' x='10' font-size='80'%3E%E2%9B%BA%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EasyCamp Rental">
+<meta property="og:title" content="EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti">
+<meta property="og:description" content="Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley. Pickup atau delivery available.">
+<meta property="og:url" content="https://easycamp.vercel.app/">
+<meta property="og:image" content="https://easycamp.vercel.app/imej/village6.png">
+<meta property="og:locale" content="ms_MY">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EasyCamp Rental — Sewa Gear Camping & Picnic">
+<meta name="twitter:description" content="Sewa gear camping & picnic berkualiti di Klang Valley. WhatsApp untuk tempah.">
+<meta name="twitter:image" content="https://easycamp.vercel.app/imej/village6.png">
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "EasyCamp Rental",
+  "image": "https://easycamp.vercel.app/imej/village6.png",
+  "url": "https://easycamp.vercel.app/",
+  "telephone": "+60182922958",
+  "priceRange": "RM",
+  "description": "Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event di Klang Valley.",
+  "areaServed": "Klang Valley, Selangor, Malaysia",
+  "address": { "@type": "PostalAddress", "addressRegion": "Selangor", "addressCountry": "MY" },
+  "openingHours": "Mo-Su 10:00-20:00",
+  "sameAs": ["https://instagram.com/easycamp.co"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,6 +68,13 @@
   .container{max-width:1240px;margin:0 auto;padding:0 24px}
   section{position:relative}
 
+  /* ===== Promo bar ===== */
+  .promo-bar{background:var(--black);color:var(--yellow);text-align:center;font-weight:700;font-size:14px;
+    padding:10px 44px 10px 16px;position:relative;letter-spacing:.3px}
+  .promo-bar.hide{display:none}
+  .promo-bar .close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;
+    color:var(--yellow);font-size:20px;cursor:pointer;line-height:1;padding:4px}
+
   /* ===== Buttons ===== */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -59,7 +101,7 @@
   .logo .dot{color:var(--black)}
   .nav-links{display:flex;gap:34px;align-items:center}
   .nav-links a{font-weight:600;font-size:14px;letter-spacing:.3px;position:relative}
-  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--yellow);transition:width .2s ease}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--black);transition:width .2s ease}
   .nav-links a:hover::after{width:100%}
   .nav-cta{padding:12px 20px;font-size:13px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
@@ -150,7 +192,6 @@
 
   /* ===== Packages ===== */
   .packages{background:var(--white)}
-  /* Featured package */
   .feat-pkg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);background:var(--white);margin-bottom:40px}
   .feat-img{position:relative;min-height:420px;border-right:2px solid var(--black)}
   .feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -173,6 +214,7 @@
   .pkg:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
   .pkg-img{height:140px;border-bottom:2px solid var(--black);position:relative}
   .pkg-img::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 10px,transparent 10px 20px)}
+  .pkg-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .k1{background:linear-gradient(135deg,#1b3a2b,#2f5d43)}
   .k2{background:linear-gradient(135deg,#2f5d43,var(--yellow))}
   .k3{background:linear-gradient(135deg,#0f2a1e,#3c5a2b)}
@@ -231,8 +273,8 @@
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .t-card{background:var(--white);border:2px solid var(--black);padding:30px 26px;box-shadow:6px 6px 0 var(--yellow)}
   .t-stars{color:#FFB800;font-size:18px;letter-spacing:2px;margin-bottom:14px}
-  .t-card p{font-size:16px;font-weight:500;margin-bottom:18px;line-height:1.5}
-  .t-card .who{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+  .t-card p{font-size:16px;font-weight:500;margin-bottom:18px;line-height:1.5;color:var(--black)}
+  .t-card .who{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--black)}
 
   /* ===== CTA ===== */
   .cta{background:var(--black);color:var(--white);text-align:center}
@@ -305,17 +347,23 @@
 </head>
 <body>
 
+<!-- ===== PROMO BAR ===== -->
+<div class="promo-bar hide" id="promoBar">
+  <span id="promoText"></span>
+  <button class="close" id="promoClose" aria-label="Tutup">×</button>
+</div>
+
 <!-- ===== NAVBAR ===== -->
 <header class="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo">EASY CAMP<span class="dot">.</span></a>
+    <a href="#" class="logo" id="navLogo">EASY CAMP<span class="dot">.</span></a>
     <nav class="nav-links">
       <a href="#produk">Produk</a>
       <a href="#pakej">Pakej</a>
       <a href="#cara">Cara Sewa</a>
       <a href="#hubungi">Hubungi</a>
     </nav>
-    <a class="btn btn-yellow nav-cta" href="https://wa.me/60182922958" target="_blank" rel="noopener">WhatsApp Kami</a>
+    <a class="btn btn-dark nav-cta wa-link" href="#" target="_blank" rel="noopener">WhatsApp Kami</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -323,7 +371,7 @@
     <a href="#pakej">Pakej</a>
     <a href="#cara">Cara Sewa</a>
     <a href="#hubungi">Hubungi</a>
-    <a href="https://wa.me/60182922958" target="_blank" rel="noopener">WhatsApp Kami</a>
+    <a href="#" class="wa-link" target="_blank" rel="noopener">WhatsApp Kami</a>
   </div>
 </header>
 
@@ -331,31 +379,20 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="reveal-up">
-      <span class="badge">Camping &amp; Picnic Gear Rental</span>
-      <h1>Campers<br>At Your<br>Service.</h1>
-      <p class="lead">Sewa gear camping &amp; picnic berkualiti untuk trip, picnic, dan event anda. Pickup atau delivery available.</p>
+      <span class="badge" id="heroBadge"></span>
+      <h1 id="heroTitle"></h1>
+      <p class="lead" id="heroLead"></p>
       <div class="hero-actions">
         <a href="#produk" class="btn btn-yellow">Lihat Produk ↓</a>
-        <a href="https://wa.me/60182922958" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Kami</a>
+        <a href="#" class="btn btn-outline wa-link" target="_blank" rel="noopener">WhatsApp Kami</a>
       </div>
     </div>
-    <div class="hero-art reveal-up">
-      <div class="art-card art-1"><img src="imej/cottage-l.png" alt="Payung Camp Cottage L"><span>Cottage L</span></div>
-      <div class="art-card art-2"><img src="imej/village6.png" alt="Naturehike Village 6"><span>Village 6</span></div>
-      <div class="art-card art-3"><span>Cooler Box</span></div>
-      <div class="art-card art-4"><span>Lantern LED</span></div>
-    </div>
+    <div class="hero-art reveal-up" id="heroArt"></div>
   </div>
 
-  <!-- Stats bar -->
   <div class="stats">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat"><div class="num" data-count="8000" data-suffix="+">0</div><div class="lbl">⛺ Campers</div></div>
-        <div class="stat"><div class="num" data-count="170" data-suffix="+">0</div><div class="lbl">🏕️ Produk</div></div>
-        <div class="stat"><div class="num" data-count="1" data-suffix=" Jam">0</div><div class="lbl">⚡ Respons</div></div>
-        <div class="stat"><div class="num">✓</div><div class="lbl">Gear Bersih</div></div>
-      </div>
+      <div class="stats-grid" id="statsGrid"></div>
     </div>
   </div>
 </section>
@@ -365,49 +402,22 @@
   <div class="container">
     <div class="sec-head reveal-up">
       <h2>Popular Rental</h2>
-      <a href="https://wa.me/60182922958" target="_blank" rel="noopener" class="link">Lihat Semua →</a>
+      <a href="#" class="link wa-link" target="_blank" rel="noopener">Lihat Semua →</a>
     </div>
-    <div class="prod-grid" id="prodGrid"><!-- injected --></div>
+    <div class="prod-grid" id="prodGrid"></div>
   </div>
 </section>
 
 <!-- ===== PACKAGES ===== -->
 <section class="packages pad" id="pakej">
-  <div class="container">
-    <!-- Featured real package: Naturehike Village 6 -->
-    <div class="feat-pkg reveal-up">
-      <div class="feat-img">
-        <span class="feat-tag">⭐ Pakej Popular</span>
-        <img src="imej/village6.png" alt="Naturehike Village 6 Package">
-      </div>
-      <div class="feat-body">
-        <div class="eyebrow">Sewa Khemah Camping</div>
-        <h3>Naturehike<br>Village 6</h3>
-        <ul class="feat-list">
-          <li>Naturehike Village 6</li>
-          <li>Kermit Chairs x2</li>
-          <li>Egg Roll Table 120cm</li>
-          <li>Opolar Fold Fan</li>
-          <li>Retro Lanterns x2</li>
-          <li>Premium Stove</li>
-          <li>Storage Box</li>
-          <li>Mobi Garden Air Mattress</li>
-        </ul>
-        <div class="price-tiers">
-          <div class="tier"><div class="dur">2D1N</div><div class="amt">RM180</div></div>
-          <div class="tier"><div class="dur">3D2N</div><div class="amt">RM280</div></div>
-        </div>
-        <button class="btn btn-yellow" onclick="waPakej('Naturehike Village 6 Package')">Tempah Pakej Ini →</button>
-      </div>
-    </div>
-  </div>
+  <div class="container" id="featWrap"></div>
   <div class="container pkg-layout">
     <div class="pkg-intro reveal-up">
       <h2>Complete<br>Packages</h2>
       <p>Tidak pasti nak sewa apa? Pilih pakej kami — kami dah aturkan semua untuk anda.</p>
-      <a href="https://wa.me/60182922958" target="_blank" rel="noopener" class="btn btn-yellow">Lihat Semua Pakej →</a>
+      <a href="#" class="btn btn-yellow wa-link" target="_blank" rel="noopener">Lihat Semua Pakej →</a>
     </div>
-    <div class="pkg-grid" id="pkgGrid"><!-- injected --></div>
+    <div class="pkg-grid" id="pkgGrid"></div>
   </div>
 </section>
 
@@ -429,29 +439,17 @@
 <section class="pad">
   <div class="container">
     <div class="sec-head reveal-up"><h2>Why EasyCamp</h2></div>
-    <div class="why-grid">
-      <div class="why-card reveal-up"><div class="why-ico">🧼</div><h3>Gear Bersih</h3><p>Semua gear dicuci &amp; diperiksa sebelum setiap sewaan.</p></div>
-      <div class="why-card reveal-up"><div class="why-ico">💰</div><h3>Harga Berpatutan</h3><p>Jimat berbanding beli gear sendiri. Kualiti premium, harga mesra.</p></div>
-      <div class="why-card reveal-up"><div class="why-ico">🚚</div><h3>Pickup &amp; Delivery</h3><p>Self pickup di Klang Valley atau kami hantar ke anda.</p></div>
-      <div class="why-card reveal-up"><div class="why-ico">🎉</div><h3>Untuk Semua Majlis</h3><p>Camping, picnic, birthday, team building &amp; outdoor event.</p></div>
-    </div>
+    <div class="why-grid" id="whyGrid"></div>
   </div>
 </section>
 
 <!-- ===== GALLERY ===== -->
 <section class="pad galsec">
   <div class="container">
-    <div class="sec-head reveal-up"><h2>Ikuti Kami @easycamp.co</h2></div>
-    <div class="gal-grid">
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal reveal-up"><img src="imej/village6.png" alt="Naturehike Village 6"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g2 reveal-up"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal reveal-up"><img src="imej/cottage-l.png" alt="Payung Camp Cottage L"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g4 reveal-up"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g5 reveal-up"><div class="gal-over">📷</div></a>
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="gal g6 reveal-up"><div class="gal-over">📷</div></a>
-    </div>
+    <div class="sec-head reveal-up"><h2 id="galTitle">Ikuti Kami</h2></div>
+    <div class="gal-grid" id="galGrid"></div>
     <div class="gal-foot reveal-up">
-      <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" class="btn btn-yellow">Follow di Instagram →</a>
+      <a href="#" class="btn btn-yellow" id="igBtn" target="_blank" rel="noopener">Follow di Instagram →</a>
     </div>
   </div>
 </section>
@@ -460,11 +458,7 @@
 <section class="testi pad">
   <div class="container">
     <h2 class="reveal-up">Apa Kata Mereka</h2>
-    <div class="testi-grid">
-      <div class="t-card reveal-up"><div class="t-stars">★★★★★</div><p>"Gear semua bersih, delivery on time. Sangat puas hati!"</p><div class="who">— Hafizah, Shah Alam</div></div>
-      <div class="t-card reveal-up"><div class="t-stars">★★★★★</div><p>"Pakej picnic cantik gila, memang berbaloi!"</p><div class="who">— Azrul, Subang</div></div>
-      <div class="t-card reveal-up"><div class="t-stars">★★★★★</div><p>"Dah 3 kali sewa, memang tak kecewa. Seller responsive!"</p><div class="who">— Suriani, KL</div></div>
-    </div>
+    <div class="testi-grid" id="testiGrid"></div>
   </div>
 </section>
 
@@ -472,8 +466,8 @@
 <section class="cta pad" id="hubungi">
   <div class="container reveal-up">
     <h2>Ready Untuk<br>Adventure? ⛺</h2>
-    <a href="https://wa.me/60182922958" target="_blank" rel="noopener" class="btn btn-yellow btn-lg">WhatsApp Kami Sekarang →</a>
-    <a href="https://wa.me/60182922958" target="_blank" rel="noopener" class="phone">018-292 2958</a>
+    <a href="#" class="btn btn-yellow btn-lg wa-link" target="_blank" rel="noopener">WhatsApp Kami Sekarang →</a>
+    <a href="#" class="phone wa-link" id="ctaPhone" target="_blank" rel="noopener"></a>
   </div>
 </section>
 
@@ -482,8 +476,8 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-col">
-        <div class="logo">EASY CAMP<span class="dot">.</span></div>
-        <p>Sewa gear camping &amp; picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.</p>
+        <div class="logo" id="footLogo">EASY CAMP<span class="dot">.</span></div>
+        <p id="footTagline"></p>
       </div>
       <div class="foot-col">
         <h4>Quick Links</h4>
@@ -494,17 +488,13 @@
       </div>
       <div class="foot-col">
         <h4>Info</h4>
-        <p>📍 Pickup: Klang Valley</p>
-        <p>🕙 Hours: 10am – 8pm</p>
-        <p>📞 018-292 2958</p>
+        <p id="footPickup"></p>
+        <p id="footHours"></p>
+        <p id="footPhone"></p>
       </div>
       <div class="foot-col">
         <h4>Follow Us</h4>
-        <div class="socials">
-          <a href="https://instagram.com/easycamp.co" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-          <a href="#" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
-        </div>
+        <div class="socials" id="footSocials"></div>
       </div>
     </div>
   </div>
@@ -514,110 +504,241 @@
 </footer>
 
 <!-- ===== WHATSAPP FLOAT ===== -->
-<a class="wa-float" href="https://wa.me/60182922958" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.738-.981zm5.392-6.79c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
 </a>
 
+<noscript>
+  <div style="padding:24px;text-align:center;font-weight:700">
+    EasyCamp Rental — Sewa gear camping &amp; picnic di Klang Valley.
+    WhatsApp <a href="https://wa.me/60182922958">018-292 2958</a>.
+  </div>
+</noscript>
+
 <script>
-  // ===== Mobile menu =====
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+// ===== Inline fallback (used only if /api/content is unreachable) =====
+const DEFAULT_CONTENT = {
+  seo:{title:"EasyCamp Rental — Sewa Gear Camping & Picnic Berkualiti di Klang Valley",description:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.",keywords:""},
+  brand:{name:"EASY CAMP",whatsapp:"60182922958",phoneDisplay:"018-292 2958",instagram:"https://instagram.com/easycamp.co",instagramHandle:"@easycamp.co",facebook:"#",tiktok:"#"},
+  promo:{enabled:true,text:"🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!"},
+  hero:{badge:"Camping & Picnic Gear Rental",title1:"Campers",title2:"At Your",title3:"Service.",lead:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda. Pickup atau delivery available."},
+  stats:[{num:"8000",suffix:"+",label:"⛺ Campers"},{num:"170",suffix:"+",label:"🏕️ Produk"},{num:"1",suffix:" Jam",label:"⚡ Respons"},{num:"",suffix:"✓",label:"Gear Bersih"}],
+  products:[
+    {name:"Payung Camp Cottage L",spec:"Khemah Cottage",price:"120",photo:"imej/cottage-l.png",badge:"New"},
+    {name:"Family Tent",spec:"5-6 Pax",price:"70",gradient:"p1",badge:"Best Seller"},
+    {name:"Tarp & Shelter",spec:"Pelbagai Saiz",price:"30",gradient:"p2",badge:""},
+    {name:"Camping Chair",spec:"High Back",price:"10",gradient:"p3",badge:""},
+    {name:"Camping Table",spec:"Roll Table",price:"20",gradient:"p4",badge:""},
+    {name:"Sleeping Bag",spec:"3 Season",price:"15",gradient:"p5",badge:""},
+    {name:"Cooler Box",spec:"25L",price:"20",gradient:"p6",badge:""},
+    {name:"Cooking Set",spec:"Lengkap",price:"15",gradient:"p7",badge:""}
+  ],
+  featuredPackage:{enabled:true,tag:"⭐ Pakej Popular",eyebrow:"Sewa Khemah Camping",title1:"Naturehike",title2:"Village 6",photo:"imej/village6.png",
+    items:["Naturehike Village 6","Kermit Chairs x2","Egg Roll Table 120cm","Opolar Fold Fan","Retro Lanterns x2","Premium Stove","Storage Box","Mobi Garden Air Mattress"],
+    tiers:[{dur:"2D1N",amt:"RM180"},{dur:"3D2N",amt:"RM280"}]},
+  packages:[
+    {name:"Basic",desc:"Essentials untuk trip solo/couple",price:"Dari RM 120",gradient:"k1"},
+    {name:"Family",desc:"Comfort untuk seluruh keluarga",price:"Dari RM 200",gradient:"k2"},
+    {name:"Group",desc:"Perfect untuk gathering & group besar",price:"Dari RM 350",gradient:"k3"},
+    {name:"Event",desc:"Kami setup, anda enjoy",price:"Custom Quote",gradient:"k4"}
+  ],
+  why:[
+    {icon:"🧼",title:"Gear Bersih",text:"Semua gear dicuci & diperiksa sebelum setiap sewaan."},
+    {icon:"💰",title:"Harga Berpatutan",text:"Jimat berbanding beli gear sendiri. Kualiti premium, harga mesra."},
+    {icon:"🚚",title:"Pickup & Delivery",text:"Self pickup di Klang Valley atau kami hantar ke anda."},
+    {icon:"🎉",title:"Untuk Semua Majlis",text:"Camping, picnic, birthday, team building & outdoor event."}
+  ],
+  gallery:[{photo:"imej/village6.png"},{gradient:"g2"},{photo:"imej/cottage-l.png"},{gradient:"g4"},{gradient:"g5"},{gradient:"g6"}],
+  testimonials:[
+    {text:"Gear semua bersih, delivery on time. Sangat puas hati!",who:"Hafizah, Shah Alam"},
+    {text:"Pakej picnic cantik gila, memang berbaloi!",who:"Azrul, Subang"},
+    {text:"Dah 3 kali sewa, memang tak kecewa. Seller responsive!",who:"Suriani, KL"}
+  ],
+  footer:{tagline:"Sewa gear camping & picnic berkualiti untuk trip, picnic, dan event anda di Klang Valley.",pickup:"Klang Valley",hours:"10am – 8pm"}
+};
 
-  // ===== WhatsApp helper =====
-  function waProduk(name){
-    const msg = encodeURIComponent(`Salam EasyCamp! Saya nak tanya stok:\n\nProduk: ${name}\nTarikh: \nTempoh: \nNama: `);
-    window.open(`https://wa.me/60182922958?text=${msg}`, '_blank');
-  }
-  function waPakej(name){
-    const msg = encodeURIComponent(`Salam EasyCamp! Saya berminat dengan pakej:\n\nPakej: ${name}\nTarikh: \nBilangan Pax: \nNama: `);
-    window.open(`https://wa.me/60182922958?text=${msg}`, '_blank');
+let WA = "60182922958";
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function waProduk(name){
+  const msg = encodeURIComponent(`Salam EasyCamp! Saya nak tanya stok:\n\nProduk: ${name}\nTarikh: \nTempoh: \nNama: `);
+  window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+}
+function waPakej(name){
+  const msg = encodeURIComponent(`Salam EasyCamp! Saya berminat dengan pakej:\n\nPakej: ${name}\nTarikh: \nBilangan Pax: \nNama: `);
+  window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+}
+
+function render(c){
+  WA = c.brand.whatsapp || WA;
+
+  // SEO / meta (for social shares + browser)
+  if(c.seo){
+    if(c.seo.title) document.title = c.seo.title;
+    const md = document.querySelector('meta[name="description"]');
+    if(md && c.seo.description) md.setAttribute('content', c.seo.description);
   }
 
-  // ===== Products data =====
-  const products = [
-    {name:'Payung Camp Cottage L', spec:'Khemah Cottage', price:'120', photo:'imej/cottage-l.png', badge:'New'},
-    {name:'Family Tent', spec:'5-6 Pax', price:'70', img:'p1', badge:'Best Seller'},
-    {name:'Tarp & Shelter', spec:'Pelbagai Saiz', price:'30', img:'p2'},
-    {name:'Camping Chair', spec:'High Back', price:'10', img:'p3'},
-    {name:'Camping Table', spec:'Roll Table', price:'20', img:'p4'},
-    {name:'Sleeping Bag', spec:'3 Season', price:'15', img:'p5'},
-    {name:'Cooler Box', spec:'25L', price:'20', img:'p6'},
-    {name:'Cooking Set', spec:'Lengkap', price:'15', img:'p7'},
-  ];
-  const prodGrid = document.getElementById('prodGrid');
-  products.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'prod reveal-up';
-    card.style.transitionDelay = (i * 0.08) + 's';
-    const imgInner = p.photo ? `<img src="${p.photo}" alt="${p.name}">` : '';
-    const imgClass = p.photo ? 'has-photo' : p.img;
+  // WhatsApp links everywhere
+  document.querySelectorAll('.wa-link').forEach(a => a.href = `https://wa.me/${WA}`);
+
+  // Promo bar
+  const pb = document.getElementById('promoBar');
+  if(c.promo && c.promo.enabled && c.promo.text && sessionStorage.getItem('promoClosed') !== '1'){
+    document.getElementById('promoText').textContent = c.promo.text;
+    pb.classList.remove('hide');
+  } else { pb.classList.add('hide'); }
+
+  // Brand name in logos
+  const logoHtml = `${esc(c.brand.name)}<span class="dot">.</span>`;
+  document.getElementById('navLogo').innerHTML = logoHtml;
+  document.getElementById('footLogo').innerHTML = logoHtml;
+
+  // Hero
+  document.getElementById('heroBadge').textContent = c.hero.badge;
+  document.getElementById('heroTitle').innerHTML = `${esc(c.hero.title1)}<br>${esc(c.hero.title2)}<br>${esc(c.hero.title3)}`;
+  document.getElementById('heroLead').textContent = c.hero.lead;
+
+  // Hero art — first 4 products
+  document.getElementById('heroArt').innerHTML = c.products.slice(0,4).map((p,i)=>{
+    const img = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
+    return `<div class="art-card art-${i+1}">${img}<span>${esc(p.name)}</span></div>`;
+  }).join('');
+
+  // Stats
+  document.getElementById('statsGrid').innerHTML = c.stats.map(s=>{
+    const numAttr = s.num ? ` data-count="${esc(s.num)}" data-suffix="${esc(s.suffix||'')}"` : '';
+    const numText = s.num ? '0' : esc(s.suffix||'');
+    return `<div class="stat"><div class="num"${numAttr}>${numText}</div><div class="lbl">${esc(s.label)}</div></div>`;
+  }).join('');
+
+  // Products
+  const pg = document.getElementById('prodGrid'); pg.innerHTML='';
+  c.products.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='prod reveal-up'; card.style.transitionDelay=(i*0.06)+'s';
+    const imgInner = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
+    const imgClass = p.photo ? 'has-photo' : (p.gradient||'p1');
     card.innerHTML = `
-      <div class="prod-img ${imgClass}">${imgInner}${p.badge ? `<span class="best">${p.badge}</span>` : ''}</div>
+      <div class="prod-img ${imgClass}">${imgInner}${p.badge?`<span class="best">${esc(p.badge)}</span>`:''}</div>
       <div class="prod-body">
-        <h3>${p.name}</h3>
-        <span class="prod-spec">${p.spec}</span>
+        <h3>${esc(p.name)}</h3>
+        <span class="prod-spec">${esc(p.spec)}</span>
         <div class="prod-foot">
-          <span class="prod-price">Dari <b>RM ${p.price}</b></span>
+          <span class="prod-price">Dari <b>RM ${esc(p.price)}</b></span>
           <span class="arrow">→</span>
         </div>
       </div>`;
-    card.addEventListener('click', () => waProduk(p.name));
-    prodGrid.appendChild(card);
+    card.addEventListener('click',()=>waProduk(p.name));
+    pg.appendChild(card);
   });
 
-  // ===== Packages data =====
-  const packages = [
-    {name:'Basic', price:'Dari RM 120', desc:'Essentials untuk trip solo/couple', img:'k1'},
-    {name:'Family', price:'Dari RM 200', desc:'Comfort untuk seluruh keluarga', img:'k2'},
-    {name:'Group', price:'Dari RM 350', desc:'Perfect untuk gathering & group besar', img:'k3'},
-    {name:'Event', price:'Custom Quote', desc:'Kami setup, anda enjoy', img:'k4'},
-  ];
-  const pkgGrid = document.getElementById('pkgGrid');
-  packages.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'pkg reveal-up';
-    card.style.transitionDelay = (i * 0.08) + 's';
+  // Featured package
+  const fw = document.getElementById('featWrap');
+  const f = c.featuredPackage;
+  if(f && f.enabled){
+    fw.innerHTML = `
+      <div class="feat-pkg reveal-up">
+        <div class="feat-img">
+          ${f.tag?`<span class="feat-tag">${esc(f.tag)}</span>`:''}
+          ${f.photo?`<img src="${esc(f.photo)}" alt="${esc(f.title1)} ${esc(f.title2)}">`:''}
+        </div>
+        <div class="feat-body">
+          <div class="eyebrow">${esc(f.eyebrow)}</div>
+          <h3>${esc(f.title1)}<br>${esc(f.title2)}</h3>
+          <ul class="feat-list">${f.items.map(it=>`<li>${esc(it)}</li>`).join('')}</ul>
+          <div class="price-tiers">${f.tiers.map(t=>`<div class="tier"><div class="dur">${esc(t.dur)}</div><div class="amt">${esc(t.amt)}</div></div>`).join('')}</div>
+          <button class="btn btn-yellow" id="featBtn">Tempah Pakej Ini →</button>
+        </div>
+      </div>`;
+    document.getElementById('featBtn').addEventListener('click',()=>waPakej(`${f.title1} ${f.title2}`));
+  } else { fw.innerHTML=''; }
+
+  // Packages grid
+  const kg=document.getElementById('pkgGrid'); kg.innerHTML='';
+  c.packages.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='pkg reveal-up'; card.style.transitionDelay=(i*0.06)+'s';
+    const imgInner = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : '';
+    const imgClass = p.photo ? '' : (p.gradient||'k1');
     card.innerHTML = `
-      <div class="pkg-img ${p.img}"></div>
+      <div class="pkg-img ${imgClass}">${imgInner}</div>
       <div class="pkg-body">
-        <h3>${p.name}</h3>
-        <p>${p.desc}</p>
-        <span class="pkg-price">${p.price}</span>
+        <h3>${esc(p.name)}</h3>
+        <p>${esc(p.desc)}</p>
+        <span class="pkg-price">${esc(p.price)}</span>
         <button class="btn btn-yellow">Tempah →</button>
       </div>`;
-    card.querySelector('button').addEventListener('click', () => waPakej(p.name));
-    pkgGrid.appendChild(card);
+    card.querySelector('button').addEventListener('click',()=>waPakej(p.name));
+    kg.appendChild(card);
   });
 
-  // ===== Reveal on scroll =====
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.1});
-  document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
+  // Why
+  document.getElementById('whyGrid').innerHTML = c.why.map(w=>`
+    <div class="why-card reveal-up">
+      <div class="why-ico">${esc(w.icon)}</div>
+      <h3>${esc(w.title)}</h3>
+      <p>${esc(w.text)}</p>
+    </div>`).join('');
 
-  // ===== Stats counter =====
-  const counters = document.querySelectorAll('.num[data-count]');
-  const cio = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        const el = e.target;
-        const target = parseInt(el.dataset.count, 10);
-        const suffix = el.dataset.suffix || '';
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(target / 60));
-        const tick = () => {
-          cur += step;
-          if(cur >= target){ el.textContent = target.toLocaleString() + suffix; }
-          else { el.textContent = cur.toLocaleString() + suffix; requestAnimationFrame(tick); }
-        };
-        tick();
-        cio.unobserve(el);
-      }
-    });
-  }, {threshold:0.4});
-  counters.forEach(c => cio.observe(c));
+  // Gallery
+  document.getElementById('galTitle').textContent = `Ikuti Kami ${c.brand.instagramHandle||''}`.trim();
+  document.getElementById('igBtn').href = c.brand.instagram || '#';
+  document.getElementById('galGrid').innerHTML = c.gallery.map(g=>{
+    const inner = g.photo ? `<img src="${esc(g.photo)}" alt="EasyCamp">` : '';
+    const cls = g.photo ? '' : (g.gradient||'g1');
+    return `<a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" class="gal ${cls} reveal-up">${inner}<div class="gal-over">📷</div></a>`;
+  }).join('');
+
+  // Testimonials
+  document.getElementById('testiGrid').innerHTML = c.testimonials.map(t=>`
+    <div class="t-card reveal-up">
+      <div class="t-stars">★★★★★</div>
+      <p>"${esc(t.text)}"</p>
+      <div class="who">— ${esc(t.who)}</div>
+    </div>`).join('');
+
+  // CTA + Footer
+  document.getElementById('ctaPhone').textContent = c.brand.phoneDisplay;
+  document.getElementById('footTagline').textContent = c.footer.tagline;
+  document.getElementById('footPickup').innerHTML = `📍 Pickup: ${esc(c.footer.pickup)}`;
+  document.getElementById('footHours').innerHTML = `🕙 Hours: ${esc(c.footer.hours)}`;
+  document.getElementById('footPhone').innerHTML = `📞 ${esc(c.brand.phoneDisplay)}`;
+  document.getElementById('footSocials').innerHTML = `
+    <a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+    <a href="${esc(c.brand.facebook||'#')}" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+    <a href="${esc(c.brand.tiktok||'#')}" target="_blank" rel="noopener" aria-label="TikTok">TT</a>`;
+
+  initObservers();
+}
+
+// ===== Scroll reveal + stat counters =====
+function initObservers(){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal-up:not(.in)').forEach(el=>io.observe(el));
+
+  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target, target=parseInt(el.dataset.count,10), suffix=el.dataset.suffix||'';
+      let cur=0; const step=Math.max(1,Math.ceil(target/60));
+      const tick=()=>{cur+=step; if(cur>=target){el.textContent=target.toLocaleString()+suffix;} else {el.textContent=cur.toLocaleString()+suffix; requestAnimationFrame(tick);}};
+      tick(); cio.unobserve(el);
+    }
+  });},{threshold:0.4});
+  document.querySelectorAll('.num[data-count]').forEach(c=>cio.observe(c));
+}
+
+// ===== Mobile menu + promo close =====
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+document.getElementById('promoClose').addEventListener('click',()=>{document.getElementById('promoBar').classList.add('hide');sessionStorage.setItem('promoClosed','1');});
+
+// ===== Boot: render defaults instantly, then hydrate from API =====
+render(DEFAULT_CONTENT);
+fetch('/api/content',{cache:'no-store'})
+  .then(r=>r.ok?r.json():null)
+  .then(c=>{ if(c && typeof c==='object') render(c); })
+  .catch(()=>{});
 </script>
 </body>
 </html>
