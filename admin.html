@@ -305,6 +305,7 @@ function buildUI(){
   (()=>{const p=$('#panel-contact');p.innerHTML='<h2>Hubungi & Footer</h2><p class="hint">Nombor WhatsApp di sini dipakai oleh SEMUA butang di laman.</p>';
     const c=document.createElement('div');c.className='card';c.innerHTML='<h4>Brand & WhatsApp</h4>';
     c.appendChild(field('Nama brand',data.brand,'name'));
+    c.appendChild(imageField('Logo (PNG telus — kosongkan untuk guna teks)',data.brand,'logo'));
     const r=document.createElement('div');r.className='row';
     r.appendChild(field('No WhatsApp (format: 60182922958)',data.brand,'whatsapp'));
     r.appendChild(field('No telefon (paparan, cth: 018-292 2958)',data.brand,'phoneDisplay'));

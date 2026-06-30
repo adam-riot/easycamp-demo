@@ -10,6 +10,7 @@ export const DEFAULT_CONTENT = {
   },
   brand: {
     name: 'EasyCamp',
+    logo: 'imej/logo.png',
     whatsapp: '60182922958',
     phoneDisplay: '018-292 2958',
     instagram: 'https://instagram.com/easycamp.co',
@@ -22,7 +23,7 @@ export const DEFAULT_CONTENT = {
     text: '🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!'
   },
   header: {
-    bgImage: 'imej/village6.png',
+    bgImage: 'imej/header.jpg',
     tagline: 'Your trusted camping gear & outdoor event partner.',
     sub: 'Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.',
     badges: ['Clean', 'Reliable', 'Ready to Use'],

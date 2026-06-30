@@ -77,8 +77,10 @@
   /* Navbar */
   header.nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .logo{font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--black);letter-spacing:-.5px}
+  .logo{font-family:'Fredoka',sans-serif;font-weight:700;font-size:26px;color:var(--black);letter-spacing:-.5px;display:inline-flex;align-items:center}
   .logo .co{color:var(--yellow-deep);font-size:16px;vertical-align:super}
+  .logo img{height:44px;width:auto;display:block}
+  .foot-grid .logo img{height:52px}
   .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-weight:600;font-size:15px;color:var(--ink);transition:.2s}
   .nav-links a:hover{color:var(--yellow-deep)}
@@ -389,10 +391,10 @@
 <script>
 const DEFAULT_CONTENT = {
   seo:{title:"EasyCamp Rental — Sewa Gear Camping & Outdoor Event di Dengkil, Selangor",description:"Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil, Selangor.",keywords:""},
-  brand:{name:"EasyCamp",whatsapp:"60182922958",phoneDisplay:"018-292 2958",instagram:"https://instagram.com/easycamp.co",instagramHandle:"@easycamp.co",facebook:"#",tiktok:"#"},
+  brand:{name:"EasyCamp",logo:"imej/logo.png",whatsapp:"60182922958",phoneDisplay:"018-292 2958",instagram:"https://instagram.com/easycamp.co",instagramHandle:"@easycamp.co",facebook:"#",tiktok:"#"},
   promo:{enabled:true,text:"🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!"},
   header:{
-    bgImage:"imej/village6.png",
+    bgImage:"imej/header.jpg",
     tagline:"Your trusted camping gear & outdoor event partner.",
     sub:"Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.",
     badges:["Clean","Reliable","Ready to Use"],
@@ -466,8 +468,8 @@ function render(c){
   const pb=document.getElementById('promoBar');
   if(c.promo&&c.promo.enabled&&c.promo.text&&sessionStorage.getItem('promoClosed')!=='1'){document.getElementById('promoText').textContent=c.promo.text;pb.classList.remove('hide');}else pb.classList.add('hide');
 
-  // Logo
-  const logo=`${esc(c.brand.name)}<span class="co">.co</span>`;
+  // Logo (image if set, else text)
+  const logo=c.brand.logo?`<img src="${esc(c.brand.logo)}" alt="${esc(c.brand.name)}">`:`${esc(c.brand.name)}<span class="co">.co</span>`;
   document.getElementById('navLogo').innerHTML=logo; document.getElementById('footLogo').innerHTML=logo;
 
   // Header
