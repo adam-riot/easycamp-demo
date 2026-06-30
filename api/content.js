@@ -4,9 +4,9 @@ import { list, put } from '@vercel/blob';
 // schema the admin panel edits. Keep in sync with DEFAULT_CONTENT in index.html.
 export const DEFAULT_CONTENT = {
   seo: {
-    title: 'EasyCamp Rental — Sewa Gear Camping & Outdoor Event di Dengkil, Selangor',
-    description: 'Sewa gear camping berkualiti, pakej outdoor event & servis cuci khemah di Dengkil, Selangor. Self pick-up atau delivery. Booking mudah via WhatsApp.',
-    keywords: 'sewa khemah, sewa camping, camping gear rental dengkil, outdoor event rental selangor, sewa khemah dengkil, tent cleaning service, naturehike village 6'
+    title: 'EasyCamp Rental — Camping Gear & Outdoor Event Rental in Dengkil, Selangor',
+    description: 'Quality camping gear rental, outdoor event packages & tent cleaning service in Dengkil, Selangor. Self pick-up or delivery. Easy booking via WhatsApp.',
+    keywords: 'camping gear rental, tent rental, camping gear rental dengkil, outdoor event rental selangor, tent rental dengkil, tent cleaning service, naturehike village 6'
   },
   brand: {
     name: 'EasyCamp',
@@ -20,20 +20,20 @@ export const DEFAULT_CONTENT = {
   },
   promo: {
     enabled: true,
-    text: '🎉 PROMO: Pakej Naturehike Village 6 dari RM180 (2D1N). WhatsApp kami untuk tempah!'
+    text: '🎉 PROMO: Naturehike Village 6 Package from RM180 (2D1N). WhatsApp us to book!'
   },
   header: {
     bgImage: 'imej/header.jpg',
     tagline: 'Your trusted camping gear & outdoor event partner.',
-    sub: 'Self pick-up di Dengkil atau delivery ke lokasi anda. Booking mudah, gear bersih & siap pakai.',
+    sub: 'Self pick-up in Dengkil or delivery to your location. Easy booking, clean & ready-to-use gear.',
     badges: ['Clean', 'Reliable', 'Ready to Use'],
     btnPrimary: 'Book Now',
     btnSecondary: 'Browse Gear'
   },
   services: [
-    { image: '', title: 'Camping Gear Rental', desc: 'Sewa gear camping berkualiti untuk adventure anda yang seterusnya.', ctaLabel: 'View Catalog', ctaAction: '#produk' },
-    { image: '', title: 'Outdoor Event Rental', desc: 'Peralatan untuk event semua saiz — gathering, birthday, team building.', ctaLabel: 'See More', ctaAction: '#pakej' },
-    { image: '', title: 'Tent Cleaning Service', desc: 'Servis cuci profesional supaya gear anda sentiasa segar & bersih.', ctaLabel: 'Learn More', ctaAction: 'wa' }
+    { image: 'imej/svc-camping.jpg', title: 'Camping Gear Rental', desc: 'Rent quality camping equipment for your next adventure.', ctaLabel: 'View Catalog', ctaAction: '#produk' },
+    { image: 'imej/svc-event.jpg', title: 'Outdoor Event Rental', desc: 'Equipment rental for events of all sizes. We’ve got you covered.', ctaLabel: 'See More', ctaAction: '#pakej' },
+    { image: 'imej/svc-cleaning.jpg', title: 'Tent Cleaning Service', desc: 'Professional cleaning to keep your gear fresh, clean and ready.', ctaLabel: 'Learn More', ctaAction: 'wa' }
   ],
   whyChoose: [
     { icon: '✨', text: 'Clean & Well-Maintained' },
@@ -44,25 +44,25 @@ export const DEFAULT_CONTENT = {
     { icon: '🚚', text: 'Delivery Available' }
   ],
   howItWorks: [
-    { icon: '🔍', title: 'Choose Your Gear', text: 'Browse koleksi kami & pilih item yang anda perlukan.' },
-    { icon: '💬', title: 'Make a Booking', text: 'Hubungi kami via WhatsApp untuk confirm tempahan.' },
-    { icon: '📦', title: 'Pick Up or Delivery', text: 'Self pick-up di Dengkil atau kami hantar ke anda.' },
-    { icon: '⛺', title: 'Enjoy Your Adventure', text: 'Camp dengan yakin guna gear bersih & berkualiti.' }
+    { icon: '🔍', title: 'Choose Your Gear', text: 'Browse our collection and select the items you need.' },
+    { icon: '💬', title: 'Make a Booking', text: 'Contact us via WhatsApp to confirm your reservation.' },
+    { icon: '📦', title: 'Pick Up or Delivery', text: 'Self pick-up in Dengkil or we deliver to you.' },
+    { icon: '⛺', title: 'Enjoy Your Adventure', text: 'Camp with confidence using clean, quality gear.' }
   ],
   products: [
-    { name: 'Payung Camp Cottage L', spec: 'Khemah Cottage', price: '120', photo: 'imej/cottage-l.png', badge: 'New' },
+    { name: 'Payung Camp Cottage L', spec: 'Cottage Tent', price: '120', photo: 'imej/cottage-l.png', badge: 'New' },
     { name: 'Family Tent', spec: '5-6 Pax', price: '70', photo: '', badge: 'Best Seller' },
-    { name: 'Tarp & Shelter', spec: 'Pelbagai Saiz', price: '30', photo: '', badge: '' },
+    { name: 'Tarp & Shelter', spec: 'Various Sizes', price: '30', photo: '', badge: '' },
     { name: 'Camping Chair', spec: 'High Back', price: '10', photo: '', badge: '' },
     { name: 'Camping Table', spec: 'Roll Table', price: '20', photo: '', badge: '' },
     { name: 'Sleeping Bag', spec: '3 Season', price: '15', photo: '', badge: '' },
     { name: 'Cooler Box', spec: '25L', price: '20', photo: '', badge: '' },
-    { name: 'Cooking Set', spec: 'Lengkap', price: '15', photo: '', badge: '' }
+    { name: 'Cooking Set', spec: 'Complete', price: '15', photo: '', badge: '' }
   ],
   featuredPackage: {
     enabled: true,
-    tag: '⭐ Pakej Popular',
-    eyebrow: 'Sewa Khemah Camping',
+    tag: '⭐ Popular Package',
+    eyebrow: 'Camping Tent Rental',
     title1: 'Naturehike',
     title2: 'Village 6',
     photo: 'imej/village6.png',
@@ -76,22 +76,22 @@ export const DEFAULT_CONTENT = {
     ]
   },
   packages: [
-    { name: 'Basic', desc: 'Essentials untuk trip solo/couple', price: 'Dari RM 120', photo: '' },
-    { name: 'Family', desc: 'Comfort untuk seluruh keluarga', price: 'Dari RM 200', photo: '' },
-    { name: 'Group', desc: 'Perfect untuk gathering & group besar', price: 'Dari RM 350', photo: '' },
-    { name: 'Event', desc: 'Kami setup, anda enjoy', price: 'Custom Quote', photo: '' }
+    { name: 'Basic', desc: 'Essentials for a solo/couple trip', price: 'From RM 120', photo: '' },
+    { name: 'Family', desc: 'Comfort for the whole family', price: 'From RM 200', photo: '' },
+    { name: 'Group', desc: 'Perfect for gatherings & large groups', price: 'From RM 350', photo: '' },
+    { name: 'Event', desc: 'We set up, you enjoy', price: 'Custom Quote', photo: '' }
   ],
   testimonials: [
-    { text: 'Gear semua bersih, delivery on time. Sangat puas hati!', who: 'Hafizah, Shah Alam' },
-    { text: 'Pakej picnic cantik gila, memang berbaloi!', who: 'Azrul, Subang' },
-    { text: 'Dah 3 kali sewa, memang tak kecewa. Seller responsive!', who: 'Suriani, KL' }
+    { text: 'Everything was clean and delivery was on time. Really satisfied!', who: 'Hafizah, Shah Alam' },
+    { text: 'The picnic package looked amazing — totally worth it!', who: 'Azrul, Subang' },
+    { text: 'Rented 3 times already, never disappointed. Super responsive seller!', who: 'Suriani, KL' }
   ],
   gallery: [
     { photo: 'imej/village6.png' }, { photo: '' }, { photo: 'imej/cottage-l.png' },
     { photo: '' }, { photo: '' }, { photo: '' }
   ],
   footer: {
-    tagline: 'Your trusted camping gear rental & outdoor event partner di Dengkil, Selangor.',
+    tagline: 'Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.',
     pickup: 'Dengkil, Selangor',
     hours: '10am – 8pm (Daily)'
   }
