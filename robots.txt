@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /api/
 
-Sitemap: https://easycamp.vercel.app/sitemap.xml
+Sitemap: https://easycamp.my/sitemap.xml
