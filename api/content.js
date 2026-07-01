@@ -20,7 +20,7 @@ export const DEFAULT_CONTENT = {
   },
   promo: {
     enabled: true,
-    text: '🎉 ONLY A BOOKING FEE IS REQUIRED. NO DEPOSIT NEEDED.'
+    text: '🎉 HUSTLE FREE RESERVATION. ONLY A BOOKING FEE IS REQUIRED. NO DEPOSIT NEEDED.'
   },
   header: {
     bgImage: 'imej/header.jpg',
