@@ -269,10 +269,10 @@ function buildUI(){
     const box=document.createElement('div');p.appendChild(box);
     listEditor(box,data.whyChoose,[{k:'icon',label:'Ikon (emoji)'},{k:'text',label:'Teks'}],{icon:'✅',text:''},'text');})();
 
-  // TESTIMONIALS
-  (()=>{const p=$('#panel-testimonials');p.innerHTML='<h2>Testimoni</h2><p class="hint">Ulasan pelanggan (5 bintang).</p>';
+  // TESTIMONIALS (image slideshow)
+  (()=>{const p=$('#panel-testimonials');p.innerHTML='<h2>Testimoni (Slideshow)</h2><p class="hint">Setiap testimoni = satu gambar poster dalam slideshow. Upload gambar testimoni.</p>';
     const box=document.createElement('div');p.appendChild(box);
-    listEditor(box,data.testimonials,[{k:'text',label:'Ulasan',type:'area'},{k:'who',label:'Nama, Lokasi'}],{text:'',who:''},'who');})();
+    listEditor(box,data.testimonials,[{k:'image',label:'Gambar testimoni',type:'image'}],{image:''},'image');})();
 
   // CONTACT
   (()=>{const p=$('#panel-contact');p.innerHTML='<h2>Hubungi & Footer</h2><p class="hint">Nombor WhatsApp di sini dipakai oleh SEMUA butang di laman.</p>';

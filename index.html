@@ -208,7 +208,7 @@
   .carousel .dots{display:flex;gap:8px;justify-content:center;margin-top:20px;flex-wrap:wrap}
   .carousel .dot{width:9px;height:9px;border-radius:50%;background:#d9d4c4;border:none;cursor:pointer;padding:0;transition:.2s}
   .carousel .dot.active{background:var(--yellow-deep);width:26px;border-radius:5px}
-  .testi-carousel{max-width:660px}
+  .testi-carousel{max-width:480px}
   .sec-cta{text-align:center;margin-top:32px}
 
   /* CTA */
@@ -447,9 +447,8 @@ const DEFAULT_CONTENT = {
   ],
   events:[],
   testimonials:[
-    {text:"Everything was clean and delivery was on time. Really satisfied!",who:"Hafizah, Shah Alam"},
-    {text:"The picnic package looked amazing — totally worth it!",who:"Azrul, Subang"},
-    {text:"Rented 3 times already, never disappointed. Super responsive seller!",who:"Suriani, KL"}
+    {image:"imej/testimoni1.jpeg"},{image:"imej/testimoni2.jpeg"},{image:"imej/testimoni4.jpeg"},
+    {image:"imej/testimoni5.jpeg"},{image:"imej/testimoni6.jpeg"},{image:"imej/testimoni7.jpeg"}
   ],
   footer:{tagline:"Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.",pickup:"Dengkil, Selangor",hours:"10am – 8pm (Daily)"}
 };
@@ -526,10 +525,13 @@ function render(c){
     : `<div class="slide"><div class="ev-ph">Event photos coming soon.<br>Get a custom quotation for your event via WhatsApp.</div></div>`;
   document.getElementById('eventQuote').onclick=()=>window.open(waMsg('Hi EasyCamp! I\'d like a quotation for an outdoor event.\n\nEvent type: \nDate: \nLocation: \nNo. of Pax: \nName: '),'_blank');
 
-  // Testimonials slideshow
-  document.getElementById('testiTrack').innerHTML=(c.testimonials||[]).map(t=>`
-    <div class="slide"><div class="t-card"><div class="t-stars">★★★★★</div><p>"${esc(t.text)}"</p>
-      <div class="t-who"><div class="t-av">${esc((t.who||'?').trim().charAt(0).toUpperCase())}</div><div class="t-name">${esc(t.who)}</div></div></div></div>`).join('');
+  // Testimonials slideshow (image posters, with text-card fallback)
+  document.getElementById('testiTrack').innerHTML=(c.testimonials||[]).map(t=>
+    t.image
+      ? `<div class="slide"><img src="${esc(t.image)}" alt="Customer testimonial"></div>`
+      : `<div class="slide"><div class="t-card"><div class="t-stars">★★★★★</div><p>"${esc(t.text)}"</p>
+          <div class="t-who"><div class="t-av">${esc((t.who||'?').trim().charAt(0).toUpperCase())}</div><div class="t-name">${esc(t.who)}</div></div></div></div>`
+  ).join('');
 
   initCarousels();
 

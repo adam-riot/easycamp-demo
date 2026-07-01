@@ -60,9 +60,8 @@ export const DEFAULT_CONTENT = {
   ],
   events: [],
   testimonials: [
-    { text: 'Everything was clean and delivery was on time. Really satisfied!', who: 'Hafizah, Shah Alam' },
-    { text: 'The picnic package looked amazing — totally worth it!', who: 'Azrul, Subang' },
-    { text: 'Rented 3 times already, never disappointed. Super responsive seller!', who: 'Suriani, KL' }
+    { image: 'imej/testimoni1.jpeg' }, { image: 'imej/testimoni2.jpeg' }, { image: 'imej/testimoni4.jpeg' },
+    { image: 'imej/testimoni5.jpeg' }, { image: 'imej/testimoni6.jpeg' }, { image: 'imej/testimoni7.jpeg' }
   ],
   footer: {
     tagline: 'Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.',
