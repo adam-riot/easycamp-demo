@@ -20,7 +20,7 @@ export const DEFAULT_CONTENT = {
   },
   promo: {
     enabled: true,
-    text: '🎉 PROMO: Naturehike Village 6 Package from RM180 (2D1N). WhatsApp us to book!'
+    text: '🎉 ONLY A BOOKING FEE IS REQUIRED. NO DEPOSIT NEEDED.'
   },
   header: {
     bgImage: 'imej/header.jpg',
