@@ -205,9 +205,8 @@ function listEditor(container, arr, fieldsDef, defaultItem, titleKey){
 
 // ---------- Build panels ----------
 const TABS=[
-  ['promo','Promo'],['header','Header'],['services','Servis'],['whychoose','Why Choose'],
-  ['how','Cara Sewa'],['products','Produk'],['featured','Pakej Utama'],['packages','Pakej'],
-  ['testimonials','Testimoni'],['gallery','Galeri'],['contact','Hubungi'],['seo','SEO']
+  ['promo','Promo'],['header','Header'],['services','Servis'],['packages','Pakej'],['events','Events'],
+  ['whychoose','Why Choose'],['how','Cara Sewa'],['testimonials','Testimoni'],['contact','Hubungi'],['seo','SEO']
 ];
 
 function buildUI(){
@@ -253,48 +252,22 @@ function buildUI(){
     const box=document.createElement('div');p.appendChild(box);
     listEditor(box,data.howItWorks,[{k:'icon',label:'Ikon (emoji)'},{k:'title',label:'Tajuk'},{k:'text',label:'Penerangan',type:'area'}],{icon:'⛺',title:'',text:''},'title');})();
 
-  // PRODUCTS
-  (()=>{const p=$('#panel-products');p.innerHTML='<h2>Produk</h2><p class="hint">Setiap produk jadi kad. Klik kad di laman → terus WhatsApp. Biar "Gambar" kosong untuk guna corak gradient.</p>';
-    const box=document.createElement('div');p.appendChild(box);
-    listEditor(box,data.products,[
-      {k:'name',label:'Nama produk'},{k:'spec',label:'Spec (cth: 5-6 Pax)'},{k:'price',label:'Harga (nombor sahaja, cth: 70)'},
-      {k:'badge',label:'Badge (cth: New / Best Seller — boleh kosong)'},{k:'photo',label:'Gambar',type:'image'}
-    ],{name:'Produk Baru',spec:'',price:'',badge:'',photo:''},'name');})();
-
-  // FEATURED
-  (()=>{const p=$('#panel-featured');p.innerHTML='<h2>Pakej Utama</h2><p class="hint">Pakej besar yang ditonjolkan (cth: Naturehike Village 6).</p>';
-    const c=document.createElement('div');c.className='card';
-    c.appendChild(boolField('Tunjukkan pakej utama',data.featuredPackage,'enabled'));
-    c.appendChild(field('Tag (cth: ⭐ Pakej Popular)',data.featuredPackage,'tag'));
-    c.appendChild(field('Eyebrow (label atas tajuk)',data.featuredPackage,'eyebrow'));
-    const r=document.createElement('div');r.className='row';
-    r.appendChild(field('Tajuk baris 1',data.featuredPackage,'title1'));
-    r.appendChild(field('Tajuk baris 2',data.featuredPackage,'title2'));
-    c.appendChild(r);
-    c.appendChild(imageField('Gambar pakej',data.featuredPackage,'photo'));
-    c.appendChild(stringList('Senarai item dalam pakej',data.featuredPackage.items));
-    p.appendChild(c);
-    const tc=document.createElement('div');tc.className='card';tc.innerHTML='<h4>Harga (tiers)</h4>';
-    const tbox=document.createElement('div');tc.appendChild(tbox);
-    listEditor(tbox,data.featuredPackage.tiers,[{k:'dur',label:'Tempoh (cth: 2D1N)'},{k:'amt',label:'Harga (cth: RM180)'}],{dur:'',amt:''},'dur');
-    p.appendChild(tc);})();
-
-  // PACKAGES
-  (()=>{const p=$('#panel-packages');p.innerHTML='<h2>Pakej</h2><p class="hint">Grid 4 pakej ringkas.</p>';
+  // PACKAGES (slideshow of poster images)
+  (()=>{const p=$('#panel-packages');p.innerHTML='<h2>Complete Packages (Slideshow)</h2><p class="hint">Setiap pakej = satu poster gambar dalam slideshow. Klik slide di laman → terus WhatsApp guna nama pakej. Upload poster & letak nama.</p>';
     const box=document.createElement('div');p.appendChild(box);
     listEditor(box,data.packages,[
-      {k:'name',label:'Nama pakej'},{k:'desc',label:'Penerangan'},{k:'price',label:'Harga (cth: Dari RM 120)'},{k:'photo',label:'Gambar (boleh kosong)',type:'image'}
-    ],{name:'Pakej Baru',desc:'',price:'',gradient:'k1',photo:''},'name');})();
+      {k:'image',label:'Poster pakej (gambar)',type:'image'},{k:'name',label:'Nama pakej (untuk mesej WhatsApp)'}
+    ],{image:'',name:'Pakej Baru'},'name');})();
+
+  // EVENTS (slideshow)
+  (()=>{const p=$('#panel-events');p.innerHTML='<h2>Events (Slideshow)</h2><p class="hint">Gambar setup event outdoor. Kalau kosong, laman tunjuk placeholder "coming soon". CTA di laman = Get Your Quotation Now → WhatsApp.</p>';
+    const box=document.createElement('div');p.appendChild(box);
+    listEditor(box,data.events,[{k:'image',label:'Gambar event',type:'image'},{k:'caption',label:'Caption (pilihan)'}],{image:'',caption:''},'caption');})();
 
   // WHY CHOOSE
   (()=>{const p=$('#panel-whychoose');p.innerHTML='<h2>Why Choose EasyCamp?</h2><p class="hint">Band kuning — sebab-sebab pilih EasyCamp. Guna emoji untuk ikon.</p>';
     const box=document.createElement('div');p.appendChild(box);
     listEditor(box,data.whyChoose,[{k:'icon',label:'Ikon (emoji)'},{k:'text',label:'Teks'}],{icon:'✅',text:''},'text');})();
-
-  // GALLERY
-  (()=>{const p=$('#panel-gallery');p.innerHTML='<h2>Galeri</h2><p class="hint">6 petak gambar. Kosongkan gambar untuk guna corak gradient.</p>';
-    const box=document.createElement('div');p.appendChild(box);
-    listEditor(box,data.gallery,[{k:'photo',label:'Gambar',type:'image'}],{photo:'',gradient:'g1'},'photo');})();
 
   // TESTIMONIALS
   (()=>{const p=$('#panel-testimonials');p.innerHTML='<h2>Testimoni</h2><p class="hint">Ulasan pelanggan (5 bintang).</p>';
@@ -340,10 +313,7 @@ async function loadContent(){
   // ensure objects/arrays exist
   if(!data.header) data.header={bgImage:'',tagline:'',sub:'',badges:[],btnPrimary:'Book Now',btnSecondary:'Browse Gear'};
   if(!Array.isArray(data.header.badges)) data.header.badges=[];
-  ['services','whyChoose','howItWorks','products','packages','gallery','testimonials'].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[];});
-  if(!data.featuredPackage) data.featuredPackage={enabled:false,items:[],tiers:[]};
-  if(!Array.isArray(data.featuredPackage.items)) data.featuredPackage.items=[];
-  if(!Array.isArray(data.featuredPackage.tiers)) data.featuredPackage.tiers=[];
+  ['services','whyChoose','howItWorks','packages','events','testimonials'].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[];});
   buildUI();markClean();
 }
 async function save(){

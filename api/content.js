@@ -31,8 +31,8 @@ export const DEFAULT_CONTENT = {
     btnSecondary: 'Browse Gear'
   },
   services: [
-    { image: 'imej/svc-camping.jpg', title: 'Camping Gear Rental', desc: 'Rent quality camping equipment for your next adventure.', ctaLabel: 'View Catalog', ctaAction: '#produk' },
-    { image: 'imej/svc-event.jpg', title: 'Outdoor Event Rental', desc: 'Equipment rental for events of all sizes. We’ve got you covered.', ctaLabel: 'See More', ctaAction: '#pakej' },
+    { image: 'imej/svc-camping.jpg', title: 'Camping Gear Rental', desc: 'Rent quality camping equipment for your next adventure.', ctaLabel: 'View Packages', ctaAction: '#pakej' },
+    { image: 'imej/svc-event.jpg', title: 'Outdoor Event Rental', desc: 'Equipment rental for events of all sizes. We’ve got you covered.', ctaLabel: 'See More', ctaAction: '#events' },
     { image: 'imej/svc-cleaning.jpg', title: 'Tent Cleaning Service', desc: 'Professional cleaning to keep your gear fresh, clean and ready.', ctaLabel: 'Learn More', ctaAction: 'wa' }
   ],
   whyChoose: [
@@ -49,46 +49,20 @@ export const DEFAULT_CONTENT = {
     { icon: '📦', title: 'Pick Up or Delivery', text: 'Self pick-up in Dengkil or we deliver to you.' },
     { icon: '⛺', title: 'Enjoy Your Adventure', text: 'Camp with confidence using clean, quality gear.' }
   ],
-  products: [
-    { name: 'Payung Camp Cottage L', spec: 'Cottage Tent', price: '120', photo: 'imej/cottage-l.png', badge: 'New' },
-    { name: 'Family Tent', spec: '5-6 Pax', price: '70', photo: '', badge: 'Best Seller' },
-    { name: 'Tarp & Shelter', spec: 'Various Sizes', price: '30', photo: '', badge: '' },
-    { name: 'Camping Chair', spec: 'High Back', price: '10', photo: '', badge: '' },
-    { name: 'Camping Table', spec: 'Roll Table', price: '20', photo: '', badge: '' },
-    { name: 'Sleeping Bag', spec: '3 Season', price: '15', photo: '', badge: '' },
-    { name: 'Cooler Box', spec: '25L', price: '20', photo: '', badge: '' },
-    { name: 'Cooking Set', spec: 'Complete', price: '15', photo: '', badge: '' }
-  ],
-  featuredPackage: {
-    enabled: true,
-    tag: '⭐ Popular Package',
-    eyebrow: 'Camping Tent Rental',
-    title1: 'Naturehike',
-    title2: 'Village 6',
-    photo: 'imej/village6.png',
-    items: [
-      'Naturehike Village 6', 'Kermit Chairs x2', 'Egg Roll Table 120cm', 'Opolar Fold Fan',
-      'Retro Lanterns x2', 'Premium Stove', 'Storage Box', 'Mobi Garden Air Mattress'
-    ],
-    tiers: [
-      { dur: '2D1N', amt: 'RM180' },
-      { dur: '3D2N', amt: 'RM280' }
-    ]
-  },
   packages: [
-    { name: 'Basic', desc: 'Essentials for a solo/couple trip', price: 'From RM 120', photo: '' },
-    { name: 'Family', desc: 'Comfort for the whole family', price: 'From RM 200', photo: '' },
-    { name: 'Group', desc: 'Perfect for gatherings & large groups', price: 'From RM 350', photo: '' },
-    { name: 'Event', desc: 'We set up, you enjoy', price: 'Custom Quote', photo: '' }
+    { image: 'imej/pkg-ango-air.jpg', name: 'Naturehike Ango Air' },
+    { image: 'imej/pkg-ansaan-pro.jpg', name: 'Vidalido An Saan Pro (Khakis)' },
+    { image: 'imej/pkg-village13.jpg', name: 'Naturehike Village 13' },
+    { image: 'imej/pkg-poonsaan-m-khaki.jpg', name: 'Vidalido Poon Saan M (Khakis)' },
+    { image: 'imej/pkg-poonsaan-l-khaki.jpg', name: 'Vidalido Poon Saan L (Khakis)' },
+    { image: 'imej/pkg-poonsaan-l-black.jpg', name: 'Vidalido Poon Saan L (Black)' },
+    { image: 'imej/pkg-poonsaan-m-black.jpg', name: 'Vidalido Poon Saan M (Black)' }
   ],
+  events: [],
   testimonials: [
     { text: 'Everything was clean and delivery was on time. Really satisfied!', who: 'Hafizah, Shah Alam' },
     { text: 'The picnic package looked amazing — totally worth it!', who: 'Azrul, Subang' },
     { text: 'Rented 3 times already, never disappointed. Super responsive seller!', who: 'Suriani, KL' }
-  ],
-  gallery: [
-    { photo: 'imej/village6.png' }, { photo: '' }, { photo: 'imej/cottage-l.png' },
-    { photo: '' }, { photo: '' }, { photo: '' }
   ],
   footer: {
     tagline: 'Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.',

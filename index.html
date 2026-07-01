@@ -185,22 +185,31 @@
 
   /* TESTIMONIALS */
   .testi{background:var(--white)}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .t-card{background:var(--cream);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm)}
-  .t-stars{color:#FFB800;font-size:17px;letter-spacing:2px;margin-bottom:14px}
-  .t-card p{font-size:15.5px;font-weight:500;margin-bottom:18px;color:var(--ink)}
-  .t-who{display:flex;align-items:center;gap:12px}
-  .t-av{width:42px;height:42px;border-radius:50%;background:var(--yellow);color:var(--black);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
-  .t-name{font-weight:700;font-size:14.5px}
+  .t-card{background:var(--cream);border-radius:var(--radius);padding:36px 34px;box-shadow:var(--shadow-sm);text-align:center}
+  .t-stars{color:#FFB800;font-size:18px;letter-spacing:2px;margin-bottom:14px}
+  .t-card p{font-size:17px;font-weight:500;margin-bottom:20px;color:var(--ink)}
+  .t-who{display:flex;align-items:center;gap:12px;justify-content:center}
+  .t-av{width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--black);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .t-name{font-weight:700;font-size:15px}
 
-  /* GALLERY */
-  .galsec{background:var(--cream)}
-  .gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:34px}
-  .gal{aspect-ratio:1;border-radius:var(--radius-sm);position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,#dfe6da,var(--yellow-soft))}
-  .gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .gal-over{position:absolute;inset:0;background:var(--yellow);display:flex;align-items:center;justify-content:center;opacity:0;transition:.22s;font-size:30px}
-  .gal:hover .gal-over{opacity:.92}
-  .gal-foot{text-align:center}
+  /* EVENTS */
+  .events{background:var(--white)}
+  .ev-ph{aspect-ratio:16/10;border-radius:var(--radius);background:linear-gradient(135deg,#e7efe2,var(--yellow-soft));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;font-size:15px;text-align:center;padding:20px}
+
+  /* Carousel / Slideshow */
+  .carousel{position:relative;max-width:600px;margin:0 auto;overflow:hidden}
+  .carousel .track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+  .carousel .slide{min-width:100%;padding:4px;box-sizing:border-box}
+  .carousel .slide img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-sm);display:block}
+  .carousel.pkg-carousel .slide{cursor:pointer}
+  .carousel .cbtn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.95);border:1px solid var(--line);box-shadow:var(--shadow-sm);cursor:pointer;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:3;color:var(--black);transition:.2s}
+  .carousel .cbtn:hover{background:var(--yellow)}
+  .carousel .cprev{left:8px}.carousel .cnext{right:8px}
+  .carousel .dots{display:flex;gap:8px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+  .carousel .dot{width:9px;height:9px;border-radius:50%;background:#d9d4c4;border:none;cursor:pointer;padding:0;transition:.2s}
+  .carousel .dot.active{background:var(--yellow-deep);width:26px;border-radius:5px}
+  .testi-carousel{max-width:660px}
+  .sec-cta{text-align:center;margin-top:32px}
 
   /* CTA */
   .cta{background:var(--black);color:#fff;text-align:center}
@@ -269,8 +278,8 @@
     <a href="#" class="logo" id="navLogo">EasyCamp<span class="co">.co</span></a>
     <nav class="nav-links">
       <a href="#services">Services</a>
-      <a href="#produk">Catalog</a>
       <a href="#pakej">Packages</a>
+      <a href="#events">Events</a>
       <a href="#cara">How It Works</a>
       <a href="#hubungi">Contact</a>
     </nav>
@@ -278,7 +287,7 @@
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#services">Services</a><a href="#produk">Catalog</a><a href="#pakej">Packages</a>
+    <a href="#services">Services</a><a href="#pakej">Packages</a><a href="#events">Events</a>
     <a href="#cara">How It Works</a><a href="#hubungi">Contact</a>
     <a href="#" class="wa-link" target="_blank" rel="noopener">WhatsApp Us</a>
   </div>
@@ -293,7 +302,7 @@
     <p class="sub reveal-up" id="heroSub">Self pick-up in Dengkil or delivery to your location. Easy booking, clean & ready-to-use gear.</p>
     <div class="hero-actions reveal-up">
       <a href="#" class="btn btn-y wa-link" id="heroBtn1" target="_blank" rel="noopener">Book Now</a>
-      <a href="#produk" class="btn btn-o" id="heroBtn2">Browse Gear</a>
+      <a href="#pakej" class="btn btn-o" id="heroBtn2">Browse Gear</a>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#ffffff" d="M0,48 C240,90 480,90 720,60 C960,30 1200,20 1440,52 L1440,90 L0,90 Z"></path></svg>
@@ -304,6 +313,34 @@
   <div class="container">
     <div class="head reveal-up"><span class="accent"></span><h2>Our Services</h2><p>Everything you need for the outdoors.</p></div>
     <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- COMPLETE PACKAGES (slideshow) -->
+<section class="packages pad" id="pakej">
+  <div class="container">
+    <div class="head reveal-up"><span class="accent"></span><h2>Complete Packages</h2><p>All-in-one camping packages — pick, book, and go.</p></div>
+    <div class="carousel reveal-up" data-autoplay="6000">
+      <div class="track" id="pkgTrack"></div>
+      <button class="cbtn cprev" aria-label="Previous">&#8249;</button>
+      <button class="cbtn cnext" aria-label="Next">&#8250;</button>
+      <div class="dots"></div>
+    </div>
+    <div class="sec-cta reveal-up"><button class="btn btn-y" id="pkgBook">Book Now →</button></div>
+  </div>
+</section>
+
+<!-- EVENTS (slideshow) -->
+<section class="events pad" id="events">
+  <div class="container">
+    <div class="head reveal-up"><span class="accent"></span><h2>Events</h2><p>Outdoor event setups for gatherings of all sizes.</p></div>
+    <div class="carousel reveal-up" data-autoplay="6000">
+      <div class="track" id="eventTrack"></div>
+      <button class="cbtn cprev" aria-label="Previous">&#8249;</button>
+      <button class="cbtn cnext" aria-label="Next">&#8250;</button>
+      <div class="dots"></div>
+    </div>
+    <div class="sec-cta reveal-up"><button class="btn btn-y" id="eventQuote">Get Your Quotation Now →</button></div>
   </div>
 </section>
 
@@ -323,37 +360,16 @@
   </div>
 </section>
 
-<!-- CATALOG -->
-<section class="catalog pad" id="produk">
-  <div class="container">
-    <div class="head reveal-up"><span class="accent"></span><h2>Popular Rental</h2><p>The gear our campers rent most.</p></div>
-    <div class="prod-grid" id="prodGrid"></div>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section class="packages pad" id="pakej">
-  <div class="container">
-    <div class="head reveal-up"><span class="accent"></span><h2>Complete Packages</h2><p>Complete packages for outdoor events & camping.</p></div>
-    <div id="featWrap"></div>
-    <div class="pkg-grid" id="pkgGrid"></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
+<!-- WHAT CAMPERS SAY (slideshow) -->
 <section class="testi pad">
   <div class="container">
     <div class="head reveal-up"><span class="accent"></span><h2>What Our Campers Say</h2></div>
-    <div class="testi-grid" id="testiGrid"></div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="galsec pad">
-  <div class="container">
-    <div class="head reveal-up"><span class="accent"></span><h2 id="galTitle">Follow Us</h2></div>
-    <div class="gal-grid" id="galGrid"></div>
-    <div class="gal-foot reveal-up"><a href="#" class="btn btn-dark" id="igBtn" target="_blank" rel="noopener">Follow on Instagram →</a></div>
+    <div class="carousel testi-carousel reveal-up" data-autoplay="5500">
+      <div class="track" id="testiTrack"></div>
+      <button class="cbtn cprev" aria-label="Previous">&#8249;</button>
+      <button class="cbtn cnext" aria-label="Next">&#8250;</button>
+      <div class="dots"></div>
+    </div>
   </div>
 </section>
 
@@ -402,8 +418,8 @@ const DEFAULT_CONTENT = {
     btnPrimary:"Book Now", btnSecondary:"Browse Gear"
   },
   services:[
-    {image:"imej/svc-camping.jpg",title:"Camping Gear Rental",desc:"Rent quality camping equipment for your next adventure.",ctaLabel:"View Catalog",ctaAction:"#produk"},
-    {image:"imej/svc-event.jpg",title:"Outdoor Event Rental",desc:"Equipment rental for events of all sizes. We’ve got you covered.",ctaLabel:"See More",ctaAction:"#pakej"},
+    {image:"imej/svc-camping.jpg",title:"Camping Gear Rental",desc:"Rent quality camping equipment for your next adventure.",ctaLabel:"View Packages",ctaAction:"#pakej"},
+    {image:"imej/svc-event.jpg",title:"Outdoor Event Rental",desc:"Equipment rental for events of all sizes. We’ve got you covered.",ctaLabel:"See More",ctaAction:"#events"},
     {image:"imej/svc-cleaning.jpg",title:"Tent Cleaning Service",desc:"Professional cleaning to keep your gear fresh, clean and ready.",ctaLabel:"Learn More",ctaAction:"wa"}
   ],
   whyChoose:[
@@ -420,31 +436,21 @@ const DEFAULT_CONTENT = {
     {icon:"📦",title:"Pick Up or Delivery",text:"Self pick-up in Dengkil or we deliver to you."},
     {icon:"⛺",title:"Enjoy Your Adventure",text:"Camp with confidence using clean, quality gear."}
   ],
-  products:[
-    {name:"Payung Camp Cottage L",spec:"Cottage Tent",price:"120",photo:"imej/cottage-l.png",badge:"New"},
-    {name:"Family Tent",spec:"5-6 Pax",price:"70",photo:"",badge:"Best Seller"},
-    {name:"Tarp & Shelter",spec:"Various Sizes",price:"30",photo:"",badge:""},
-    {name:"Camping Chair",spec:"High Back",price:"10",photo:"",badge:""},
-    {name:"Camping Table",spec:"Roll Table",price:"20",photo:"",badge:""},
-    {name:"Sleeping Bag",spec:"3 Season",price:"15",photo:"",badge:""},
-    {name:"Cooler Box",spec:"25L",price:"20",photo:"",badge:""},
-    {name:"Cooking Set",spec:"Complete",price:"15",photo:"",badge:""}
-  ],
-  featuredPackage:{enabled:true,tag:"⭐ Popular Package",eyebrow:"Camping Tent Rental",title1:"Naturehike",title2:"Village 6",photo:"imej/village6.png",
-    items:["Naturehike Village 6","Kermit Chairs x2","Egg Roll Table 120cm","Opolar Fold Fan","Retro Lanterns x2","Premium Stove","Storage Box","Mobi Garden Air Mattress"],
-    tiers:[{dur:"2D1N",amt:"RM180"},{dur:"3D2N",amt:"RM280"}]},
   packages:[
-    {name:"Basic",desc:"Essentials for a solo/couple trip",price:"From RM 120",photo:""},
-    {name:"Family",desc:"Comfort for the whole family",price:"From RM 200",photo:""},
-    {name:"Group",desc:"Perfect for gatherings & large groups",price:"From RM 350",photo:""},
-    {name:"Event",desc:"We set up, you enjoy",price:"Custom Quote",photo:""}
+    {image:"imej/pkg-ango-air.jpg",name:"Naturehike Ango Air"},
+    {image:"imej/pkg-ansaan-pro.jpg",name:"Vidalido An Saan Pro (Khakis)"},
+    {image:"imej/pkg-village13.jpg",name:"Naturehike Village 13"},
+    {image:"imej/pkg-poonsaan-m-khaki.jpg",name:"Vidalido Poon Saan M (Khakis)"},
+    {image:"imej/pkg-poonsaan-l-khaki.jpg",name:"Vidalido Poon Saan L (Khakis)"},
+    {image:"imej/pkg-poonsaan-l-black.jpg",name:"Vidalido Poon Saan L (Black)"},
+    {image:"imej/pkg-poonsaan-m-black.jpg",name:"Vidalido Poon Saan M (Black)"}
   ],
+  events:[],
   testimonials:[
     {text:"Everything was clean and delivery was on time. Really satisfied!",who:"Hafizah, Shah Alam"},
     {text:"The picnic package looked amazing — totally worth it!",who:"Azrul, Subang"},
     {text:"Rented 3 times already, never disappointed. Super responsive seller!",who:"Suriani, KL"}
   ],
-  gallery:[{photo:"imej/village6.png"},{photo:""},{photo:"imej/cottage-l.png"},{photo:""},{photo:""},{photo:""}],
   footer:{tagline:"Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.",pickup:"Dengkil, Selangor",hours:"10am – 8pm (Daily)"}
 };
 
@@ -505,48 +511,27 @@ function render(c){
   document.getElementById('stepsGrid').innerHTML=(c.howItWorks||[]).map((s,i)=>`
     <div class="step reveal-up"><div class="circle">${esc(s.icon)}<span class="n">${i+1}</span></div><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p></div>`).join('');
 
-  // Products
-  const pg=document.getElementById('prodGrid');pg.innerHTML='';
-  (c.products||[]).forEach((p,i)=>{
-    const d=document.createElement('div');d.className='prod reveal-up';d.style.transitionDelay=(i*0.05)+'s';
-    d.innerHTML=`<div class="prod-img">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}">`:''}${p.badge?`<span class="badge-tag">${esc(p.badge)}</span>`:''}</div>
-      <div class="prod-body"><h3>${esc(p.name)}</h3><span class="prod-spec">${esc(p.spec)}</span>
-      <div class="prod-foot"><span class="prod-price">Dari <b>RM${esc(p.price)}</b></span><span class="arrow">→</span></div></div>`;
-    d.addEventListener('click',()=>waProduk(p.name));pg.appendChild(d);
-  });
+  // Packages slideshow (poster images)
+  const pkgC=document.getElementById('pkgTrack').closest('.carousel');
+  pkgC.classList.add('pkg-carousel');
+  document.getElementById('pkgTrack').innerHTML=(c.packages||[]).map(p=>
+    `<div class="slide" data-name="${esc(p.name||'')}"><img src="${esc(p.image)}" alt="${esc(p.name||'Package')}"></div>`).join('');
+  document.querySelectorAll('#pkgTrack .slide').forEach(s=>s.onclick=()=>waPakej(s.dataset.name||'Package'));
+  document.getElementById('pkgBook').onclick=()=>window.open(waMsg('Hi EasyCamp! I\'d like to book a camping package. Please advise availability & pricing.\n\nPackage: \nDate: \nNo. of Pax: \nName: '),'_blank');
 
-  // Featured package
-  const fw=document.getElementById('featWrap');const f=c.featuredPackage;
-  if(f&&f.enabled){
-    fw.innerHTML=`<div class="feat-pkg reveal-up">
-      <div class="feat-img">${f.tag?`<span class="feat-tag">${esc(f.tag)}</span>`:''}${f.photo?`<img src="${esc(f.photo)}" alt="${esc(f.title1)} ${esc(f.title2)}">`:''}</div>
-      <div class="feat-body"><div class="eyebrow">${esc(f.eyebrow)}</div><h3>${esc(f.title1)} ${esc(f.title2)}</h3>
-        <ul class="feat-list">${(f.items||[]).map(it=>`<li>${esc(it)}</li>`).join('')}</ul>
-        <div class="price-tiers">${(f.tiers||[]).map(t=>`<div class="tier"><div class="dur">${esc(t.dur)}</div><div class="amt">${esc(t.amt)}</div></div>`).join('')}</div>
-        <button class="btn btn-y" id="featBtn">Book This Package →</button></div></div>`;
-    document.getElementById('featBtn').addEventListener('click',()=>waPakej(`${f.title1} ${f.title2}`));
-  } else fw.innerHTML='';
+  // Events slideshow (images may be empty -> placeholder)
+  const ev=(c.events||[]).filter(e=>e&&e.image);
+  document.getElementById('eventTrack').innerHTML = ev.length
+    ? ev.map(e=>`<div class="slide"><img src="${esc(e.image)}" alt="${esc(e.caption||'Event')}"></div>`).join('')
+    : `<div class="slide"><div class="ev-ph">Event photos coming soon.<br>Get a custom quotation for your event via WhatsApp.</div></div>`;
+  document.getElementById('eventQuote').onclick=()=>window.open(waMsg('Hi EasyCamp! I\'d like a quotation for an outdoor event.\n\nEvent type: \nDate: \nLocation: \nNo. of Pax: \nName: '),'_blank');
 
-  // Packages
-  const kg=document.getElementById('pkgGrid');kg.innerHTML='';
-  (c.packages||[]).forEach(p=>{
-    const d=document.createElement('div');d.className='pkg reveal-up';
-    d.innerHTML=`<div class="pkg-img">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}">`:''}</div>
-      <div class="pkg-body"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><span class="pkg-price">${esc(p.price)}</span>
-      <button class="btn btn-y">Book Now →</button></div>`;
-    d.querySelector('button').addEventListener('click',()=>waPakej(p.name));kg.appendChild(d);
-  });
+  // Testimonials slideshow
+  document.getElementById('testiTrack').innerHTML=(c.testimonials||[]).map(t=>`
+    <div class="slide"><div class="t-card"><div class="t-stars">★★★★★</div><p>"${esc(t.text)}"</p>
+      <div class="t-who"><div class="t-av">${esc((t.who||'?').trim().charAt(0).toUpperCase())}</div><div class="t-name">${esc(t.who)}</div></div></div></div>`).join('');
 
-  // Testimonials
-  document.getElementById('testiGrid').innerHTML=(c.testimonials||[]).map(t=>`
-    <div class="t-card reveal-up"><div class="t-stars">★★★★★</div><p>"${esc(t.text)}"</p>
-      <div class="t-who"><div class="t-av">${esc((t.who||'?').trim().charAt(0).toUpperCase())}</div><div class="t-name">${esc(t.who)}</div></div></div>`).join('');
-
-  // Gallery
-  document.getElementById('galTitle').textContent=`Follow Us ${c.brand.instagramHandle||''}`.trim();
-  document.getElementById('igBtn').href=c.brand.instagram||'#';
-  document.getElementById('galGrid').innerHTML=(c.gallery||[]).map(g=>`
-    <a href="${esc(c.brand.instagram||'#')}" target="_blank" rel="noopener" class="gal reveal-up">${g.photo?`<img src="${esc(g.photo)}" alt="EasyCamp">`:''}<div class="gal-over">📷</div></a>`).join('');
+  initCarousels();
 
   // CTA + footer
   document.getElementById('ctaPhone').textContent=c.brand.phoneDisplay;
@@ -561,6 +546,33 @@ function render(c){
 
   initObservers();
 }
+
+// ===== Carousel / slideshow =====
+function initCarousel(c){
+  const track=c.querySelector('.track'), dotsWrap=c.querySelector('.dots');
+  const count=()=>track.children.length;
+  const go=i=>{const n=count();if(!n)return;const idx=((i%n)+n)%n;c.__i=idx;
+    track.style.transform=`translateX(-${idx*100}%)`;
+    if(dotsWrap)[...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active',j===idx));};
+  c._go=go; c.__i=0;
+  if(dotsWrap){dotsWrap.innerHTML='';[...track.children].forEach((_,j)=>{const b=document.createElement('button');b.className='dot'+(j===0?' active':'');b.type='button';b.setAttribute('aria-label','Slide '+(j+1));b.onclick=()=>go(j);dotsWrap.appendChild(b);});}
+  const prev=c.querySelector('.cprev'),next=c.querySelector('.cnext');
+  if(prev)prev.onclick=()=>go(c.__i-1);
+  if(next)next.onclick=()=>go(c.__i+1);
+  const single=count()<2;
+  if(prev)prev.style.display=single?'none':'';
+  if(next)next.style.display=single?'none':'';
+  if(!c._touch){c._touch=1;let sx=0;
+    track.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+    track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)c._go(c.__i+(dx<0?1:-1));},{passive:true});}
+  if(c._ap)clearInterval(c._ap);
+  const ap=parseInt(c.dataset.autoplay||'0',10);
+  if(ap>0&&!single){c._ap=setInterval(()=>c._go(c.__i+1),ap);
+    if(!c._hov){c._hov=1;c.addEventListener('mouseenter',()=>clearInterval(c._ap));
+      c.addEventListener('mouseleave',()=>{clearInterval(c._ap);c._ap=setInterval(()=>c._go(c.__i+1),ap);});}}
+  go(0);
+}
+function initCarousels(){document.querySelectorAll('.carousel').forEach(initCarousel);}
 
 function initObservers(){
   const vh=window.innerHeight||800;
