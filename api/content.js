@@ -62,11 +62,11 @@ export const DEFAULT_CONTENT = {
     { image: 'imej/events/event1.jpg' }, { image: 'imej/events/event2.jpg' }, { image: 'imej/events/event3.jpg' },
     { image: 'imej/events/event4.jpg' }, { image: 'imej/events/event5.jpg' }, { image: 'imej/events/event6.jpg' },
     { image: 'imej/events/event7.jpg' }, { image: 'imej/events/event8.jpg' }, { image: 'imej/events/event9.jpg' },
-    { image: 'imej/events/event10.jpg' }, { image: 'imej/events/event11.jpg' }, { image: 'imej/events/event12.jpg' }
+    { image: 'imej/events/event10.jpg' }, { image: 'imej/events/event11.jpg' }, { image: 'imej/events/event12.jpg' },
+    { image: 'imej/events/event13.jpg' }
   ],
   testimonials: [
-    { image: 'imej/testimoni1.jpeg' }, { image: 'imej/testimoni2.jpeg' }, { image: 'imej/testimoni4.jpeg' },
-    { image: 'imej/testimoni5.jpeg' }, { image: 'imej/testimoni6.jpeg' }, { image: 'imej/testimoni7.jpeg' }
+    { image: 'imej/testimoni-a.jpg' }, { image: 'imej/testimoni-b.jpg' }, { image: 'imej/testimoni-c.jpg' }
   ],
   footer: {
     tagline: 'Your trusted camping gear rental & outdoor event partner in Dengkil, Selangor.',
