@@ -7,9 +7,9 @@
 <meta name="description" content="Quality camping gear rental, outdoor event packages & tent cleaning service in Dengkil, Selangor. Self pick-up or delivery. Easy booking via WhatsApp.">
 <meta name="keywords" content="camping gear rental, tent rental, camping gear rental dengkil, outdoor event rental selangor, tent rental dengkil, tent cleaning service, naturehike village 6">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#FFD100">
+<meta name="theme-color" content="#F3D98F">
 <link rel="canonical" href="https://easycamp.my/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FFD100'/%3E%3Ctext y='.9em' x='12' font-size='78'%3E%E2%9B%BA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23F3D98F'/%3E%3Ctext y='.9em' x='12' font-size='78'%3E%E2%9B%BA%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EasyCamp Rental">
 <meta property="og:title" content="EasyCamp Rental — Camping Gear & Outdoor Event Rental">
@@ -37,10 +37,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --yellow:#FFD100; --yellow-deep:#F2C200; --yellow-soft:#FFF3C2; --cream:#FFFBF0;
-    --black:#1A1A1A; --ink:#2A2A2A; --muted:#6B6B6B; --white:#FFFFFF; --line:#EFEADD;
+    /* Palette: Morning Butter #F3D98F + Blue Grey #7298C7 */
+    --yellow:#F3D98F; --yellow-deep:#E7C765; --yellow-soft:#FBF1D0; --cream:#FBFAF5;
+    --blue:#7298C7; --blue-deep:#5E86BC; --blue-soft:#E7EEF7;
+    --black:#243244; --ink:#2C3A4A; --muted:#61707F; --white:#FFFFFF; --line:#E7EAEF;
     --radius:20px; --radius-sm:14px; --radius-pill:999px;
-    --shadow:0 16px 40px rgba(26,26,26,.10); --shadow-sm:0 8px 22px rgba(26,26,26,.08);
+    --shadow:0 16px 40px rgba(36,50,68,.12); --shadow-sm:0 8px 22px rgba(36,50,68,.09);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -53,7 +55,7 @@
 
   /* Section heading */
   .head{text-align:center;margin-bottom:44px}
-  .head .accent{display:inline-block;width:48px;height:4px;background:var(--yellow);border-radius:4px;margin-bottom:16px}
+  .head .accent{display:inline-block;width:48px;height:4px;background:var(--blue);border-radius:4px;margin-bottom:16px}
   .head h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-transform:uppercase}
   .head p{color:var(--muted);font-size:16px;margin-top:8px}
   .pad{padding:84px 0}
@@ -61,7 +63,7 @@
   /* Buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:15px;
     padding:14px 26px;border-radius:var(--radius-pill);cursor:pointer;border:2px solid transparent;transition:.2s;white-space:nowrap}
-  .btn-y{background:var(--yellow);color:var(--black);box-shadow:0 8px 20px rgba(242,194,0,.35)}
+  .btn-y{background:var(--yellow);color:var(--black);box-shadow:0 8px 20px rgba(231,199,101,.45)}
   .btn-y:hover{background:var(--yellow-deep);transform:translateY(-2px)}
   .btn-o{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7)}
   .btn-o:hover{background:rgba(255,255,255,.14);border-color:#fff}
@@ -83,7 +85,7 @@
   .foot-grid .logo img{height:52px}
   .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-weight:600;font-size:15px;color:var(--ink);transition:.2s}
-  .nav-links a:hover{color:var(--yellow-deep)}
+  .nav-links a:hover{color:var(--blue-deep)}
   .nav-cta{padding:11px 20px;font-size:14px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
   .burger span{width:25px;height:3px;background:var(--black);border-radius:3px}
@@ -129,15 +131,15 @@
   .why-item span{display:block;font-weight:700;font-size:13.5px;color:var(--black);line-height:1.35}
 
   /* HOW IT WORKS */
-  .how{background:var(--cream)}
+  .how{background:var(--blue-soft)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
   .step{text-align:center;position:relative;padding:0 6px}
   .step .circle{width:84px;height:84px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;
-    margin:0 auto 16px;font-size:32px;position:relative;z-index:2;border:3px solid var(--yellow)}
+    margin:0 auto 16px;font-size:32px;position:relative;z-index:2;border:3px solid var(--blue)}
   .step .n{position:absolute;top:-6px;right:calc(50% - 52px);z-index:3;width:26px;height:26px;border-radius:50%;background:var(--yellow);color:var(--black);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
   .step h4{font-size:16px;font-weight:800;text-transform:uppercase;margin-bottom:6px;letter-spacing:.3px}
   .step p{font-size:13.5px;color:var(--muted);max-width:200px;margin:0 auto}
-  .step:not(:last-child)::after{content:"";position:absolute;top:42px;left:62%;width:76%;height:0;border-top:3px dotted var(--yellow-deep);z-index:1}
+  .step:not(:last-child)::after{content:"";position:absolute;top:42px;left:62%;width:76%;height:0;border-top:3px dotted var(--blue);z-index:1}
 
   /* CATALOG / PRODUCTS */
   .catalog{background:var(--white)}
@@ -207,7 +209,7 @@
   .carousel .cprev{left:8px}.carousel .cnext{right:8px}
   .carousel .dots{display:flex;gap:8px;justify-content:center;margin-top:20px;flex-wrap:wrap}
   .carousel .dot{width:9px;height:9px;border-radius:50%;background:#d9d4c4;border:none;cursor:pointer;padding:0;transition:.2s}
-  .carousel .dot.active{background:var(--yellow-deep);width:26px;border-radius:5px}
+  .carousel .dot.active{background:var(--blue);width:26px;border-radius:5px}
   .testi-carousel{max-width:480px}
   .ev-carousel{max-width:1140px}
   .ev-carousel .cprev{left:-6px}.ev-carousel .cnext{right:-6px}
@@ -220,7 +222,7 @@
   .cta .phone{display:inline-block;margin-top:18px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:26px;color:var(--yellow)}
 
   /* Footer */
-  footer{background:#141414;color:#fff;padding-top:60px}
+  footer{background:#1C2A38;color:#fff;padding-top:60px}
   .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
   .foot-grid .logo{color:#fff;margin-bottom:14px;display:inline-block}
   .foot-col h4{color:var(--yellow);font-size:15px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;font-weight:800}
@@ -335,7 +337,7 @@
 <!-- EVENTS (slideshow) -->
 <section class="events pad" id="events">
   <div class="container">
-    <div class="head reveal-up"><span class="accent"></span><h2>Events</h2><p>Outdoor event setups for gatherings of all sizes.</p></div>
+    <div class="head reveal-up"><span class="accent"></span><h2>Events</h2><p>Our Event's Portfolio</p></div>
     <div class="carousel ev-carousel reveal-up" data-autoplay="3500" data-pv="3" data-pv-tablet="2" data-pv-mobile="1">
       <div class="track" id="eventTrack"></div>
       <button class="cbtn cprev" aria-label="Previous">&#8249;</button>
